@@ -1,24 +1,22 @@
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Wersje technologii:
 
-Things you may want to cover:
+- Ruby ->	2.6.3
 
-* Ruby version
+- Ruby on Rails -> 5.2.3
 
-* System dependencies
+- Wersje gem'ów mozna w Gemfile sprawdzić
 
-* Configuration
+---
 
-* Database creation
+## Workflow
+Na tą skalę możemy spokojnie pracować w [GitHub Flow](https://guides.github.com/introduction/flow/). 
 
-* Database initialization
+Bezpośrednie commitowanie i mergowanie do `mastera` jest zablokowane. Wszystkie zmiany robimy na jakoś adekwatnie nazwanym branchu.
+By zmergować brancha do mastera trzeba zrobic pull request wymagający review. Najlepiej używac labeli do tych pull requestów by było się łatwo ogrnąć w zmergowancych requestach.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Poza defaultowymi labelami GitHub'a dodałem:
+* __feature__ - jak robimy pulla z nową funkcjonalnością
+* __hot-fix__ - jak robimy pulla z fixem dla znalezionych bugów itd.
