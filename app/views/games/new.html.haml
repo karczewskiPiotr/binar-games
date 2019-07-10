@@ -1,3 +1,9 @@
+- if @game.errors.any?
+    %p The form contains #{pluralize(@game.errors.count, "error")}
+    %ul
+        - @game.errors.full_messages.each do |error_message|
+            %li= error_message
+    
 = form_for @game do |field|
     = field.label :title
     = field.text_field :title

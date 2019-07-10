@@ -16,6 +16,7 @@ class GamesController < ApplicationController
     if @game.save
       redirect_to @game
     else
+      # redirect_to new_game_path
       render 'new'
     end
   end
