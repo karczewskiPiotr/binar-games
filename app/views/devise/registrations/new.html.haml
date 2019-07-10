@@ -20,6 +20,10 @@
     = f.label :name
     %br/
     = f.text_field :name, autofocus: true
+  %div
+    = f.label :nick
+    %br/
+    = f.text_field :nick, autofocus: true 
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
