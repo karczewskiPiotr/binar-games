@@ -1,0 +1,3 @@
+%p Title: #{@game.title}
+%p Description #{@game.description}
+= image_tag(@game.pictures.first) if @game.pictures.attached?

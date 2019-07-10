@@ -8,7 +8,6 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    render html: "Title: #{@game.title} Description: #{@game.description}"
   end
 
   def create
@@ -24,7 +23,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :rating)
+    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: [])
 
   end
 end
