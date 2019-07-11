@@ -1,0 +1,15 @@
+= form_for @game do |form|
+    = form.label :title
+    = form.text_field :title
+
+    = form.label :description
+    = form.text_field :description
+
+    = form.label :pictures
+    =form.file_field :pictures, multiple: true
+
+    = form.label :game_guide
+    =form.file_field :game_guide
+
+    = form.submit 'Add to my collection'
+  
