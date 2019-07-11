@@ -29,4 +29,5 @@ class EpicMenu extends React.Component{
         </nav>)
     }
 }
-export default EpicMenu;
+ReactDOM.render(<EpicMenu />, document.getElementById('head'))
+//export default EpicMenu;

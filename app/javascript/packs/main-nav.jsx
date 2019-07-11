@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EpicMenu from './EpicMenu';
 import Profile from './profileAcces';
-// import 'bootstrap/dist/css/bootstrap.css'
+
 
 
 
@@ -44,4 +44,4 @@ class MainNav extends React.Component{
     }
 }
 
-ReactDOM.render(<MainNav />, document.getElementById('app'))
+// ReactDOM.render(<MainNav />, document.getElementById('app'))

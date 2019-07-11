@@ -7,7 +7,8 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-  %body
+  %body 
+    =%render :partial 'EpicMenu'
     %p.notice= notice
     %p.alert= alert
     = yield

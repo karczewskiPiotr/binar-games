@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- get "/test" => "application#test"
+ get "/test" => "application#header"
   devise_for :users
   resources :games
   get 'games/index'
