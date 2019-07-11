@@ -8,7 +8,7 @@
     clear:both;
 }
 .menu {
-    background-color: white;
+    background-color: hsla(0, 0%, 100% ,0.75);
     box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
     border-radius: 18px;
     width: 800px;
@@ -194,6 +194,8 @@
   }
   
   .xlarge{
+    position:absolute;
+    z-index:-100;
     width: 700px;
     height: 700px;
     left: -300px;
