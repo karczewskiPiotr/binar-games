@@ -11,19 +11,19 @@
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "new-password"
+    = f.password_field :password
   .field
     = f.label :password_confirmation
     %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  %div
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true
+    = f.password_field :password_confirmation
   %div
     = f.label :nick
     %br/
-    = f.text_field :nick, autofocus: true 
+    = f.text_field :nick, autofocus: true
+  %div
+    = f.label "Avatar"
+    %br/
+    = f.file_field :avatar
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
