@@ -8,11 +8,13 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = current_game
   end
 
   def create
     @game = Game.new(game_params)
+    category = assign_category
+    @game.category = assign_category
     if @game.save
       redirect_to @game
     else
@@ -37,6 +39,16 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: [])
+  end
+
+  def assign_category
+    category = Category.new(name: params[:game][:category])
+    if category.save
+      category
+    else
+      category.name
+      Category.find_by name: params[:game][:category]
+    end
   end
 
   def current_game

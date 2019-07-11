@@ -9,7 +9,10 @@
     =form.file_field :pictures, multiple: true
 
     = form.label :game_guide
-    =form.file_field :game_guide
+    = form.file_field :game_guide
+
+    = form.label :category
+    = form.text_field :category
 
     = form.submit 'Add to my collection'
   
