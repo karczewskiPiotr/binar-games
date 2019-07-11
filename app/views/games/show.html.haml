@@ -1,3 +1,6 @@
 %p Title: #{@game.title}
 %p Description #{@game.description}
-= image_tag(@game.pictures.first) if @game.pictures.attached?
+-# = image_tag(@game.pictures.first) if @game.pictures.attached?
+%p Amount of pictures: #{@game.pictures.count}
+- @game.pictures.each do |picture|
+    %img(src="#{Rails.application.routes.url_helpers.rails_blob_path(picture, only_path: true)}" alt="test")/

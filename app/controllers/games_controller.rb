@@ -4,6 +4,7 @@ class GamesController < ApplicationController
   end
 
   def index
+    @games = Game.all
   end
 
   def show
@@ -15,7 +16,6 @@ class GamesController < ApplicationController
     if @game.save
       redirect_to @game
     else
-      # redirect_to new_game_path
       render 'new'
     end
   end
@@ -24,6 +24,5 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: [])
-
   end
 end
