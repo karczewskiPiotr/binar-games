@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get 'home/index'
   devise_for :users
   resources :users
-  resources :users
   devise_scope :user do
     root to: "devise/sessions#new"
   end
