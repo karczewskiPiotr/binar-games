@@ -29,11 +29,19 @@
     %br/
     = f.password_field :current_password, autocomplete: "current-password"
   %div
-    = f.label :name
+    = f.label :nick
     %br/
-    = f.text_field :name, autofocus: true
+    = f.text_field :nick, autofocus: true
+  %div
+    = f.label "Avatar"
+    %br/
+    = f.file_field :avatar
+  %div
+    = image_tag(@user.avatar, :size => '260x180')
   .actions
-    = f.submit "Update"
+    = f.submit "Update" 
+  
+  
 %h3 Cancel my account
 %p
   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
