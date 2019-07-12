@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  root "games#index"
   devise_for :users
   resources :games
-  root "games#index"
+  scope format: true, constraints: { format: 'json' } do
+    resources :categories, only: [:index, :show]
+   end
 end
