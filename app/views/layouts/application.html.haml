@@ -1,0 +1,17 @@
+!!!
+%html
+  %body
+    = stylesheet_link_tag "body_form"
+    = stylesheet_link_tag "newlog"
+    = stylesheet_link_tag "newsign"
+    = stylesheet_link_tag "alert_message"
+    = stylesheet_link_tag "pass_forg"
+    = stylesheet_link_tag "links"
+    %title BinarGames
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    %p.notice= notice
+    %p.alert= alert
+    = yield
