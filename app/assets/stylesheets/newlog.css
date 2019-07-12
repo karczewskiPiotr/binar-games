@@ -1,0 +1,104 @@
+
+  /*   ****** Log in *******   */
+  .login {
+    margin:0 auto;
+    max-width:500px;
+  }
+
+  .login label{
+    float: left;
+    width: 20%;
+    margin-top: 15%;
+    line-height: 200%;
+    font-size: 90%;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px  #4b5fcf;
+    text-align: center;
+    flex-flow: row wrap;
+    
+  }
+  
+ 
+  .login input[type=email]{
+    max-width:400px;
+    width: 60%;
+    padding: 3% 4%;
+    margin-left: 2%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 70%;
+    margin-top: 10%;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+  .pass label{
+    float: left;
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 5%;
+    line-height: 200%;
+    font-size: 80%;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px  #4b5fcf;
+    text-align: center;
+    flex-flow: row wrap;
+   
+  }
+  
+  .pass input[type=password] {
+    max-width:300px;
+    width: 60%;
+    padding: 3% 4%;
+    margin-left: 0%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 70%;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+
+  
+  .log_button {
+  width: 20%;
+  padding: 2% 3%;
+  float: right;
+  margin-right: 20%;
+  border: none;
+  cursor: pointer;  
+}
+
+.log_button input[type=submit] {
+  padding: 0 10%;
+  height: 15%;
+  width: 100%;
+  font-size: 80%;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+  outline: 0;
+}
+
+.remember{
+
+  color: #8d2fe6;
+  height: 3%;
+  margin-left: 26%;
+  margin-top: 3%;
+  float: left;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 60%;
+  line-height: 31px;
+  border: none;
+  cursor: pointer;
+
+}
+

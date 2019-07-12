@@ -1,0 +1,36 @@
+/*     Links      */
+
+.link_log {
+    width: 40%;
+    margin-left: 47%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 60%;
+    color: #8d2fe6;
+    text-align: center;
+    flex-flow: row wrap;
+    line-height: 160%;
+  }
+  
+  .link_sign {
+    width: 40%;
+    margin-left: 46.5%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 60%;
+    color: #8d2fe6;
+    text-align: center;
+    flex-flow: row wrap;
+    line-height: 160%;
+  }
+  
+  .link_pass {
+    width: 40%;
+    margin-left: 42%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 60%;
+    color: #8d2fe6;
+    text-align: center;
+    flex-flow: row wrap;
+    line-height: 160%;
+  }
+  
+  

@@ -1,0 +1,123 @@
+form {
+    border-width:9px;  
+    /* border-style:outset;
+    border-color:#4b5fcf; */
+    border-radius: 14px;
+    align-content: center;
+    width: 40%;
+    height: 40%;
+    margin-left: 30%;
+    margin-top: -1%;
+    background-color: rgba(4, 230, 255, 0.5);
+    
+  }
+  
+   body{
+    /* background-image: url(https://casbeg.com/wp-content/uploads/2019/03/binar-apps-logo-RGB-02-1.png); 
+    background-image: url(https://discourse-cloud-file-uploads.s3.dualstack.us-west-2.amazonaws.com/boingboing/original/3X/0/0/0092c4ce200041d74ead87e2e2467538ab62ad9c.gif);
+     */
+    /*background-image: linear-gradient(rgb(75, 19, 179), rgb(0, 255, 234)); 
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/2424501685490003644/607D8BF29E03E4FCE1FB2E6DF7A334AA5ED704FA/); 
+    background-image: url(https://thumbs.gfycat.com/WelldocumentedGrouchyFlyingfox-small.gif); */
+    /*background-image: url(https://66.media.tumblr.com/1bf6c2c832d636015ad66150f4a8a86e/tumblr_p6bu8gl1pm1uruo10o1_500.gif); */
+    /*background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 60% 90%;
+    background-position: center center;
+    */
+    
+    background-size: 100% 130%;
+    background-image: linear-gradient(rgb(75, 19, 179), rgb(14, 199, 255));
+  } 
+
+  h2{
+    align-content: center;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 15%;
+    line-height: 200%;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(81, 2, 128);
+    text-align: center;
+    text-shadow: 0 3px  rgba(4, 230, 255);
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border-width:9px;  
+    /* border-style:outset;
+    border-color:#4b5fcf; */
+    border-radius: 14px;
+   
+  }
+
+  .circle{
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    animation: ripple 15s infinite;
+    box-shadow: 0px 0px 1px 0px #3b79a3;
+    
+  }
+ 
+  .small{
+    width: 200px;
+    height: 200px;
+    left: -100px;
+    bottom: -100px;
+  }
+ 
+  .medium{
+    width: 400px;
+    height: 400px;
+    left: -200px;
+    bottom: -200px;
+  }
+ 
+  .large{
+    width: 550px;
+    height: 550px;
+    left: -250px;
+    bottom: -250px;
+  }
+ 
+  .xlarge{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    left: -300px;
+    bottom: -300px;
+    z-index: -100;
+  }
+  
+ 
+  .shade1{
+    opacity: 0.2;
+  }
+  .shade2{
+    opacity: 0.5;
+  }
+ 
+  .shade3{
+    opacity: 0.3;
+  }
+ 
+  .shade4{
+    opacity: 0.4;
+  }
+ 
+  .shade5{
+    opacity: 0.5;
+  }
+ 
+  @keyframes ripple{
+    0%{
+      transform: scale(0.8);
+    }
+ 
+    50%{
+      transform: scale(1.2);
+    }
+ 
+    100%{
+      transform: scale(0.8);
+    }
+  }
