@@ -11,10 +11,10 @@ class MainNav extends React.Component{
 
     render(){
         let links = [
-            {label: 'Profile', link: '/profile',},
-            {label: 'Users', link: '/user'},
-            {label: 'Games', link: '/games'},
-            {label: 'Events', link: '/events'}
+            {label: 'Profile', link: '#',},
+            {label: 'Users', link: '/users'},
+            {label: 'Games', link: '#'},
+            {label: 'Events', link: '#'}
             
         ];
         
