@@ -37,5 +37,5 @@ render() {
 }
 
 }
-ReactDOM.render(<Profile />, document.getElementById('app'))
-//export default Profile;
+//ReactDOM.render(<Profile />, document.getElementById('app'))
+export default Profile;
