@@ -5,11 +5,14 @@
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.7",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "^4.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "react-image-resizer": "^1.3.0",
     "webpack-dev-server": "^3.7.2"
   }
 }
