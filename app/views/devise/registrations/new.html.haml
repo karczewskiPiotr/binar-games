@@ -1,18 +1,28 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+
+.error_mess
   = render "devise/shared/error_messages", resource: resource
-  .field
+%h2 Sign up
+.ripple-background
+  .circle.xxlarge.shade1
+  .circle.xlarge.shade2
+  .circle.large.shade3
+  .circle.mediun.shade4
+  .circle.small.shade5
+%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}/
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  .new_login
     = f.label :email
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
+    = f.email_field :email, autofocus: true, autocomplete: "email_new"
+  .new_pass
     = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
+    .limit_letters
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
     = f.password_field :password, autocomplete: "new-password"
-  .field
+  .new_pass_conf
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
@@ -24,6 +34,6 @@
     = f.label "Avatar"
     %br/
     = f.file_field :avatar
-  .actions
+  .sign_button
     = f.submit "Sign up"
 = render "devise/shared/links"
