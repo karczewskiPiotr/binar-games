@@ -40,4 +40,5 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'devise', '~> 4.2'
 gem 'haml'
 gem 'html2haml'
+gem 'jquery-rails'
 gem 'rubocop', require: false

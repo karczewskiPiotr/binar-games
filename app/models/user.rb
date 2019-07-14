@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
 
-  validates :nick, uniqueness: true
+  validates :nick, presence: true, uniqueness: true
 end
