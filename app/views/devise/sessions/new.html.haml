@@ -1,17 +1,39 @@
-%h2 Log in
+%%link{id: "bootstrap-css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css", :rel => "stylesheet"}
+%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
+
+%body
+  .ripple-background
+    .circle.xlarge.shade2
+    .circle.large.shade3
+    .circle.mediun.shade4
+    .circle.small.shade5
+%main.login_form
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card.bg-transparent
+          .card-header{:style => "background-color: hsla(0, 0%, 100%, 0.5); border-radius:10px;"} Welcome to BinarGames
+          .card-body{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
+             
+            .form-group.row{:id => "login"}
+              = f.label :email
+              .col-md-6{:id => "col_login"}
+                = f.email_field :email, autofocus: true, autocomplete: "email"
+            .form-group.row{:id => "pass"}
+              = f.label :password
+              .col-md-6{:id => "col_pass"}
+                = f.password_field :password, autocomplete: "current-password"
+            .form-group.row{:id => "rest"}
+              .col-md-6.offset-md-4{:id => "col_rest"}
+                .checkbox
+                   
+                  = f.check_box :remember_me
+                  = f.label :remember_me
+              .col-md-6.offset-md-4{:id => "col_button"}
+                .log_button  
+                  %button.btn.bg-transparent{:type => "submit"}
+                    = f.submit "Log in"
+= render "devise/shared/links"              
+
+

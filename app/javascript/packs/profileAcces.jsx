@@ -16,7 +16,7 @@ render() {
         </a>
         <div className='binargames'>
         <h2 className = 'binar'>INAR</h2>
-        <h2 classname ='games'>GAMES</h2>
+        <h2 className ='games'>GAMES</h2>
         </div>
         </div>  
         <div className='drop'>
