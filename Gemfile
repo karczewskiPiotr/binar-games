@@ -43,4 +43,5 @@ gem 'devise', '~> 4.2'
 gem 'haml'
 gem 'html2haml'
 gem 'jquery-rails'
+gem 'popper_js', '~> 1.14.5'
 gem 'rubocop', require: false
