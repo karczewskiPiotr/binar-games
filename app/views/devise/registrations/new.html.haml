@@ -1,29 +1,52 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  %div
-    = f.label :nick
-    %br/
-    = f.text_field :nick, autofocus: true
-  %div
-    = f.label "Avatar"
-    %br/
-    = f.file_field :avatar
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+%link{id: "bootstrap-css", :href => "//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css", :rel => "stylesheet"}
+%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
+
+%body
+  .ripple-background
+    .circle.xlarge.shade2
+    .circle.large.shade3
+    .circle.mediun.shade4
+    .circle.small.shade5
+%main.login_form
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card.bg-transparent
+          .card-header{:style => "background-color: hsla(0, 0%, 100%, 0.5); border-radius:10px;"} Sign up
+          .card-body{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
+             
+            .form-group.row{:id => "new_login"}
+              = f.label :email
+              .col-md-6{:id => "col_new_login"}
+                = f.email_field :email, autofocus: true, autocomplete: "email_new"
+            .form-group.row{:id => "new_pass"}
+              = f.label :password
+              .limit_letters
+                - if @minimum_password_length
+                  %em
+                    (#{@minimum_password_length} characters minimum)
+              .col-md-6{:id => "col_new_pass"}
+                = f.password_field :password, autocomplete: "new-password"
+            .form-group.row{:id => "new_pass_conf"}
+              = f.label :password_confirmation
+              .col-md-6{:id => "col_new_conf"}
+                = f.password_field :password_confirmation, autocomplete: "new-password"
+            .form-group.row{:id => "new_nick"}
+              = f.label :nick
+              .col-md-6{:id => "col_new_nick"}
+                = f.text_field :nick, autofocus: true
+            .form-group.row{:id => "ava"}
+              .col-md-6.offset-md-4{:id => "col_ava"}
+                .input-group
+                  .custom-file
+                    %input#inputGroupFile01.custom-file-input{"aria-describedby" => "inputGroupFileAddon01", :type => "file"}
+                    %label.custom-file-label{:for => "inputGroupFile01"} Choose file
+            
+              .col-md-6.offset-md-4{:id => "col_button"}
+                .sign_button  
+                  %button.btn.bg-transparent{:type => "submit"}
+                    = f.submit "Sign up"
+  = render "devise/shared/links"              
+  .error_mess
+    = render "devise/shared/error_messages", resource: resource

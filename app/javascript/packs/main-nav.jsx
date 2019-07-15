@@ -8,7 +8,7 @@ class MainNav extends React.Component {
     let links = [
       { label: "Profile", link: "#" },
       { label: "Users", link: "/users" },
-      { label: "Games", link: "#" },
+      { label: "Games", link: "/games" },
       { label: "Events", link: "#" }
     ];
 

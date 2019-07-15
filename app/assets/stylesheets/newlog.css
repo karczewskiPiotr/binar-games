@@ -1,0 +1,159 @@
+/*   ****** Log in *******   */
+.cotainer{
+  width:100%;
+  height: 40%;
+  align-content: center;
+  margin:0;
+  padding: 0;
+ 
+}
+
+.card-header {
+  align-content: center;
+  font-size: 24px;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-align: center;
+  text-shadow: 0 3px rgba(4, 230, 255);
+}
+
+#new_user.new_user {
+  align-content: center;
+  width: 60%;
+  height: 54%;
+  margin-left:20%;
+  margin-top:10%;
+  
+}
+#login.form-group.row{
+  width:55%;
+  height:40%;
+}
+#user_email {
+  margin: 1%;
+  padding: 3%;
+}
+
+#login label{
+  margin-top: 4%;
+  margin-left: 10%;
+  padding: 2%;
+  width: 50%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+  
+}
+#col_login{
+  width:30%;
+  height:100%;
+  position: absolute;
+  left: 30%;
+  
+}
+
+#col_login input[type="email"] {
+  height: 15%;
+  font-family: "Press Start 2P", cursive;
+  font-size: 70%;
+  width:200%;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  
+}
+
+#pass label{
+  
+  margin-right: 65%;
+  padding: 2%;
+  width: 50%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+#col_pass{
+  width:30%;
+  height:100%;
+  position: absolute;
+  left: 30%;
+  
+}
+#col_pass input[type="password"] {
+  height: 15%;
+  font-family: "Press Start 2P", cursive;
+  font-size: 70%;
+  width:200%;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+#user_password {
+  margin: 1%;
+  padding: 3%;
+}
+
+#rest{
+  width:80%;
+  height:100%;
+  
+}
+#col_rest{
+  width:50%;
+  margin-top:-3%;
+  margin-left: 40%;
+}
+#col_button{
+  width:50%;
+  margin-left: 54.5%;
+  margin-top: -10%;
+}
+.log_button {
+  width: 40%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  float: right;
+  border: none;
+  cursor: pointer;
+  position:relative;
+  top:-3%;
+  right:-4%;
+}
+
+.log_button input[type="submit"] {
+  padding: 0;
+  margin: 0;
+  width: 110%;
+  font-size: 80%;
+  font-family: "Press Start 2P", cursive;
+  font-weight: bold;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+  outline: 0;
+}
+
+.checkbox {
+  width: 100%;
+  color: #320447;
+  float: left;
+  font-family: "Press Start 2P", cursive;
+  font-size: 60%;
+  line-height: 31px;
+  border: none;
+  cursor: pointer;
+  position:relative;
+  top:5%;
+}
+.checkbox label {
+  width: 60%;
+  margin-top:5%;
+}

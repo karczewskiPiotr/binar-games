@@ -1,0 +1,60 @@
+.give_email label{
+    float: left;
+    width: 15%;
+    margin-top: 20%;
+    margin-left: 5%;
+    line-height: 200%;
+    font-size: 80%;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px  #4b5fcf;
+    text-align: center;
+    flex-flow: row wrap;
+}
+.give_email input[type=email]{
+    width: 60%;
+    padding: 2% 3%;
+    margin-left: 5%;
+    margin-top:15%;
+    font-size: 70%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.reset_instruct{
+    width: 8%;
+    padding: 14px 20px;
+    float: right;
+    align-content: center;
+    margin-right:24%;
+    margin-top: 1%;
+    border: none;
+    cursor: pointer;
+}
+.reset_instruct input[type=submit]{
+    padding: 0 9%;
+    height: 15%;
+    width: 260%;
+    font-size: 70%;
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #e3f1f1;
+    background: #a9def5;
+    border: 1px solid;
+    border-color: #4b5fcf #031680 #4b5fcf;
+    border-radius: 16px;
+    outline: 0;
+}
+.link_forget{
+    width: 40%;
+    margin-left: 30%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 60%;
+    text-align: center;
+    flex-flow: row wrap;
+    line-height: 160%;
+}
