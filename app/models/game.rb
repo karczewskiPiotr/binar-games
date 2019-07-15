@@ -2,6 +2,7 @@ class Game < ApplicationRecord
     has_many_attached :pictures
     has_one_attached :game_guide
     belongs_to :category
+    belongs_to :user
 
     validates :title, presence: true, length: { maximum: 35 }
     validates :description, presence: true, length: {maximum: 255}

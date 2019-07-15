@@ -15,6 +15,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     category = assign_category
     @game.category = assign_category
+    @game.user = current_user
     if @game.save
       redirect_to @game
     else

@@ -1,4 +1,5 @@
 json.id game.id
+json.user game.user.id
 json.title game.title
 json.description game.description
 json.category game.category.name
