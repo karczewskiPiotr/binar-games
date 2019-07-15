@@ -5,21 +5,26 @@
     margin-left: 47%;
     font-family: 'Press Start 2P', cursive;
     font-size: 60%;
-    color: #8d2fe6;
+    color:  #320447;
     text-align: center;
     flex-flow: row wrap;
     line-height: 160%;
+    position: absolute;
+    top:82%;
+    left:-18%;
   }
   
   .link_sign {
     width: 40%;
-    margin-left: 46.5%;
     font-family: 'Press Start 2P', cursive;
     font-size: 60%;
-    color: #8d2fe6;
+    color:  #320447;
     text-align: center;
     flex-flow: row wrap;
-    line-height: 160%;
+    line-height: 160%; 
+    position: absolute;
+    top:64%;
+    left:30%;
   }
   
   .link_pass {
@@ -27,10 +32,13 @@
     margin-left: 42%;
     font-family: 'Press Start 2P', cursive;
     font-size: 60%;
-    color: #8d2fe6;
+    color:  #320447;
     text-align: center;
     flex-flow: row wrap;
     line-height: 160%;
+    position: absolute;
+    top:66.5%;
+    left:-11%;
   }
   
   
