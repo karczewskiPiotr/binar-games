@@ -10,7 +10,7 @@ export default class Profile extends React.Component {
           <a href="https://www.google.com/">
             <img className="logo" src={logo} />
           </a>
-          <div className="binargames">
+          <div className="binargames my-auto">
             <h2 className="binar">INAR</h2>
             <h2 className="games">GAMES</h2>
           </div>
