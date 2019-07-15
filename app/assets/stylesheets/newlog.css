@@ -15,17 +15,9 @@
   color: rgb(81, 2, 128);
   text-align: center;
   text-shadow: 0 3px rgba(4, 230, 255);
- 
-  /*border-width: 9px;
-   border-style:outset;
-    border-color:#4b5fcf; 
-  border-radius: 14px;*/
 }
 
 #new_user.new_user {
-  /* border-width:9px;  
-    border-style:outset;
-    border-color:#4b5fcf; */
   align-content: center;
   width: 60%;
   height: 54%;
