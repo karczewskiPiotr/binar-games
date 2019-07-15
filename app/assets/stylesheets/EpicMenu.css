@@ -77,33 +77,32 @@
     color: #5f0d80;
 }
 .drop {
-    float: right;
-    display: inline-flex;
+  display: inline-flex;
+  float: right;
 
 }
-
+.logo-wrapper {
+  display: inline-flex;
+}
 .logo{
     border-radius: 50%;
     width: 80px;
     height: 80px;
 }
 .logoName{
-    display:inline-flex;
-    
+    display: flex;
+    justify-content: space-between;
 }
 .binargames{
     display: inline-flex;
     color:white;
     padding: 5px;
 }
-.binar{
-    font-weight: bold;
-}
-.games{
-    color:white;
-    
 
+.binar, .games {
+  margin: 0px;
 }
+
 .bell {
     width: 60px;
     height: 60px;
@@ -220,6 +219,10 @@
   
   .shade5{
     opacity: 0.5;
+  }
+
+  #main {
+    padding: 20px;
   }
   
   @keyframes ripple{
