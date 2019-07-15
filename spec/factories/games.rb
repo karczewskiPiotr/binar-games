@@ -1,5 +1,6 @@
 FactoryBot.define do
     factory :game do
+        user
         title { Faker::String.random(1..35) }
         description { Faker::Game.platform }
         category { Category.new(name: Faker::Game.genre) }
