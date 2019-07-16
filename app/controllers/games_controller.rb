@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
+
   def new
     @game = Game.new
   end
@@ -13,12 +15,14 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-    @game.category = assign_category
-    @game.user = current_user
-    if @game.save
-      redirect_to @game
-    else
-      render 'new'
+    respond_to do |format|
+      if @game.save
+        format.html { redirect_to @game }
+        format.json { render :show, status: :created, location: @game }
+      else
+        format.html { render 'new' }
+        format.json { render json: @game.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -28,17 +32,21 @@ class GamesController < ApplicationController
 
   def update
     @game = current_game
-    if @game.update_attributes(game_params)
-      redirect_to @game
-    else
-      render 'edit'
+    respond_to do |format|
+      if @game.update_attributes(game_params)
+        format.html { redirect_to @game }
+        format.json { render :show, status: :ok, location: @game }
+      else
+        format.html { render 'edit' }
+        format.json { render json: @game.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: [])
+    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: []).merge({ category: assign_category, user: current_user })
   end
 
   def assign_category
@@ -53,5 +61,12 @@ class GamesController < ApplicationController
 
   def current_game
     Game.find(params[:id])
+  end
+
+  def handle_record_not_found
+    respond_to do |format|
+      format.html { redirect_to games_path }
+      format.json { render json: { error: "Game with id #{params[:id]} does not exist" }, status: :unprocessable_entity }
+    end
   end
 end
