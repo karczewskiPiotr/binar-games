@@ -14,10 +14,9 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
-      return render 'new' unless @game.save
+    return render('new') unless @game.save
 
-      redirect_to @game
-    end
+    redirect_to @game
   end
 
   def edit
@@ -26,10 +25,9 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-      return render 'edit' unless @game.update_attributes(game_params)
+      return render('edit') unless @game.update_attributes(game_params)
 
       redirect_to @game
-    end
   end
 
   private
@@ -46,6 +44,6 @@ class GamesController < ApplicationController
   end
 
   def handle_record_not_found
-      redirect_to games_path
+    redirect_to games_path
   end
 end
