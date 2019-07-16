@@ -1,4 +1,4 @@
-class Api::V1::GamesController < ActionController::API
+class Api::V1::GamesController < ApiController
     rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
 
     def index

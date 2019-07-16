@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
+  before_action :authenticate_user!
 
   def new
     @game = Game.new
@@ -33,14 +34,11 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: []).merge({ category: assign_category, user: current_user })
+    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: []).merge(category_id: assign_category.id, user_id: current_user.id)
   end
 
   def assign_category
-    category = Category.new(name: params[:game][:category])
-    return Category.find_by(name: params[:game][:category]) unless category.save
-    
-    category
+    Category.first_or_create(name: params[:game][:category])
   end
 
   def handle_record_not_found
