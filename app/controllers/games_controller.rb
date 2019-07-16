@@ -6,40 +6,29 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
   end
 
   def show
-    @game = current_game
+    @game = Game.find(params[:id])
   end
 
   def create
     @game = Game.new(game_params)
-    respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game }
-        format.json { render :show, status: :created, location: @game }
-      else
-        format.html { render 'new' }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+      return render 'new' unless @game.save
+
+      redirect_to @game
     end
   end
 
   def edit
-    @game = current_game
+    @game = Game.find(params[:id])
   end
 
   def update
-    @game = current_game
-    respond_to do |format|
-      if @game.update_attributes(game_params)
-        format.html { redirect_to @game }
-        format.json { render :show, status: :ok, location: @game }
-      else
-        format.html { render 'edit' }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    @game = Game.find(params[:id])
+      return render 'edit' unless @game.update_attributes(game_params)
+
+      redirect_to @game
     end
   end
 
@@ -51,22 +40,12 @@ class GamesController < ApplicationController
 
   def assign_category
     category = Category.new(name: params[:game][:category])
-    if category.save
-      category
-    else
-      category.name
-      Category.find_by name: params[:game][:category]
-    end
-  end
-
-  def current_game
-    Game.find(params[:id])
+    return Category.find_by(name: params[:game][:category]) unless category.save
+    
+    category
   end
 
   def handle_record_not_found
-    respond_to do |format|
-      format.html { redirect_to games_path }
-      format.json { render json: { error: "Game with id #{params[:id]} does not exist" }, status: :unprocessable_entity }
-    end
+      redirect_to games_path
   end
 end
