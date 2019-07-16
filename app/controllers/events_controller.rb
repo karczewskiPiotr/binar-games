@@ -4,7 +4,7 @@ class EventsController < ApplicationController
         @events = Event.all.order('created_at DESC')
     end
     def create
-        @event = Event.new(event_params)
+        @event = current_user.events.build(event_params)
 
 		if @event.save
 			redirect_to @event
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
     end
     def new
-        @event = Event.new
+        @event = current_user.events.build
     end
     def edit
 
