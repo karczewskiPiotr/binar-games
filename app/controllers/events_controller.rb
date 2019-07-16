@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
-    before_action :find_event, only: [:index, :show]
+    before_action :find_event, only: [:show]
     def index
-        @events = Event.all.order('created_at DESC')
+        if user_signed_in?
+            @events = Event.where(:user_id => current_user.id).order('created_at DESC')
+        end
     end
     def create
         @event = current_user.events.build(event_params)
@@ -20,7 +22,7 @@ class EventsController < ApplicationController
 
     end
     def show
-        
+       
     end
     def update
 
