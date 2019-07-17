@@ -1,10 +1,4 @@
 AllCops:
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-    - '**/*.rake'
-    - '**/Gemfile'
-    - '**/Capfile'
   Exclude:
     - 'vendor/**/*'
     - 'bin/**/*'
@@ -13,29 +7,17 @@ AllCops:
     - 'script/**/*'
     - 'spec/**/*'
     - 'node_modules/**/*'
-  TargetRubyVersion:                   2.6.3
-
-# Longer lines
+  TargetRubyVersion:                   2.6
 Metrics/LineLength:
   Max:                                 120
-
-# More liberal block lengths
 Metrics/MethodLength:
   Max:                                 25
 Metrics/AbcSize:
   Max:                                 50
 Metrics/ClassLength:
   Enabled:                             false
-
-# Enable rails part of rubocop (rubocop-rails)
-Rails:
-  Enabled:                             true
-
-# Do not force every comments for every class/module in each file
 Style/Documentation:
   Enabled:                             false
-
-# Minor text alignments
 Layout/AlignParameters:
   EnforcedStyle:                       with_fixed_indentation
 Layout/MultilineMethodCallIndentation:
@@ -44,15 +26,11 @@ Layout/DotPosition:
   EnforcedStyle:                       trailing
 Layout/MultilineHashBraceLayout:
   Enabled:                             false
-
-# Allows one line lambdas with block parameters
 Style/Lambda:
   Enabled:                             false
-
-# Allow nested Module::Class definitions
+Style/CharacterLiteral:
+  Enabled:                             false
 Style/ClassAndModuleChildren:
   Enabled:                             false
-
-# Do not force frozen literals in every rb file 
 Style/FrozenStringLiteralComment:
   Enabled:                             false

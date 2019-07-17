@@ -9,15 +9,15 @@ class User < ApplicationRecord
   has_many :games
 
   def as_json(options = nil)
-    super({ only: [:id, :nick, :email] }.merge(options || {}))
+    super({ only: %i[id nick email] }.merge(options || {}))
   end
 
   private
 
   def avatar_extension
-    if avatar.attached? && !avatar.content_type.in?(%w(image/jpeg image/png))
-      avatar.purge
-      errors.add(:avatar, 'must be a JPG or a PNG file.')
-    end
+    return unless avatar.attached? && !avatar.content_type.in?(%w[image/jpeg image/png])
+
+    avatar.purge
+    errors.add(:avatar, 'must be a JPG or a PNG file.')
   end
 end

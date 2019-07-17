@@ -6,8 +6,7 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
-  def index
-  end
+  def index; end
 
   def show
     @game = Game.find(params[:id])
@@ -26,15 +25,16 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-      return render('edit') unless @game.update_attributes(game_params)
+    return render('edit') unless @game.update_attributes(game_params)
 
-      redirect_to @game
+    redirect_to @game
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: []).merge(category_id: assign_category.id, user_id: current_user.id)
+    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: []).
+      merge(category_id: assign_category.id, user_id: current_user.id)
   end
 
   def assign_category
