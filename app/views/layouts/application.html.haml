@@ -1,6 +1,9 @@
 !!!
 %html
-  %head
+  %p.notice= notice
+  %p.alert= alert
+  %head 
+   
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title BinarGames
     = csrf_meta_tags
@@ -9,8 +12,7 @@
     = javascript_include_tag 'application'
   %body 
     =render 'layouts/main_nav'
-    %p.notice= notice
-    %p.alert= alert
+   
     = link_to "Binar Games", root_path
     - if user_signed_in?
       = link_to "Log out", destroy_user_session_path, method: :delete
@@ -25,3 +27,4 @@
     %div{:class => "circle large shade3"}
     %div{:class => "circle mediun shade4"}
     %div{:class => "circle small shade5"}
+  

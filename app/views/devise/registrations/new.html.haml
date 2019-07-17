@@ -1,5 +1,5 @@
 %link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
-
+<link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
 %body
   .ripple-background
     .circle.xlarge.shade2
@@ -39,13 +39,14 @@
               .col-md-6.offset-md-4{:id => "col_ava"}
                 .input-group
                   .custom-file
-                    %input#inputGroupFile01.custom-file-input{"aria-describedby" => "inputGroupFileAddon01", :type => "file"}
+                    = f.file_field :avatar, type: 'file', class: 'custom-file-input', id: 'inputGroupFile01', aria: { describedby: 'inputGroupFileAddon01' }
                     %label.custom-file-label{:for => "inputGroupFile01"} Choose file
             
               .col-md-6.offset-md-4{:id => "col_button"}
                 .sign_button  
                   %button.btn.bg-transparent{:type => "submit"}
                     = f.submit "Sign up"
-  = render "devise/shared/links"              
+    .l_box
+      = render "devise/shared/links"              
   .error_mess
     = render "devise/shared/error_messages", resource: resource

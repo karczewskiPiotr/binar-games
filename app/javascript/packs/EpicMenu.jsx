@@ -21,7 +21,7 @@ class EpicMenu extends React.Component {
       );
     });
     return (
-      <nav className="menu">
+      <nav className="menu"> 
         <div className="menuRight">
           <ul className="menuList">{listOfLinks}</ul>
         </div>

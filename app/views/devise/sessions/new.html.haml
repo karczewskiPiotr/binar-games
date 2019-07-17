@@ -1,5 +1,5 @@
 %link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
-
+<link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
 %body
   .ripple-background
     .circle.xlarge.shade2
@@ -13,7 +13,6 @@
         .card.bg-transparent
           .card-header{:style => "background-color: hsla(0, 0%, 100%, 0.5); border-radius:10px;"} Welcome to BinarGames
           .card-body{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
-             
             .form-group.row{:id => "login"}
               = f.label :email
               .col-md-6{:id => "col_login"}
@@ -32,6 +31,7 @@
                 .log_button  
                   %button.btn.bg-transparent{:type => "submit"}
                     = f.submit "Log in"
-= render "devise/shared/links"              
+    .link_box
+      = render "devise/shared/links"              
 
 

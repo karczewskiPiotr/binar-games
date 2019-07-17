@@ -1,18 +1,28 @@
-= render "devise/shared/error_messages", resource: resource
-%h2{:id=>"log"} Forgot your password?
-.ripple-background
-  .circle.xxlarge.shade1
-  .circle.xlarge.shade2
-  .circle.large.shade3
-  .circle.mediun.shade4
-  .circle.small.shade5
-%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}/
-
+%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
+.error_mess
+  = render "devise/shared/error_messages", resource: resource  
+%body
+  .ripple-background
+    .circle.xlarge.shade2
+    .circle.large.shade3
+    .circle.mediun.shade4
+    .circle.small.shade5
+   
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  .give_email
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .reset_instruct
-    = f.submit "Send"
-= render "devise/shared/links"
+  .cotainer
+    .row.justify-content-center
+      .col-md-8
+        .card.bg-transparent
+          .card-header{:style => "background-color: hsla(0, 0%, 100%, 0.5); border-radius:10px;"} Forgot your password?
+          .card-body{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
+            .form-group.row{:id => "give_email"}
+              = f.label :email
+              .col-md-6{:id => "col_email"}
+                = f.email_field :email, autofocus: true, autocomplete: "email"
+              .col-md-6.offset-md-4{:id => "send"}
+                .send_button  
+                  %button.btn.bg-transparent{:type => "submit"}
+                    = f.submit "Send"
+    .link_forget
+      = render "devise/shared/links" 
+          

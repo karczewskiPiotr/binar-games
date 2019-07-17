@@ -1,18 +1,35 @@
-= form_for @game do |form|
-    = form.label :title
-    = form.text_field :title
+%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
+<link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
 
-    = form.label :description
-    = form.text_field :description
-
-    = form.label :pictures
-    =form.file_field :pictures, multiple: true
-
-    = form.label :game_guide
-    = form.file_field :game_guide
-
-    = form.label :category
-    = form.text_field :category
-
-    = form.submit 'Add to my collection'
-  
+= form_for @game do |form|   
+    .cotainer
+        .row.justify-content-center
+            .col-md-8
+                .card.bg-transparent{:id=>"menu_card"}
+                    .card-body.container{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
+             
+                        .form-group.row{:id => "name"}
+                            = form.label :title
+                            .col-md-6{:id => "col_name"}
+                                = form.text_field :title
+                        .form-group.row{:id => "desc"}
+                            = form.label :description
+                            .col-md-6{:id => "col_desc"}
+                                = form.text_area :description
+                        .form-group.row{:id => "pic"}
+                            = form.label :pictures
+                            .col-md-6{:id => "col_pic"}
+                                =form.file_field :pictures, multiple: true
+                        .form-group.row{:id => "guide"}
+                            = form.label :game_guide
+                            .col-md-6{:id => "col_guide"}
+                                = form.file_field :game_guide
+                        .form-group.row{:id => "cat"}
+                            = form.label :category
+                            .col-md-6{:id => "col_cat"}
+                                = form.text_field :category
+                        .form-group.row{:id => "add_btn"}
+                            .col-md-6.offset-md-4
+                                .add_button  
+                                    %button.btn.bg-transparent{:type => "submit"}
+                                        = form.submit 'Add to my collection'
