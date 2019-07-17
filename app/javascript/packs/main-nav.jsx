@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import EpicMenu from "./EpicMenu";
-import Profile from "./profileAcces";
+import EpicMenu from "../components/EpicMenu";
+import Profile from "../components/profileAcces";
 
 class MainNav extends React.Component {
   render() {
