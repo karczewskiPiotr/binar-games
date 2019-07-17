@@ -18,7 +18,6 @@ RSpec.describe GamesController, type: :controller do
         before { get :show, params: { id: game.id } }
 
         describe "successful response" do
-
             it { expect(response).to be_successful }
             it { expect(response).to render_template('show') }
         end
