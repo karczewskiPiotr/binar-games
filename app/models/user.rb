@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validate :avatar_extension
   validates :nick, presence: true, uniqueness: true
   has_many :games
+  has_many :events
 
   private
 
