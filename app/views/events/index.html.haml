@@ -1,8 +1,2 @@
-%h3= link_to('Add Event', new_event_path)
-- @events.each do |event|
-    %h2= event.title
-    %p= event.description
-    %p= event.user.nick
-    %div= event.event_date
-    %div= event.event_time
-
+.events-wrapper.container
+    %h2.events-wrapper-header= link_to 'Dodaj event', new_event_path

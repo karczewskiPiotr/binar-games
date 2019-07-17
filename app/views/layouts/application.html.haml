@@ -11,12 +11,7 @@
     =render 'layouts/main_nav'
     %p.notice= notice
     %p.alert= alert
-    = link_to "Binar Games", root_path
-    - if user_signed_in?
-      = link_to "Log out", destroy_user_session_path, method: :delete
-      = link_to "Edit profile", edit_user_registration_path
-    - else
-      = link_to "Log in", new_user_session_path
+  
     = yield
     %div{:class => "bg"}
     %div{:class => "ripple-background"}
