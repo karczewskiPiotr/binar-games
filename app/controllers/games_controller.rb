@@ -38,7 +38,7 @@ class GamesController < ApplicationController
   end
 
   def assign_category
-    Category.first_or_create(name: params[:game][:category])
+    Category.find_or_create_by(name: params[:game][:category])
   end
 
   def handle_record_not_found
