@@ -8,10 +8,6 @@ class User < ApplicationRecord
   validates :nick, presence: true, uniqueness: true
   has_many :games
 
-  def as_json(options = nil)
-    super({ only: %i[id nick email] }.merge(options || {}))
-  end
-
   private
 
   def avatar_extension
