@@ -5,6 +5,7 @@ import Table from "../components/table";
 
 class UsersTable extends React.Component {
 
+    compare = (a,b) => (b>a) - (b<a);
     
     state = {
         users: []
@@ -14,7 +15,7 @@ class UsersTable extends React.Component {
         axios.get('/api/v1/users.json', {}, { 'Content-Type': 'application/json' })
             .then(res => {
                 console.log(res.data.data)
-                this.setState({ users: res.data.data.sort((a,b) => b.points - a.points ) || (b.nick - a.nick) })
+                this.setState({ users: res.data.data.sort((a,b) => this.compare(a.points,b.points) || this.compare(b.nick.toUpperCase(),a.nick.toUpperCase()) )})
                 console.log(this.state);
             });
     }
