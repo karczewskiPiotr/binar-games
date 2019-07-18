@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
-# Erb2Haml
-gem "haml-rails", "~> 2.0"
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jbuilder', '~> 2.5'
@@ -37,10 +35,16 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
 end
 
+group :production do
+  gem 'unicorn-rails'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootstrap', '~> 4.3.1'
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
 gem 'devise', '~> 4.2'
 gem 'haml'
 gem 'html2haml'
