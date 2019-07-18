@@ -58,7 +58,11 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    brakeman (4.5.1)
     builder (3.2.3)
+    bundler-audit (0.6.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 0.18)
     byebug (11.0.1)
     capybara (3.25.0)
       addressable
@@ -281,6 +285,8 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
+  brakeman
+  bundler-audit
   byebug
   capybara (>= 2.15)
   chromedriver-helper
