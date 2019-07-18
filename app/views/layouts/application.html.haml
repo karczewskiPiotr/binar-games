@@ -1,7 +1,5 @@
 !!!
 %html
-  %p.notice= notice
-  %p.alert= alert
   %head 
    
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -11,6 +9,8 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body 
+    %p.notice= notice
+    %p.alert= alert 
     =render 'layouts/main_nav'
    
     = link_to "Binar Games", root_path

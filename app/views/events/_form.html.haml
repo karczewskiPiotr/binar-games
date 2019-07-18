@@ -1,18 +1,38 @@
+%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
+<link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
 
-.add-event-form.container
+.add-event-form
     = form_for @event do |form|
         %h1.events-header= "Dodaj event:"
-        = form.label :title 
-        = form.text_field :title    
-        %br/ 
-        = form.label :description
-        = form.text_field :description
-        %br/ 
-        = form.label :event_time
-        = form.time_field :event_time
-        %br/ 
-        = form.label :event_date
-        = form.date_field :event_date
-        %br/ 
-        = form.submit 'Add to my collection', {:class => "submit-button"}
-  
+        .row.justify-content-center
+            .col-md-8
+                .form-group.row{:id => "event_name"}
+                    .col-md-6{:id => "col_en"}
+                        = form.label :title 
+                    .col-md-6{:id => "col_event_name"}
+                        = form.text_field :title
+                .form-group.row{:id => "event_desc"}
+                    .col-md-6{:id => "col_ed"}
+                        = form.label :description
+                    .col-md-6{:id => "col_event_desc"}
+                        = form.text_area :description
+                .form-group.row{:id => "event_t"}
+                    .col-md-6{:id => "col_et"}
+                        = form.label :event_time
+                    .col-md-6{:id => "col_event_t"}
+                        = form.time_field :event_time
+                .form-group.row{:id => "event_d"}
+                    .col-md-6{:id => "col_dd"}
+                        = form.label :event_date
+                    .col-md-6{:id => "col_event_d"}
+                        = form.date_field :event_date
+                .form-group.row{:id => "event_game"}
+                    .col-md-6{:id => "col_eg"}
+                        = form.label :games
+                    .col-md-6{:id => "col_event_game"}
+                        = form.select(:game, options_for_select(@game))
+                .form-group.row{:id => "add_btn"}
+                    .col-md-6.offset-md-4
+                        .add_event  
+                            %button.btn.bg-transparent{:type => "submit"}
+                                = form.submit 'Add Event'

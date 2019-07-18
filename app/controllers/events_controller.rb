@@ -17,6 +17,7 @@ class EventsController < ApplicationController
     end
     def new
         @event = current_user.events.build
+        @game=Game.all.map{|g| [g.title]}
     end
     def edit
 
