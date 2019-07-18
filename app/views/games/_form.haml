@@ -1,40 +1,38 @@
-%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
-<link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
 
 = form_for @game do |form|   
     .cotainer
         .row.justify-content-center
             .col-md-8
-                .card.bg-transparent{:id=>"menu_card"}
-                    .card-body.container{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
+                .card.bg-transparent#menu_card
+                    .card-body.container{:style : "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
              
-                        .form-group.row{:id => "name"}
-                            .col-md-6{:id => "col_n"}
+                        .form-group.row#name
+                            .col-md-6#col_n
                                 = form.label :title
-                            .col-md-6{:id => "col_name"}
+                            .col-md-6#col_name
                                 = form.text_field :title
-                        .form-group.row{:id => "desc"}
+                        .form-group.row#desc
                             .col-md-6
                                 = form.label :description
-                            .col-md-6{:id => "col_desc"}
+                            .col-md-6#col_desc
                                 = form.text_area :description
-                        .form-group.row{:id => "pic"}
+                        .form-group.row#pic
                             .col-md-6
                                 = form.label :pictures
-                            .col-md-6{:id => "col_pic"}
+                            .col-md-6#col_pic
                                 =form.file_field :pictures, multiple: true
-                        .form-group.row{:id => "guide"}
+                        .form-group.row#guide
                             .col-md-6
                                 = form.label :game_guide
-                            .col-md-6{:id => "col_guide"}
+                            .col-md-6#col_guide
                                 = form.file_field :game_guide
-                        .form-group.row{:id => "cat"}
+                        .form-group.row#cat
                             .col-md-6 
                                 = form.label :category
-                            .col-md-6{:id => "col_cat"}
+                            .col-md-6#col_cat
                                 = form.text_field :category
-                        .form-group.row{:id => "add_btn"}
+                        .form-group.row#add_btn
                             .col-md-6.offset-md-4
                                 .add_button  
-                                    %button.btn.bg-transparent{:type => "submit"}
+                                    %button.btn.bg-transparent{type: "submit"}
                                         = form.submit 'Add to my collection'

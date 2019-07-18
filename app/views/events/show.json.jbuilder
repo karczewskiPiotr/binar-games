@@ -1,2 +1,1 @@
-json.title @event.title
-json.description @event.description
+json.call @event, :title, :description

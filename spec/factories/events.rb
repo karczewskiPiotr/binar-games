@@ -1,8 +1,10 @@
+
+
 FactoryBot.define do
   factory :event do
-    title { "MyString" }
-    description { "MyText" }
-    event_time { "2019-07-16 09:16:15" }
-    event_date { "2019-07-16" }
+    title { fake.text(max_nb_chars=100, ext_word_list=None) }
+    description { fake.text(max_nb_chars=200, ext_word_list=None) }
+    event_time { fake.time(pattern="%H:%M:%S", end_datetime=None) }
+    event_date { fake.date(pattern="%Y-%m-%d", end_datetime=None) }
   end
 end

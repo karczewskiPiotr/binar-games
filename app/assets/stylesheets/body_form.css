@@ -14,8 +14,15 @@ html{
     
   } 
 
+.header_style {
+  background-color: hsla(0, 0%, 100%, 0.5); 
+  border-radius:10px;
+}
 
-
+.body_style{
+  background-color:  rgba(4, 230, 255, 0.5); 
+  border-radius:10px;
+}
   .circle{
     position: absolute;
     border-radius: 50%;

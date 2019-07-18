@@ -1,4 +1,3 @@
-%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
 .error_mess
   = render "devise/shared/error_messages", resource: resource  
 %body
@@ -13,16 +12,16 @@
     .row.justify-content-center
       .col-md-8
         .card.bg-transparent
-          .card-header{:style => "background-color: hsla(0, 0%, 100%, 0.5); border-radius:10px;"} Forgot your password?
-          .card-body{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
-            .form-group.row{:id => "give_email"}
+          .header_style
+            .card-header Forgot your password?
+          .card-body.body_style
+            .form-group.row#give_email
               = f.label :email
-              .col-md-6{:id => "col_email"}
+              .col-md-6#col_email
                 = f.email_field :email, autofocus: true, autocomplete: "email"
-              .col-md-6.offset-md-4{:id => "send"}
+              .col-md-6.offset-md-4#send
                 .send_button  
-                  %button.btn.bg-transparent{:type => "submit"}
-                    = f.submit "Send"
+                  = f.submit "Send", class: 'btn'
     .link_forget
       = render "devise/shared/links" 
           

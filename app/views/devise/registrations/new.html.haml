@@ -1,52 +1,54 @@
-%link{:href => "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap", :rel => "stylesheet"}
-<link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+
 %body
   .ripple-background
     .circle.xlarge.shade2
     .circle.large.shade3
     .circle.mediun.shade4
     .circle.small.shade5
+.error_mess
+  = render "devise/shared/error_messages", resource: resource
+
 %main.login_form
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   .cotainer
     .row.justify-content-center
       .col-md-8
         .card.bg-transparent
-          .card-header{:style => "background-color: hsla(0, 0%, 100%, 0.5); border-radius:10px;"} Sign up
-          .card-body{:style => "background-color:  rgba(4, 230, 255, 0.5); border-radius:10px;"}
-             
-            .form-group.row{:id => "new_login"}
-              = f.label :email
-              .col-md-6{:id => "col_new_login"}
+          .header_style
+            .card-header Sign up
+          .card-body.body_style
+            .form-group.row#new_login
+              .col-md-6#col_nl
+                = f.label :email
+              .col-md-6#col_new_login
                 = f.email_field :email, autofocus: true, autocomplete: "email_new"
-            .form-group.row{:id => "new_pass"}
-              = f.label :password
+            .form-group.row#new_pass
+              .col-md-6#col_np
+                = f.label :password
               .limit_letters
                 - if @minimum_password_length
                   %em
                     (#{@minimum_password_length} characters minimum)
-              .col-md-6{:id => "col_new_pass"}
+              .col-md-6#col_new_pass
                 = f.password_field :password, autocomplete: "new-password"
-            .form-group.row{:id => "new_pass_conf"}
-              = f.label :password_confirmation
-              .col-md-6{:id => "col_new_conf"}
+            .form-group.row#new_pass_conf
+              .col-md-6#col_npc
+                = f.label :password_confirmation
+              .col-md-6#col_new_conf
                 = f.password_field :password_confirmation, autocomplete: "new-password"
-            .form-group.row{:id => "new_nick"}
-              = f.label :nick
-              .col-md-6{:id => "col_new_nick"}
+            .form-group.row#new_nick
+              .col-md-6#col_nn
+                = f.label :nick
+              .col-md-6#col_new_nick
                 = f.text_field :nick, autofocus: true
-            .form-group.row{:id => "ava"}
-              .col-md-6.offset-md-4{:id => "col_ava"}
-                .input-group
-                  .custom-file
-                    = f.file_field :avatar, type: 'file', class: 'custom-file-input', id: 'inputGroupFile01', aria: { describedby: 'inputGroupFileAddon01' }
-                    %label.custom-file-label{:for => "inputGroupFile01"} Choose file
-            
-              .col-md-6.offset-md-4{:id => "col_button"}
+            .form-group.row#ava
+              .col-md-6#col_na
+                = f.label :avatar
+              .col-md-6#col_ava
+                = f.file_field :avatar
+              .col-md-6.offset-md-4#col_but
                 .sign_button  
-                  %button.btn.bg-transparent{:type => "submit"}
-                    = f.submit "Sign up"
+                  = f.submit "Sign up", class: 'btn'
     .l_box
       = render "devise/shared/links"              
-  .error_mess
-    = render "devise/shared/error_messages", resource: resource
+    
