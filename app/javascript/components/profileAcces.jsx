@@ -11,8 +11,8 @@ export default class Profile extends React.Component {
             <img className="logo" src={logo} />
           </a>
           <div className="binargames my-auto">
-            <h2 className="binar">INAR</h2>
-            <h2 className="games">GAMES</h2>
+            <h2 className="binar">inar</h2>
+            <h2 className="games">Games</h2>
           </div>
         </div>
         <div className="drop">
@@ -25,9 +25,9 @@ export default class Profile extends React.Component {
               <a className="dropdown-font" href="#">
                 Settings
               </a>
-              <a className="dropdown-font" href="#">
+              <div className="dropdown-font" href="#">
                 Log out
-              </a>
+              </div>
             </div>
           </div>
         </div>

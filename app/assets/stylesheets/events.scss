@@ -206,3 +206,33 @@
   font-size: 82%;
   color: #510280;
 }
+// display added event (event/events/id)
+.show-event-page {
+  width: 800px;
+  margin: 55px 0 0 280px;
+  border-radius: 18px;
+}
+
+.show-event-page-title,
+.show-event-page-description,
+.show-event-page-time,
+.show-event-page-users {
+  width: 100%;
+  margin: 25px 0 0 0;
+  border-radius: 18px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+}
+.show-event-page-title {
+  margin: 25px 0 0 0;
+}
+
+.show-event-page-title,
+.show-event-page-description,
+.show-event-page-time,
+.show-event-page-users > h3 {
+  padding: 25px;
+}
+
+.show-event-page-users-list {
+  padding-left: 25px;
+}

@@ -1,7 +1,18 @@
-%h1= "Your event:"
-
-%h2= @event.title
-%p= @event.description
-%div= @event.event_date
-%div= @event.event_time
+.show-event-page
+    .row
+        .show-event-page-title
+            %h3= "Twój event:"  
+            %p= @event.title
+        .show-event-page-description
+            %h3= "Szczegóły:"
+            %p= @event.description
+        .show-event-page-time
+            %h3= "Godzina i data:"
+            %div= @event.event_date
+            %div= @event.event_time
+        .show-event-page-users
+            %h3= "uczestnicy eventu:"
+            - @event.users.each do |user|
+                .show-event-page-users-list
+                = user.nick
 
