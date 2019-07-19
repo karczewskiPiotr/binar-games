@@ -29,11 +29,11 @@ group :development do
 end
 
 group :test do
-  gem 'simplecov', require: false
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false
 end
 
 group :production do

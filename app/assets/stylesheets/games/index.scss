@@ -30,3 +30,19 @@
     }
   }
 }
+.new-game-button-wrapper {
+  margin-top: 50px;
+  text-align: center;
+  .new-game-button {
+    text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.75);
+    text-shadow: 0 3px rgb(4, 230, 255);
+    color: #5c20e9b9;
+    border-radius: 18px;
+    text-transform: uppercase;
+    max-width: 800px;
+    min-width: 800px;
+    height: 50px;
+    font-size: 17px;
+  }
+}
