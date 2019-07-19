@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :games
-  resources :events
+  resources :events , only: [:index, :create, :show, :new]
   devise_scope :user do
     root to: "devise/sessions#new"
   end
