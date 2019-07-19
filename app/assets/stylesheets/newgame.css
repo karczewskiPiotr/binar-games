@@ -5,7 +5,7 @@
     width: 84%;
 }
 .card-body{
-    background-color:  rgb(4, 230, 255, 0.5); 
+    background-color:  rgba(4, 230, 255, 0.5); 
     border-radius:10px;
 }
 #col_name{
@@ -171,7 +171,7 @@
     position: absolute;
     top: 35%;
     left: 21.5%;
-    background-color: rgb(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.75);
 }
 #col_gn{
     width: 50%;
