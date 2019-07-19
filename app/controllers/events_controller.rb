@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @events = Event.where(:owner => current_user.id).order('created_at DESC')
+    @events = Event.where(owner: current_user.id).order('created_at DESC')
   end
 
   def create
@@ -22,14 +22,10 @@ class EventsController < ApplicationController
     @users = User.all.pluck(:nick)
   end
 
-  def show 
-  end
-
   private
 
   def event_params 
-    params.require(:event).permit(:title, :description, :event_time, :event_date, :private)
-.merge(owner_id: current_user.id)
+    params.require(:event).permit(:title, :description, :event_time, :event_date, :private).merge(owner_id: current_user.id)
   end
 
   def find_event
