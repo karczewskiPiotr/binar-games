@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "../../../serduszeczko.svg";
-import Heart from './heart'
+// import Heart from './heart'
 
 export default function Table(props) {
     return (
