@@ -1,0 +1,288 @@
+#menu_card{
+    position: relative;
+    top: 7.3%;
+    left: 8%;
+    width: 84%;
+}
+.card-body{
+    background-color:  rgba(4, 230, 255, 0.5); 
+    border-radius:10px;
+}
+#col_name{
+    width: 50%;
+    margin-left: -9%;
+}
+#name label{
+    width: 119%;
+    margin-top: 1.1%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+}
+#name input[type=text]{
+    padding: 2%;
+    font-size: 70%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+#desc{
+    margin-bottom: 9%;
+}
+#col_desc{
+    margin-left: -8.5%;
+}
+
+#desc label{
+    width: 121%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+}
+#desc textarea{
+    padding: 2%;
+    font-size: 50%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    height: 220%;
+    width: 65%;
+    scroll-behavior: smooth;
+}
+
+#col_pic{
+    margin-left: -8.5%;
+}
+#pic label{
+    width: 119%;
+    margin-top: 1%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+}
+#pic input[type=file]{
+    padding: 2%;
+    font-size: 59%;
+    font-family: 'Play', sans-serif;
+    display: inline-block;
+    width: 65%;
+}
+
+#col_guide{
+    margin-left: -8.5%;
+}
+#guide label{
+    width: 119%;
+    margin-top: 1%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+}
+#guide input[type=file]{
+    padding: 2%;
+    font-size: 61%;
+    font-family: 'Play', sans-serif;
+    display: inline-block;
+    width: 65%;
+}
+#col_cat{
+    margin-left: -8.5%;
+}
+#cat label{
+    width: 119%;
+    margin-top: 1%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+}
+#cat input[type=text]{
+    padding: 2%;
+    font-size: 70%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+.add_button{
+    width: 66%;
+    padding: 0;
+    margin: 0;
+    float: right;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 35%;
+    right: 50%;
+}
+.add_button input[type=submit]{
+    padding: 4%;
+    margin: 0;
+    width: 90%;
+    font-size: 80%;
+    font-family: "Press Start 2P", cursive;
+    font-weight: bold;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #e3f1f1;
+    background: #a9def5;
+    border: 1px solid;
+    border-color: #4b5fcf #031680 #4b5fcf;
+    border-radius: 16px;
+    outline: 0;
+}
+.putain{
+    width: 100%;
+    background-color: hsla(0, 0%, 100%, 0);
+    position: absolute;
+    top: 3%;
+    align-content: center;
+    line-height: 180%;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(4, 230, 255);
+    text-align: center;
+    text-shadow: 0 3px rgb(6, 0, 10);
+}
+
+.games-form{
+    display: flex;
+    justify-content: center;
+    border-radius: 18px;
+    margin: 0;
+    width: 56.99%;
+    padding: 0;
+    position: absolute;
+    top: 35%;
+    left: 21.5%;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+#col_gn{
+    width: 50%;
+    margin-left: -11%;
+  }
+  #col_game_name{
+    width: 50%;
+    margin-left: 2%;
+    margin-top: 7%;
+  }
+  #game_name label{
+    width: 119%;
+    margin-top: 18%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+  }
+  #game_name input[type=text]{
+    padding: 2%;
+    font-size: 70%;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+  #col_gd{
+    width: 50%;
+    margin-left: -11%;
+  }
+  #col_game_desc{
+    width: 50%;
+    margin-left: 2%;
+  }
+  #game_desc label{
+    width: 119%;
+    margin-top: 1.1%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+  }
+  #game_desc textarea{
+    padding: 2%;
+    font-size: 50%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    height: 220%;
+    width: 94%;
+    scroll-behavior: smooth;
+  }
+
+  #col_g{
+    width: 50%;
+    margin-left: -12%;
+    margin-top: 13%;
+  }
+  #col_game_cat{
+    margin-left: 40%;
+    margin-top: -6%;
+  }
+  #game_cat label{
+    width: 72%;
+    margin-top: 26%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+  }
+  #game_cat input[type=text]{
+    padding: 2%;
+      width: 98%;
+      text-align: center;
+      font-size: 70%;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      display: inline-block;
+      border: 1px solid blue;
+      border-radius: 14px;
+      box-sizing: border-box;
+  }
+  #game_pic{
+    width: 119%;
+    margin-left: 19%;
+    margin-top: 1%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    text-align: center;
+  }
+
+
+.pic_display{
+    width:100%;
+    margin-top: 3%;
+    margin-left: 9%
+}
+.pic{
+    width:20%;
+   
+}
+.img_show{
+    display:inline;
+}

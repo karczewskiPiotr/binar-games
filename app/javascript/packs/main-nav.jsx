@@ -9,7 +9,7 @@ class MainNav extends React.Component {
       { label: "Profile", link: "#" },
       { label: "Users", link: "/users" },
       { label: "Games", link: "/games" },
-      { label: "Events", link: "#" }
+      { label: "Events", link: "/events" }
     ];
 
     return (
