@@ -26,9 +26,19 @@
                         = form.date_field :event_date
                 .form-group.row#event_game
                     .col-md-6#col_eg
-                        = form.label :games
+                        = form.label :game
                     .col-md-6#col_event_game
                         = form.select(:game, options_for_select(@game))
+                .form-group.row#event_players
+                    .col-md-6#col_ep
+                        = form.label :users
+                    .col-md-6#col_players
+                        = form.select(:users, options_for_select(@users))
+                .form-group.row#event_private
+                    .col-md-6#col_pp
+                        = form.label :private
+                    .col-md-6#colprivate
+                        = form.check_box :private
                 .form-group.row#add_btn
                     .col-md-6.offset-md-4
                         .add_event  

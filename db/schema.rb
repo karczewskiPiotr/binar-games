@@ -47,10 +47,12 @@ ActiveRecord::Schema.define(version: 2019_07_18_073000) do
     t.text "description"
     t.time "event_time"
     t.date "event_date"
+    t.string "games"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.string "games"
+    t.integer "game_id"
+    t.index ["game_id"], name: "index_events_on_game_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
