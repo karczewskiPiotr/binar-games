@@ -47,19 +47,13 @@ ActiveRecord::Schema.define(version: 2019_07_19_070620) do
     t.text "description"
     t.time "event_time"
     t.date "event_date"
-<<<<<<< HEAD
     t.string "games"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "game_id"
-    t.index ["game_id"], name: "index_events_on_game_id"
-    t.index ["user_id"], name: "index_events_on_user_id"
-=======
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "owner_id"
+    t.integer "game_id"
     t.boolean "private"
+    t.index ["game_id"], name: "index_events_on_game_id"
     t.index ["owner_id"], name: "index_events_on_owner_id"
   end
 
@@ -68,7 +62,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_070620) do
     t.integer "event_id"
     t.index ["event_id"], name: "index_events_users_on_event_id"
     t.index ["user_id"], name: "index_events_users_on_user_id"
->>>>>>> staging
   end
 
   create_table "games", force: :cascade do |t|
