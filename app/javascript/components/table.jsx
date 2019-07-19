@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "../../../serduszeczko.svg";
-// import Heart from './heart'
+
 
 export default function Table(props) {
     return (
@@ -18,7 +18,7 @@ export default function Table(props) {
                 <tbody>
                   {
                     props.usersData.map(row => (
-                      <tr>
+                      <tr key={row.id}>
                         <td>{row.id}</td>
                         <td>{row.nick}</td>
                         <td>{row.points}</td>

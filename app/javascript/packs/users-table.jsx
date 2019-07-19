@@ -14,9 +14,7 @@ class UsersTable extends React.Component {
     componentWillMount() {
         axios.get('/api/v1/users.json', {}, { 'Content-Type': 'application/json' })
             .then(res => {
-                console.log(res.data.data)
                 this.setState({ users: res.data.data.sort((a,b) => this.compare(a.points,b.points) || this.compare(b.nick.toUpperCase(),a.nick.toUpperCase()) )})
-                console.log(this.state);
             });
     }
     render() {
