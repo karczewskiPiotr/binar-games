@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   resources :users
   resources :games
   resources :events , only: [:index, :create, :show, :new]
+
   devise_scope :user do
     root to: "devise/sessions#new"
   end
-  scope format: true, constraints: { format: 'json' } do
-    resources :categories, only: [:index, :show]
-  end
 
-  namespace :api do
+  namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
+      resources :games, only: [:index, :show]
+      resources :categories, only: [:index, :show]
       resources :users, only: [:index]
     end
   end

@@ -1,3 +1,3 @@
 json.data do
-    json.array! @users,:id, :nick, :points 
+  json.array! @users, :id, :nick, :points
 end

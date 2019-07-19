@@ -1,9 +1,9 @@
 FactoryBot.define do
     factory :game do
         user
-        title { Faker::String.random(1..35) }
-        description { Faker::Game.platform }
-        category { Category.new(name: Faker::Game.genre) }
+        title { Faker::Lorem.characters(10) }
+        description { Faker::Lorem.characters(23) }
+        category
 
         trait :with_attachments do
             after(:build) do |game|
