@@ -1,7 +1,4 @@
 .events-wrapper
-    %h2.events-wrapper-header= link_to 'Dodaj event', new_event_path
-    #events
-    = javascript_pack_tag 'events'
-
-
-
+    %h2.events-wrapper-header
+        .add_event_link
+            = link_to 'Dodaj event', new_event_path

@@ -2,43 +2,55 @@
 
 .link_log {
     width: 40%;
-    margin-left: 47%;
+    margin-left: 59%;
     font-family: 'Press Start 2P', cursive;
     font-size: 60%;
     color:  #320447;
     text-align: center;
     flex-flow: row wrap;
     line-height: 160%;
-    position: absolute;
-    top:82%;
-    left:-18%;
+    position: relative;
+    top:3%;
+    left:0%;
   }
-  
+  .link_log:hover{
+    color:aqua;
+    font-weight: bold;
+  }
   .link_sign {
     width: 40%;
     font-family: 'Press Start 2P', cursive;
+    margin-left: 9%;
     font-size: 60%;
     color:  #320447;
     text-align: center;
     flex-flow: row wrap;
     line-height: 160%; 
-    position: absolute;
-    top:64%;
-    left:30%;
+    position: relative;
+    top:3%;
+    left:48%;
+    
   }
-  
+  .link_sign:hover{
+    color:aqua;
+    font-weight: bold;
+  }
   .link_pass {
     width: 40%;
-    margin-left: 42%;
+    margin-left: 49%;
     font-family: 'Press Start 2P', cursive;
     font-size: 60%;
     color:  #320447;
     text-align: center;
     flex-flow: row wrap;
     line-height: 160%;
-    position: absolute;
-    top:66.5%;
-    left:-11%;
+    position: relative;
+    top:3%;
+    
+  }
+  .link_pass:hover{
+    color:aqua;
+    font-weight: bold;
   }
   
   

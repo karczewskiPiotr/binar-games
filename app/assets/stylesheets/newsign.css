@@ -1,15 +1,12 @@
 /*   ****** Sign up ******   */
 
-
-#new_login.form-group.row{
-  width:55%;
-  height:40%;
+#col_nl{
+  width: 50%;
+  margin-left: -11%;
 }
 #new_login label{
-  margin-top: 4%;
-  margin-left: 9%;
-  padding: 2%;
-  width: 50%;
+  width: 166%;
+  margin-top: 1.1%;
   font-size: 90%;
   font-family: "Press Start 2P", cursive;
   color: rgb(81, 2, 128);
@@ -18,18 +15,16 @@
     
   }
   #col_new_login{
-    width:30%;
-    height:100%;
-    position: absolute;
-    left: 30%;
+    width: 50%;
+    margin-left: 6%;
     
   }
   
   #col_new_login input[type=email]{
-    height: 8%;
-    font-family: "Press Start 2P", cursive;
+    padding: 2%;
     font-size: 70%;
-    width:200%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
     border: 1px solid blue;
     border-radius: 14px;
     box-sizing: border-box;
@@ -37,17 +32,16 @@
 
   .limit_letters{
     color:rgb(52, 0, 119);
-    font-size: 10px;
+    font-size: 8px;
     position: absolute;
-    top:27%;
-    left:36%;
+    top: 29.5%;
+    left: 53%;
+
   }
 
   #new_pass label{
-    margin-right: 65%;
-    margin-top: 2%;
-    padding: 2%;
-    width: 50%;
+    width: 119%;
+    margin-top: 1.1%;
     font-size: 90%;
     font-family: "Press Start 2P", cursive;
     color: rgb(81, 2, 128);
@@ -55,62 +49,48 @@
     text-align: center;
    
   }
-  #col_pass{
-    width:30%;
-    height:100%;
-    position: absolute;
-    left: 30%;
+  #col_new_pass{
+    width: 50%;
+    margin-left: -5%;
     
   }
 #col_new_pass input[type=password] {
-  height: 110%;
-  font-family: "Press Start 2P", cursive;
+  padding: 2%;
   font-size: 70%;
-  width:114%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
-  position: relative;
-  left:66%;
-  top:-154%;
   }
- 
+
 #new_pass_conf label{
-  margin-right: 65%;
-  margin-top:-8%;
-  padding: 2%;
-  width: 50%;
-  font-size: 80%;
+  width: 119%;
+  margin-top: 1.1%;
+  font-size: 90%;
   font-family: "Press Start 2P", cursive;
   color: rgb(81, 2, 128);
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#col_pass_conf{
-  width:30%;
-  height:100%;
-  position: absolute;
-  left: 30%;
+#col_new_conf{
+  width: 50%;
+  margin-left: -4.5%;
 }
 #col_new_conf input[type=password] {
-  height: 150%;
-  font-family: "Press Start 2P", cursive;
+  padding: 2%;
   font-size: 70%;
-  width:114%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
-  position: relative;
-  left:67%;
-  top:-200%;
   }
   
  
 #new_nick label{
-  margin-top: -5%;
-  margin-left: -8%;
-  padding: 2%;
-  width: 50%;
+  width: 119%;
+  margin-top: 1.1%;
   font-size: 90%;
   font-family: "Press Start 2P", cursive;
   color: rgb(81, 2, 128);
@@ -118,85 +98,65 @@
   text-align: center;
       
 }
-#col_new_nick_login{
-  width:30%;
-  height:100%;
-  position: absolute;
-  left: 30%;
-  
-      
+#col_new_nick{
+  width: 50%;
+  margin-left: -4.5%;
 }
     
 #col_new_nick input[type=text]{
-  height: 120%;
-  font-family: "Press Start 2P", cursive;
+  padding: 2%;
   font-size: 70%;
-  width:114%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
-  position: relative;
-  left:-27%;
-  top:-100%;
 }
-  .avatar_new {
-    margin:0 auto;
-    max-width:500px;
-   
+ 
+  #col_na{
+    width: 50%;
+    margin-left: -11%;
   }
-  .input-group{
-    position: relative;
-    left: 112%;
-    top:-20%;
-    align-items: stretch;
-    width: 260%;
-}
-
-  .custom-file-label::after{
-    width:45%;
-  }
-
-  .custom-file label{
-    float: left;
-    width: 300%;
-    line-height: 200%;
-    font-size: 60%;
-    font-family: 'Press Start 2P', cursive;
+  #ava label{
+    width: 168%;
+    margin-top: 1%;
+    font-size: 90%;
+    font-family: "Press Start 2P", cursive;
     color: rgb(81, 2, 128);
     text-shadow: 0 1px #4b5fcf;
-    text-align: left;
-    flex-flow: row wrap;
-    position: relative;
-    left: -120%;
-    border-radius: 10px;
-   
-  }
-  .custom-file input[type=file]{
-    width: 70%;
-    padding: 2% 3%;
-   width:50%;
-   
-    
-  }
+    text-align: center;
+}
+  #ava input[type=file]{
+    padding: 2%;
+    font-size: 59%;
+    font-family: 'Play', sans-serif;
+    display: inline-block;
+    width: 65%;
+}
+#col_ava{
+  width: 50%;
+  margin-left: 10.5%;
+}
   .sign_button {
-    width: 20%;
-    height: 20%;
+    width: 42%;
     padding: 2% 3%;
     float: right;
     align-content: center;
     position: relative;
-    top:78%;
-    left:-40%;
+    top: 58%;
+    left: -12%;
     border: none;
     cursor: pointer;
     
     
   }
-  
+  #col_but{
+    margin-top: -2%;
+    margin-left: 14.5%;
+  }
   .sign_button input[type=submit] {
-    padding: 0 10%;
-    height: 20%;
-    width: 130%;
+    width: 110%;
+    padding: 8%;
     font-size: 75%;
     font-weight: bold;
     font-family: 'Press Start 2P', cursive;
@@ -209,6 +169,13 @@
     outline: 0;
   }
 
+  .l_box{
+    position: relative;
+    right:13%;
+    display:inline-block;
+    width:100%;
+    height:40%;
   
+  }
 
   

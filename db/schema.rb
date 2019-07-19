@@ -47,10 +47,13 @@ ActiveRecord::Schema.define(version: 2019_07_19_070620) do
     t.text "description"
     t.time "event_time"
     t.date "event_date"
+    t.string "games"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "owner_id"
+    t.integer "game_id"
     t.boolean "private"
+    t.index ["game_id"], name: "index_events_on_game_id"
     t.index ["owner_id"], name: "index_events_on_owner_id"
   end
 

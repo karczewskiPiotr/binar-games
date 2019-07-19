@@ -2,42 +2,210 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// event index page (/events)
-.events-wrapper {
-  width: 800px;
-  margin: 55px 0 0 275px;
-  margin-top: 58px;
-  background-color: antiquewhite;
-  height: 200px;
-  border-radius: 18px;
-  background-color: hsla(0, 0%, 100%, 0.75);
-  box-sizing: border-box;
-}
-.events-wrapper-header {
-  padding-top: 45px;
-  text-align: center;
-}
-
-// add event form (/events/new)
 .add-event-form {
-  width: 800px;
-  margin: 55px 0 0 280px;
   display: flex;
   justify-content: center;
   border-radius: 18px;
-  background-color: hsla(0, 0%, 100%, 0.75);
+  margin: 0;
+  width: 56.99%;
+  padding: 0;
+  position: absolute;
+  top: 35%;
+  left: 21.5%;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 .events-header {
   width: 60%;
   margin: 15px;
   width: 100%;
   text-align: center;
+  color: #510280;
 }
-.submit-button {
-  margin-bottom: 15px;
-  margin-left: 18%;
+#col_en{
+  width: 50%;
+  margin-left: -11%;
+}
+#col_event_name{
+  width: 50%;
+  margin-left: 0%;
+}
+#event_name label{
+  width: 119%;
+  margin-top: 1.1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+#event_name input[type=text]{
+  padding: 2%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+#col_ed{
+  width: 50%;
+  margin-left: -11%;
+}
+#col_event_desc{
+  width: 50%;
+  margin-left: 2%;
+}
+#event_desc label{
+  width: 119%;
+  margin-top: 1.1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+#event_desc textarea{
+  padding: 2%;
+  font-size: 50%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  height: 220%;
+  width: 146%;
+  scroll-behavior: smooth;
+}
+#col_et{
+  width: 50%;
+  margin-left: -12%;
+  margin-top: 13%;
+}
+#col_event_t{
+  margin-left: 4%;
+  margin-top: 13%;
+}
+#event_t label{
+  width: 119%;
+  margin-top: 1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+#event_t input[type=time]{
+  padding: 2%;
+    width: 142%;
+    text-align: center;
+    font-size: 70%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
 }
 
+#col_dd{
+  width: 50%;
+  margin-left: -12%;
+}
+#col_event_d{
+  margin-left: 4%;
+}
+#event_d label{
+  width: 119%;
+  margin-top: 1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+#event_d input[type=date]{
+  padding: 2%;
+  width: 142%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box
+}
+
+#col_eg{
+  width: 50%;
+  margin-left: -11%;
+}
+#col_event_game{
+  margin-left: 3%;
+}
+#event_game label{
+  width: 119%;
+  margin-top: 1.1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+#event_game select{
+  padding: 2%;
+  width: 142%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+.add_event{
+  width:80%;
+  margin-left: -24%;
+}
+.add_event input[type=submit]{
+  width:100%;
+  padding: 4%;
+  margin: 0;
+  font-size: 80%;
+  font-family: "Press Start 2P", cursive;
+  font-weight: bold;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+  outline: 0;
+}
+
+.events-wrapper {
+  margin: 0;
+  width: 56.99%;
+  padding: 0;
+  position: absolute;
+  top: 35%;
+  left: 21.5%;
+  background-color: antiquewhite;
+  height: 200px;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-sizing: border-box;
+}
+.events-wrapper-header {
+  padding-top: 45px;
+  text-align: center;
+  padding: 0;
+  margin-top: 2%;
+  color: #510280;
+}
+.add_event_link{
+  font-size: 82%;
+  color: #510280;
+}
 // display added event (event/events/id)
 .show-event-page {
   width: 800px;
@@ -67,4 +235,7 @@
 
 .show-event-page-users-list {
   padding-left: 25px;
+}
+#table {
+  margin-top: 100px;
 }

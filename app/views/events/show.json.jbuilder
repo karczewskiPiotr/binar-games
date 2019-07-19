@@ -1,1 +1,1 @@
-json.call(@event, :title, :description)
+json.call @event, :title, :description

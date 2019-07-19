@@ -20,12 +20,13 @@ class EventsController < ApplicationController
   def new
     @event = current_user.events.build
     @users = User.all.pluck(:nick)
+    @game = Game.pluck(:title)
   end
 
   private
 
   def event_params 
-    params.require(:event).permit(:title, :description, :event_time, :event_date, :private).merge(owner_id: current_user.id)
+    params.require(:event).permit(:title, :description, :event_time, :event_date, :private).merge(owner_id: current_user.id, game_id: Game.find_by(title: params[:event][:game]).id)
   end
 
   def find_event

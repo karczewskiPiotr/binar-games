@@ -1,16 +1,16 @@
 !!!
 %html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %head 
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title BinarGames
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body 
-    =render 'layouts/main_nav'
     %p.notice= notice
-    %p.alert= alert
+    %p.alert= alert 
+    =render 'layouts/main_nav'
   
     = yield
     %div{:class => "bg"}
@@ -20,3 +20,4 @@
     %div{:class => "circle large shade3"}
     %div{:class => "circle mediun shade4"}
     %div{:class => "circle small shade5"}
+  
