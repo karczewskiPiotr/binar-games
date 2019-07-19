@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import EpicMenu from "./EpicMenu";
-import Profile from "./profileAcces";
+import EpicMenu from "../components/EpicMenu";
+import Profile from "../components/profileAcces";
 
 class MainNav extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class MainNav extends React.Component {
       { label: "Profile", link: "#" },
       { label: "Users", link: "/users" },
       { label: "Games", link: "/games" },
-      { label: "Events", link: "#" }
+      { label: "Events", link: "/events" }
     ];
 
     return (
