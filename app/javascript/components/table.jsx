@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from "../../../serduszeczko.svg";
+import Heart from './heart'
 
 export default function Table(props) {
     return (
@@ -10,6 +12,7 @@ export default function Table(props) {
                     <th>id</th>
                     <th>Nick</th>
                     <th>Points</th>
+                    <th>Fav</th>
                   </tr> 
                 </thead>
                 <tbody>
@@ -19,6 +22,9 @@ export default function Table(props) {
                         <td>{row.id}</td>
                         <td>{row.nick}</td>
                         <td>{row.points}</td>
+                        <td>
+                          serce
+                        </td>
                       </tr>
                     ))
                   }
