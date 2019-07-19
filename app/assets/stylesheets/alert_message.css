@@ -7,7 +7,7 @@
     font-size: 24px;
     font-weight: bold;
     font-family: 'Press Start 2P', cursive;
-    color: rgba(4, 230, 255);
+    color: rgb(4, 230,255);
     text-align: center;
     text-shadow: 0 3px  rgb(6, 0, 10);
   }
@@ -22,7 +22,7 @@
     font-family: 'Press Start 2P', cursive;
     color: rgb(81, 2, 128);
     text-align: center;
-    text-shadow: 0 3px  rgba(4, 230, 255);
+    text-shadow: 0 3px  rgb(4, 230,255);
     float: top;
     
   }

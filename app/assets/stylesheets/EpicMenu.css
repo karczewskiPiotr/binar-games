@@ -49,7 +49,7 @@
     display: inline-block;
     height: 100%;
     margin-right: 20px;
-    text-shadow: 0 3px  rgba(4, 230, 255);
+    text-shadow: 0 3px  rgb(4, 230,255);
 }
 .menuLinkActive {
     color: #5c20e9b9;
