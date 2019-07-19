@@ -1,9 +1,9 @@
-role :app,        %w(binar-games.binar.app)
-role :web,        %w(binar-games.binar.app)
-role :db,         %w(binar-games.binar.app)
+role :app,        %w(karo.binar.app)
+role :web,        %w(karo.binar.app)
+role :db,         %w(karo.binar.app)
 set :application, 'binar-games'
 
-server 'binar-games.binar.app', user: fetch(:application), roles: %w(web app db), primary: true
+server 'karo.binar.app', user: fetch(:application), roles: %w(web app db), primary: true
 
 set :rails_env,   'production'
 set :branch,      'master' # select which branch should be deployed
