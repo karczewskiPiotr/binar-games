@@ -33,6 +33,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false
 end
 
 group :production do
@@ -50,4 +51,5 @@ gem 'haml'
 gem 'html2haml'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
+gem 'rails-controller-testing'
 gem 'rubocop', require: false

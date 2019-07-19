@@ -25,8 +25,9 @@ class EventsController < ApplicationController
 
   private
 
-  def event_params 
-    params.require(:event).permit(:title, :description, :event_time, :event_date, :private).merge(owner_id: current_user.id, game_id: Game.find_by(title: params[:event][:game]).id)
+  def event_params
+    params.require(:event).permit(:title, :description, :event_time, :event_date, :private).
+      merge(owner_id: current_user.id, game_id: Game.find_by(title: params[:event][:game]).id)
   end
 
   def find_event

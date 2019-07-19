@@ -10,9 +10,9 @@
   %body 
     %p.notice= notice
     %p.alert= alert 
-    = render 'layouts/main_nav'
-  
-    = yield
+    #main
+      = render 'layouts/main_nav'
+      = yield
     %div{:class => "bg"}
     %div{:class => "ripple-background"}
     %div{:class => "circle xxlarge shade1"}
