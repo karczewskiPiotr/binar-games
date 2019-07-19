@@ -22,8 +22,12 @@ export default class Profile extends React.Component {
           <div className="dropdown">
             <button className="dropbtn">More</button>
             <div className="dropdown-content">
-            <a className="dropdown-font" href="/users/edit">Edit profile</a>  
-            <a rel="nofollow" data-method="delete" className="dropdown-font" href="/users/sign_out">Log out</a>    
+              <a className="dropdown-font" href="#">
+                Settings
+              </a>
+              <div className="dropdown-font" href="#">
+                Log out
+              </div>
             </div>
           </div>
         </div>

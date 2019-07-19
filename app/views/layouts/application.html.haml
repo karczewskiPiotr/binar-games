@@ -11,10 +11,7 @@
     =render 'layouts/main_nav'
     %p.notice= notice
     %p.alert= alert
-    = link_to "Binar Games", root_path
-    - if user_signed_in?
-    - else
-      = link_to "Log in", new_user_session_path
+  
     = yield
     %div{:class => "bg"}
     %div{:class => "ripple-background"}
