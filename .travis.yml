@@ -1,0 +1,16 @@
+language: ruby
+cache: bundler
+services:
+- postgresql
+jobs:
+  include:
+  - stage: build
+    before_script:
+    - psql -c "create database binar_games_test;" -U postgres
+    script:
+    - bundle exec rspec spec
+    - bundle exec bundle-audit check --update --ignore CVE-2015-9284
+    - bundle exec brakeman --quiet
+    - bundle exec rubocop
+stages:
+  - build
