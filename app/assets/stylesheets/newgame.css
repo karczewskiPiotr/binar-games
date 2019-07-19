@@ -5,7 +5,7 @@
     width: 84%;
 }
 .card-body{
-    background-color:  rgb(4, 230, 255, 0.5); 
+    background-color:  rgba(4, 230, 255, 0.5); 
     border-radius:10px;
 }
 #col_name{
