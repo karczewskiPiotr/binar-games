@@ -1,6 +1,29 @@
-%p Title: #{@game.title}
-%p Description #{@game.description}
-%p Category: #{@game.category.name}
-%p Amount of pictures: #{@game.pictures.count}
-- @game.pictures.each do |picture|
-    %img(src="#{Rails.application.routes.url_helpers.rails_blob_path(picture, only_path: true)}" alt="test")/
+.games-form
+    = form_for @game do |form|
+        
+        .row.justify-content-center
+            .col-md-8
+                .form-group.row#game_name
+                    .col-md-6#col_gn
+                        = form.label :title
+                    .col-md-6#col_game_name
+                        = form.text_field :title
+                .form-group.row#game_desc
+                    .col-md-6#col_gd
+                        = form.label :description
+                    .col-md-6#col_game_desc
+                        = form.text_area :description
+                .form-group.row#game_cat
+                    .col-md-6#col_gc
+                        = form.label :category
+                    .col-md-6#col_game_cat
+                        = form.text_field :category
+                .form-group.row#game_pic
+                    
+                    Amount of pictures: #{@game.pictures.count}
+                .form-group.row.img_show        
+                    .pic_display                
+                        - @game.pictures.each do |picture|
+                            %img.pic(src="#{Rails.application.routes.url_helpers.rails_blob_path(picture, only_path: true)}" alt="test")
+
+
