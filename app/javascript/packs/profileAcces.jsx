@@ -3,6 +3,11 @@ import bell from "../../../bell.png";
 import logo from "../../../bin.png";
 
 export default class Profile extends React.Component {
+  handleSbumit = e => {
+    e.preventDefault();
+    console.log("wylogowwałes sie prawie");
+  };
+
   render() {
     return (
       <div className="logoName">
@@ -25,9 +30,9 @@ export default class Profile extends React.Component {
               <a className="dropdown-font" href="#">
                 Settings
               </a>
-              <a className="dropdown-font" href="#">
+              <button className="dropdown-font" onClick={this.handleSubmit}>
                 Log out
-              </a>
+              </button>
             </div>
           </div>
         </div>

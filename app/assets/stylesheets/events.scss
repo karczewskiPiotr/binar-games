@@ -1,14 +1,31 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// event index page (/events)
+.events-wrapper {
+  width: 800px;
+  margin: 55px 0 0 0px;
+  margin-top: 58px;
+  background-color: antiquewhite;
+  height: 200px;
+  border-radius: 18px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  box-sizing: border-box;
+}
+.events-wrapper-header {
+  padding-top: 45px;
+  text-align: center;
+}
+
+// add event form (/events/new)
 .add-event-form {
-  margin-top: 5px;
+  width: 800px;
+  margin: 55px 0 0 280px;
   display: flex;
   justify-content: center;
   border-radius: 18px;
-  width: 800px;
   background-color: hsla(0, 0%, 100%, 0.75);
-  margin-top: 18px;
 }
 .events-header {
   width: 60%;
@@ -20,15 +37,34 @@
   margin-bottom: 15px;
   margin-left: 18%;
 }
-.events-wrapper {
-  margin-top: 18px;
-  background-color: antiquewhite;
-  height: 200px;
+
+// display added event (event/events/id)
+.show-event-page {
+  width: 800px;
+  margin: 55px 0 0 280px;
+  border-radius: 18px;
+}
+
+.show-event-page-title,
+.show-event-page-description,
+.show-event-page-time,
+.show-event-page-users {
+  width: 100%;
+  margin: 25px 0 0 0;
   border-radius: 18px;
   background-color: hsla(0, 0%, 100%, 0.75);
-  box-sizing: border-box;
 }
-.events-wrapper-header {
-  padding-top: 45px;
-  text-align: center;
+.show-event-page-title {
+  margin: 25px 0 0 0;
+}
+
+.show-event-page-title,
+.show-event-page-description,
+.show-event-page-time,
+.show-event-page-users > h3 {
+  padding: 25px;
+}
+
+.show-event-page-users-list {
+  padding-left: 25px;
 }
