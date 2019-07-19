@@ -12,7 +12,6 @@ class EventsController < ApplicationController
         
         @users = User.all.map{ |c| [c.nick] }
         
-        # byebug
 		if @event.save
 			redirect_to @event
 		else
@@ -38,7 +37,7 @@ class EventsController < ApplicationController
     end
     private
     def event_params 
-        params.require(:event).permit(:title, :description, :event_time, :event_date).merge(owner_id: current_user.id)
+        params.require(:event).permit(:title, :description, :event_time, :event_date, :private).merge(owner_id: current_user.id)
     end
     def find_event
         @event = Event.find(params[:id])

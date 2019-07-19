@@ -16,6 +16,8 @@
         %br/
         = form.select(:users, options_for_select(@users))
         %br/
+        =form.label :private
+        = form.check_box :private
         //- @users.each do |user|
         //    = check_box_tag user
         //    = user
