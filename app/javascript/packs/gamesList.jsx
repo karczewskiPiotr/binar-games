@@ -33,7 +33,7 @@ const GamesList = () => {
 
   return (
     <>
-      <div className="row" id="header">
+      <div className="row header">
         <div className="col-md">Title</div>
         <div className="col-md">Category</div>
         <div className="col-md rating">Rating</div>
@@ -49,4 +49,7 @@ const GamesList = () => {
   );
 };
 
-ReactDOM.render(<GamesList />, document.getElementById("games-list"));
+ReactDOM.render(
+  <GamesList />,
+  document.getElementsByClassName("games-list")[0]
+);

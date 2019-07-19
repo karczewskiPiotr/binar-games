@@ -13,7 +13,7 @@ const Rating = ({ rating }) => {
 };
 
 Rating.propTypes = {
-  rating: PropTypes.number || null
+  rating: PropTypes.number.isRequired
 };
 
 export default Rating;
