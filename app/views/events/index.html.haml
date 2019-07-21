@@ -1,4 +1,2 @@
-.events-wrapper
-    %h2.events-wrapper-header
-        .add_event_link
-            = link_to 'Dodaj event', new_event_path
+.add-event-button-wrapper
+    = button_to 'ADD EVENT', new_event_path, :class => "add-event-button", method: :get

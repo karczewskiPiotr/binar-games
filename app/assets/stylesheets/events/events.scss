@@ -21,15 +21,15 @@
   text-align: center;
   color: #510280;
 }
-#col_en{
+#col_en {
   width: 50%;
   margin-left: -11%;
 }
-#col_event_name{
+#col_event_name {
   width: 50%;
   margin-left: 0%;
 }
-#event_name label{
+#event_name label {
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -38,24 +38,24 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_name input[type=text]{
+#event_name input[type="text"] {
   padding: 2%;
   font-size: 70%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
 }
-#col_ed{
+#col_ed {
   width: 50%;
   margin-left: -11%;
 }
-#col_event_desc{
+#col_event_desc {
   width: 50%;
   margin-left: 2%;
 }
-#event_desc label{
+#event_desc label {
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -64,10 +64,10 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_desc textarea{
+#event_desc textarea {
   padding: 2%;
   font-size: 50%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
@@ -77,16 +77,16 @@
   width: 146%;
   scroll-behavior: smooth;
 }
-#col_et{
+#col_et {
   width: 50%;
   margin-left: -12%;
   margin-top: 13%;
 }
-#col_event_t{
+#col_event_t {
   margin-left: 4%;
   margin-top: 13%;
 }
-#event_t label{
+#event_t label {
   width: 119%;
   margin-top: 1%;
   font-size: 90%;
@@ -95,26 +95,26 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_t input[type=time]{
+#event_t input[type="time"] {
   padding: 2%;
-    width: 142%;
-    text-align: center;
-    font-size: 70%;
-    font-family: 'Press Start 2P', cursive;
-    display: inline-block;
-    border: 1px solid blue;
-    border-radius: 14px;
-    box-sizing: border-box;
+  width: 142%;
+  text-align: center;
+  font-size: 70%;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
 }
 
-#col_dd{
+#col_dd {
   width: 50%;
   margin-left: -12%;
 }
-#col_event_d{
+#col_event_d {
   margin-left: 4%;
 }
-#event_d label{
+#event_d label {
   width: 119%;
   margin-top: 1%;
   font-size: 90%;
@@ -123,26 +123,26 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_d input[type=date]{
+#event_d input[type="date"] {
   padding: 2%;
   width: 142%;
   font-size: 70%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   text-align: center;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
-#col_eg{
+#col_eg {
   width: 50%;
   margin-left: -11%;
 }
-#col_event_game{
+#col_event_game {
   margin-left: 3%;
 }
-#event_game label{
+#event_game label {
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -151,23 +151,26 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_game select{
+#event_game select {
   padding: 2%;
   width: 142%;
   font-size: 70%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   text-align: center;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
 }
-.add_event{
-  width:80%;
+.add-event-form {
+  margin-top: 55px;
+}
+.add_event {
+  width: 80%;
   margin-left: -24%;
 }
-.add_event input[type=submit]{
-  width:100%;
+.add_event input[type="submit"] {
+  width: 100%;
   padding: 4%;
   margin: 0;
   font-size: 80%;
@@ -182,29 +185,22 @@
   outline: 0;
 }
 
-.events-wrapper {
-  margin: 0;
-  width: 56.99%;
-  padding: 0;
-  position: absolute;
-  top: 35%;
-  left: 21.5%;
-  background-color: antiquewhite;
-  height: 200px;
-  border-radius: 18px;
-  background-color: rgba(255, 255, 255, 0.75);
-  box-sizing: border-box;
-}
-.events-wrapper-header {
-  padding-top: 45px;
+.add-event-button-wrapper {
   text-align: center;
-  padding: 0;
-  margin-top: 2%;
-  color: #510280;
 }
-.add_event_link{
-  font-size: 82%;
-  color: #510280;
+.add-event-button {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  border-radius: 18px;
+  text-transform: uppercase;
+  max-width: 800px;
+  min-width: 800px;
+  height: 50px;
+  font-size: 17px;
 }
 // display added event (event/events/id)
 .show-event-page {
