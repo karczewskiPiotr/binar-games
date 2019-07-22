@@ -19,7 +19,7 @@ class UsersTable extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className = 'mainTable'>
                 <Table usersData={this.state.users}></Table>
             </div>
         )
