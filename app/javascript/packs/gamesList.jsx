@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import Game from "../components/games/game";
 import Searchbar from "../components/games/searchbar";
+import FilterDropdwon from "../components/games/filterDropdown";
 
 const GamesList = () => {
   const [state, updateState] = useState({
@@ -53,7 +54,10 @@ const GamesList = () => {
 
   return (
     <>
-      <Searchbar handleSearch={handleSearch} />
+      <div className="row search-filter">
+        <Searchbar handleSearch={handleSearch} />
+        <FilterDropdwon />
+      </div>
       <div className="row header">
         <div className="col-md">Title</div>
         <div className="col-md">Category</div>

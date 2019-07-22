@@ -6,16 +6,12 @@ const Searchbar = ({ handleSearch }) => {
   };
 
   return (
-    <>
-      <div className="row search-filter">
-        <input
-          type="text"
-          placeholder="Search"
-          className="col-md search"
-          onChange={updateSearchPhrase}
-        />
-      </div>
-    </>
+    <input
+      type="text"
+      placeholder="Search"
+      className="col-md search"
+      onChange={updateSearchPhrase}
+    />
   );
 };
 

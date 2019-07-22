@@ -15,10 +15,15 @@
         border-radius: 18px;
         height: 50px;
         border: none;
+        margin-right: 5px;
       }
       .search:focus {
         outline: none;
         box-shadow: 0 3px rgb(4, 230, 255);
+      }
+      .filter {
+        margin-left: 5px;
+        padding: 0px;
       }
     }
     .header {
