@@ -2,8 +2,8 @@
     max-width: 1500px;
     min-width: 1000px;
     text-align: center;
-    border-radius: 18px;
-    display: inline-block;    
+    border-radius: 18px;  
+    display: inline-block; 
     background-color: hsla(0, 0%, 100% ,0.75);
 }
 
