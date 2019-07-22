@@ -18,9 +18,14 @@
                         Category: 
                     .col-md-6.col_game_cat
                         #{@game.category.name}
+                .form-group.row.game_guide
+                    .col-md-6.col_gg
+                        Guide:
+                    .col-md-6.col_game_guide
+                        = link_to @game.game_guide.filename, url_for(@game.game_guide), target: '_blank'
                 .form-group.row.game_pic
                     .col-md-6.col_num    
-                        Amount of pictures: 
+                        Owned pictures: 
                     .col-md-6.col_game_num
                         #{@game.pictures.count}
                 .form-group.row.img_show        
