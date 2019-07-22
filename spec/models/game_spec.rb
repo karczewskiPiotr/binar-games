@@ -29,7 +29,7 @@ RSpec.describe Game, type: :model do
             game2.game_guide.attach(io: File.open('spec/files/images/avatar.png'), filename: 'attachment.png', content_type: 'image/png')
             game2.pictures.attach(io: File.open('spec/files/documents/dummy.pdf'), filename: 'attachment.pdf', content_type: 'application/pdf')
             expect(game2).not_to be_valid
-        end
+    end
 
         context 'pictures' do
             it 'have maximum number of 5' do
