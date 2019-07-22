@@ -6,7 +6,7 @@ export default function Table(props) {
     return (
           <div className = 'listDiv' > 
             <div className = 'bg'>
-              <table className = 'table placek' >
+              <table className = 'table' >
                 <thead>
                   <tr>
                     <th>id</th>
