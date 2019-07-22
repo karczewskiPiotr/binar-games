@@ -162,6 +162,7 @@
   border-radius: 14px;
   box-sizing: border-box;
 }
+
 .add-event-form {
   margin-top: 55px;
 }
@@ -204,8 +205,10 @@
 }
 // display added event (event/events/id)
 .show-event-page {
-  width: 800px;
-  margin: 55px 0 0 280px;
+  max-width: 800px;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 18px;
 }
 

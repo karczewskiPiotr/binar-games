@@ -12,12 +12,12 @@ RSpec.describe Event, type: :model do
       it { is_expected.to validate_presence_of(:description) }
       it { is_expected.to validate_presence_of(:event_time) }
       it { is_expected.to validate_presence_of(:event_date) }
-      it { is_expected.to validate_presence_of(:game) }
       it { is_expected.to validate_length_of(:description).is_at_most(500) }
       it { is_expected.to validate_length_of(:title).is_at_most(35) }
     end
 
     describe "relations" do
       it { is_expected.to belong_to(:owner) }
+      it { is_expected.to belong_to(:game) }
     end
 end
