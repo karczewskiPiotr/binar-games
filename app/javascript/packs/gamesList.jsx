@@ -44,7 +44,7 @@ const GamesList = () => {
   const getGames = () => {
     return state.searchPhrase
       ? state.games.filter(game => {
-          return game.title.toLowerCase().search(state.searchPhrase) !== -1;
+          return game.title.toLowerCase().includes(state.searchPhrase);
         })
       : state.games;
   };
