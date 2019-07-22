@@ -15,11 +15,12 @@
           .header_style
             .card-header Forgot your password?
           .card-body.body_style
-            .form-group.row#give_email
-              = f.label :email
-              .col-md-6#col_email
+            .form-group.row.give_email
+              .col-md-6.col_e
+                = f.label :email
+              .col-md-6.col_email
                 = f.email_field :email, autofocus: true, autocomplete: "email"
-              .col-md-6.offset-md-4#send
+              .col-md-6.offset-md-4.send
                 .send_button  
                   = f.submit "Send", class: 'btn'
     .link_forget

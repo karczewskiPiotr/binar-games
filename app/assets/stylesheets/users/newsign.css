@@ -1,10 +1,11 @@
 /*   ****** Sign up ******   */
 
-#col_nl{
+.col_nl{
   width: 50%;
   margin-left: -11%;
 }
-#new_login label{
+
+.new_login label{
   width: 166%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -14,13 +15,13 @@
   text-align: center;
     
   }
-  #col_new_login{
+  .col_new_login{
     width: 50%;
     margin-left: 6%;
     
   }
   
-  #col_new_login input[type=email]{
+  .col_new_login input[type=email]{
     padding: 2%;
     font-size: 70%;
     font-family: 'Press Start 2P', cursive;
@@ -29,17 +30,26 @@
     border-radius: 14px;
     box-sizing: border-box;
   }
-
+ .letters{
+    margin-top:-8%;
+    position: relative;
+  }
   .limit_letters{
     color:rgb(52, 0, 119);
     font-size: 8px;
-    position: absolute;
-    top: 29.5%;
-    left: 53%;
+    padding-top: 8%;
+    margin-left: 54%;
 
   }
-
-  #new_pass label{
+  .letters_form{
+    position: relative;
+    top: -132%;
+  }
+ 
+.new_pass{
+  margin-top:-5%;
+}
+  .new_pass label{
     width: 119%;
     margin-top: 1.1%;
     font-size: 90%;
@@ -49,12 +59,13 @@
     text-align: center;
    
   }
-  #col_new_pass{
+ 
+  .col_new_pass{
     width: 50%;
     margin-left: -5%;
     
   }
-#col_new_pass input[type=password] {
+.col_new_pass input[type=password] {
   padding: 2%;
   font-size: 70%;
   font-family: 'Press Start 2P', cursive;
@@ -64,7 +75,7 @@
   box-sizing: border-box;
   }
 
-#new_pass_conf label{
+.new_pass_conf label{
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -73,12 +84,13 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#col_new_conf{
+.col_new_conf{
   width: 50%;
   margin-left: -4.5%;
+  margin-top: 2%;
 }
-#col_new_conf input[type=password] {
-  padding: 2%;
+.col_new_conf input[type=password] {
+  padding: 3%;
   font-size: 70%;
   font-family: 'Press Start 2P', cursive;
   display: inline-block;
@@ -87,8 +99,8 @@
   box-sizing: border-box;
   }
   
- 
-#new_nick label{
+
+.new_nick label{
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -98,13 +110,13 @@
   text-align: center;
       
 }
-#col_new_nick{
+.col_new_nick{
   width: 50%;
   margin-left: -4.5%;
 }
     
-#col_new_nick input[type=text]{
-  padding: 2%;
+.col_new_nick input[type=text]{
+  padding: 3%;
   font-size: 70%;
   font-family: 'Press Start 2P', cursive;
   display: inline-block;
@@ -113,11 +125,11 @@
   box-sizing: border-box;
 }
  
-  #col_na{
+  .col_na{
     width: 50%;
     margin-left: -11%;
   }
-  #ava label{
+  .ava label{
     width: 168%;
     margin-top: 1%;
     font-size: 90%;
@@ -126,31 +138,30 @@
     text-shadow: 0 1px #4b5fcf;
     text-align: center;
 }
-  #ava input[type=file]{
+  .ava input[type=file]{
     padding: 2%;
     font-size: 59%;
     font-family: 'Play', sans-serif;
     display: inline-block;
     width: 65%;
 }
-#col_ava{
+.col_ava{
   width: 50%;
   margin-left: 10.5%;
 }
   .sign_button {
-    width: 42%;
-    padding: 2% 3%;
+    width: 45%;
+    padding: 3% 3%;
     float: right;
     align-content: center;
     position: relative;
     top: 58%;
-    left: -12%;
+    left: -49%;
     border: none;
     cursor: pointer;
     
-    
   }
-  #col_but{
+  .col_but{
     margin-top: -2%;
     margin-left: 14.5%;
   }
