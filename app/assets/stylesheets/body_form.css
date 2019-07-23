@@ -3,7 +3,9 @@ html{
   height:145%;
 }
 
-  
+  head{
+    margin-bottom: 7%;
+  }
    body{
    
     background-image: linear-gradient(rgb(75, 19, 179), rgb(0, 255, 234)); 
@@ -14,6 +16,9 @@ html{
     
   } 
 
+  #main{
+    margin-top: -4%;
+  }
 .header_style {
   background-color: hsla(0, 0%, 100%, 0.5); 
   border-radius:10px;
@@ -95,3 +100,5 @@ html{
       transform: scale(0.8);
     }
   }
+
+  
