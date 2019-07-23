@@ -27,16 +27,17 @@ class UsersEventList extends Component {
   };
 
   handleSubmit = event => {
-    console.log(this.state);
-    console.log(this.state.users.find(user => user.nick === this.state.value));
-
-    this.setState({
-      addedUsers: [
-        ...this.state.addedUsers,
-        this.state.users.find(user => user.nick === this.state.value)
-      ]
-    });
-    alert("new user was added");
+    if (this.state.addedUsers.length < 4) {
+      this.setState({
+        addedUsers: [
+          ...this.state.addedUsers,
+          this.state.users.find(user => user.nick === this.state.value)
+        ]
+      });
+      alert("new user was added");
+    } else {
+      alert("number of players is already enough");
+    }
     event.preventDefault();
   };
 

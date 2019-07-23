@@ -6,4 +6,5 @@ class Event < ApplicationRecord
   validates :description, length: { min: 2, maximum: 500 }, presence: true
   validates :event_time, presence: true
   validates :event_date, presence: true 
+  
 end

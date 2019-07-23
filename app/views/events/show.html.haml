@@ -9,7 +9,7 @@
         .show-event-page-time
             %h3= "Godzina i data:"
             %div= @event.event_date
-            %div= @event.event_time
+            %div= @event.event_time.strftime("%H:%M")
         .show-event-page-users
             %h3= "uczestnicy eventu:"
             - @event.users.each do |user|

@@ -13,20 +13,7 @@ RSpec.describe EventsController, type: :controller do
         end
     end
 
-    describe 'GET #new' do
-        before { get :new }
     
-        describe 'successful response' do
-          it { expect(response).to be_successful }
-          it { expect(response).to render_template('new') }
-        end
-    
-      context 'event' do
-          it 'returns one event by given id' do
-            expect(assigns(:owner)).to be_a(Owner)
-            expect(assigns(:owner).persisted?).to eq(false)
-          end
-        end
-      end
+
 
 end
