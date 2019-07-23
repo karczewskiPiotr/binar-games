@@ -27,7 +27,15 @@ class UsersEventList extends Component {
   };
 
   handleSubmit = event => {
-    this.setState({ addedUsers: [...this.state.addedUsers, this.state.value] });
+    console.log(this.state);
+    console.log(this.state.users.find(user => user.nick === this.state.value));
+
+    this.setState({
+      addedUsers: [
+        ...this.state.addedUsers,
+        this.state.users.find(user => user.nick === this.state.value)
+      ]
+    });
     alert("new user was added");
     event.preventDefault();
   };
@@ -35,7 +43,7 @@ class UsersEventList extends Component {
   render() {
     const { value, users, addedUsers } = this.state;
     return (
-      <form>
+      <>
         <label>
           Users:
           <select value={value} onChange={this.handleChange}>
@@ -48,9 +56,16 @@ class UsersEventList extends Component {
         </label>
         <button onClick={this.handleSubmit}>Add user</button>
         {addedUsers.map(addedUser => (
-          <li>{addedUser}</li>
+          <React.Fragment key={addedUser.id}>
+            <li>{addedUser.nick}</li>
+            <input
+              type="hidden"
+              name="event[user_ids][]"
+              value={addedUser.id}
+            />
+          </React.Fragment>
         ))}
-      </form>
+      </>
     );
   }
 }
