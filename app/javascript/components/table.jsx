@@ -6,22 +6,22 @@ export default function Table(props) {
     return (
           <div className = 'listDiv' > 
             <div className = 'bg'>
-              <table className = 'table' >
-                <thead>
+              <table className = 'topnavbar table' >
+                <thead className='tab_head'>
                   <tr>
-                    <th>id</th>
+                    <th></th>
                     <th>Nick</th>
                     <th>Points</th>
                     <th>Fav</th>
                   </tr> 
                 </thead>
-                <tbody>
+                <tbody >
                   {
-                    props.usersData.map(row => (
-                      <tr key={row.id}>
-                        <td>{row.id}</td>
-                        <td>{row.nick}</td>
-                        <td>{row.points}</td>
+                    props.usersData.map(tab_row => (
+                      <tr key={tab_row.id} >
+                        <td>{tab_row.id}</td>
+                        <td>{tab_row.nick}</td>
+                        <td>{tab_row.points}</td>
                         <td>
                           serce
                         </td>
