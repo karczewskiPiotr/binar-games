@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_090710) do
     t.text "description"
     t.time "event_time"
     t.date "event_date"
-    t.string "games"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "owner_id"
