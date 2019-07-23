@@ -34,6 +34,8 @@
                         = form.label :users
                     .col-md-6#col_players
                         = collection_check_boxes(:event, :user_ids, @users, :id, :name)
+                    .users-list
+                        = javascript_pack_tag 'usersEventList'
                 .form-group.row#event_private
                     .col-md-6#col_pp
                         = form.label :private
