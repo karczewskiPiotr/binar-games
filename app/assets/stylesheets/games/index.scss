@@ -49,6 +49,15 @@
       margin: 0px 3px;
     }
   }
+  .sort-button {
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    margin-left: 10px;
+  }
+  .sort-button:focus {
+    outline: none;
+  }
 }
 .new-game-button-wrapper {
   margin-top: 50px;
