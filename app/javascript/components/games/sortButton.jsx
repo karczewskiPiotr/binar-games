@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const SortButton = ({ handleSort, sortedElement }) => {
-  const [state, updateState] = useState({
-    position: "default"
-  });
+const SortButton = ({ handleSort, sortedElement, currentCondition }) => {
 
   const renderIcon = () => {
-    switch (state.position) {
+    switch (currentCondition) {
       case "default":
         return (
           <svg
@@ -19,7 +16,7 @@ const SortButton = ({ handleSort, sortedElement }) => {
             <path d="M0 0h24v24H0z" fill="none" />
           </svg>
         );
-      case "up":
+      case `${sortedElement}_desc`:
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +31,7 @@ const SortButton = ({ handleSort, sortedElement }) => {
             <path d="M0 0h24v24H0z" fill="none" />
           </svg>
         );
-      case "down":
+      case `${sortedElement}_asc`:
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,29 +46,35 @@ const SortButton = ({ handleSort, sortedElement }) => {
             />
           </svg>
         );
+      default:
+        return (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path d="M19 13H5v-2h14v2z" fill="#5c20e9b9" />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+        );
     }
   };
 
+
   const handleClick = () => {
-    switch (state.position) {
+    switch (currentCondition) {
       case "default":
-        updateState({
-          position: "down"
-        });
         handleSort(`${sortedElement}_asc`);
         break;
-      case "down":
-        updateState({
-          position: "up"
-        });
+      case `${sortedElement}_asc`:
         handleSort(`${sortedElement}_desc`);
         break;
-      case "up":
-        updateState({
-          position: "default"
-        });
-        handleSort("none");
+      case `${sortedElement}_desc`:
+        handleSort("default");
         break;
+      default:
+        handleSort(`${sortedElement}_asc`);
     }
   };
 
