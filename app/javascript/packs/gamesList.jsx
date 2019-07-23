@@ -9,7 +9,8 @@ const GamesList = () => {
   const [state, updateState] = useState({
     games: [],
     loading: true,
-    searchPhrase: ""
+    searchPhrase: "",
+    filterCondition: "all"
   });
 
   const compare = (a, b) => (b > a) - (b < a);
@@ -31,7 +32,8 @@ const GamesList = () => {
             );
           }),
           loading: false,
-          searchPhrase: ""
+          searchPhrase: "",
+          filterCondition: "all"
         });
       });
   };
@@ -42,12 +44,28 @@ const GamesList = () => {
     });
   };
 
+  const handleFiltration = filterCondition => {
+    updateState(rest => {
+      return { ...rest, filterCondition: filterCondition };
+    });
+  };
+
+const filterByCondition = (game) => {
+  if (state.filterCondition == "all") {
+    return state.games;
+  } else {
+    return game.category.includes(state.filterCondition);
+  }
+}
+
   const getGames = () => {
     return state.searchPhrase
-      ? state.games.filter(game => {
-          return game.title.toLowerCase().includes(state.searchPhrase);
-        })
-      : state.games;
+      ? state.games
+          .filter(filterByCondition)
+          .filter(game => {
+            return game.title.toLowerCase().includes(state.searchPhrase);
+          })
+      : state.games.filter(filterByCondition);
   };
 
   useEffect(fetchGames, []);
@@ -56,7 +74,7 @@ const GamesList = () => {
     <>
       <div className="row search-filter">
         <Searchbar handleSearch={handleSearch} />
-        <FilterDropdwon />
+        <FilterDropdwon handleFiltration={handleFiltration} />
       </div>
       <div className="row header">
         <div className="col-md">Title</div>

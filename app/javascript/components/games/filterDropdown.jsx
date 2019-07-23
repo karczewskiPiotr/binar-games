@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import axios from "axios";
 
-const FilterDropdown = () => {
+const FilterDropdown = ({ handleFiltration }) => {
   const [state, updateState] = useState({
     categories: [],
     loading: true
   });
 
-  var options = [];
+  var options = [{ value: "all", label: "all" }];
 
   const fetchCategories = () => {
     axios
@@ -23,18 +23,24 @@ const FilterDropdown = () => {
           categories: response.data.data,
           loading: false
         });
-        getOptions();
       });
   };
 
-  const getOptions = () => {
+  const setOptions = () => {
     state.categories.map(category => {
-      options.push({ value: category.id, label: category.name });
+      options.push({
+        value: category.name.toLowerCase(),
+        label: category.name
+      });
     });
   };
 
+  const updateFiltrationConditon = selectedOption => {
+    handleFiltration(selectedOption.value);
+  };
+
   useEffect(fetchCategories, []);
-  useEffect(getOptions);
+  useEffect(setOptions);
 
   return (
     <Select
@@ -42,6 +48,7 @@ const FilterDropdown = () => {
       options={options}
       className="col-md-4 filter"
       placeholder="Filter"
+      onChange={updateFiltrationConditon}
     />
   );
 };
