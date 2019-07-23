@@ -8,8 +8,6 @@ const FilterDropdown = ({ handleFiltration }) => {
     loading: true
   });
 
-  var options = [{ value: "all", label: "all" }];
-
   const fetchCategories = () => {
     axios
       .get("/api/v1/categories", {
@@ -26,13 +24,17 @@ const FilterDropdown = ({ handleFiltration }) => {
       });
   };
 
-  const setOptions = () => {
-    state.categories.map(category => {
-      options.push({
+  const categoriesToOptions = () => {
+    return state.categories.map(category => {
+      return {
         value: category.name.toLowerCase(),
         label: category.name
-      });
+      };
     });
+  };
+
+  const getOptions = () => {
+    return [{ value: "all", label: "all" }, ...categoriesToOptions()];
   };
 
   const updateFiltrationConditon = selectedOption => {
@@ -40,7 +42,8 @@ const FilterDropdown = ({ handleFiltration }) => {
   };
 
   useEffect(fetchCategories, []);
-  useEffect(setOptions);
+
+  const options = getOptions();
 
   return (
     <Select
