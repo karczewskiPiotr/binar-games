@@ -2,6 +2,69 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.events-list-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+.events-list {
+  
+  display: inline-block;
+  font-size: 17px;
+  max-width: 1500px;
+  min-width: 1000px;
+}
+.header {
+  margin: 0px 30px;
+  padding: 20px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  margin-bottom: 10px;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  border-radius: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.event {
+  margin: 10px 40px 0px;
+  padding: 15px;
+  font-size: 70%;
+  color:black;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.event:hover{
+  color:#5c20e9b9;
+}
+.event-rows{
+  margin: 0% 2%;
+}
+
+.owned{
+  margin: 10px 251px 0px;
+  padding: 15px;
+  width:50%;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  text-transform: uppercase;
+}
+.others{
+  margin: 50px 251px 0px;
+  padding: 15px;
+  width:50%;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  text-transform: uppercase;
+}
+
 .add-event-form {
   display: flex;
   justify-content: center;
