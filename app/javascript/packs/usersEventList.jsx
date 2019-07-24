@@ -14,7 +14,7 @@ class UsersEventList extends Component {
 
   componentWillMount() {
     axios
-      .get("/api/v1/users.json", {}, { "Content-Type": "application/json" })
+      .get("/api/v1/users", {}, { "Content-Type": "application/json" })
       .then(res => {
         this.setState({
           users: res.data.data
@@ -34,7 +34,6 @@ class UsersEventList extends Component {
           this.state.users.find(user => user.nick === this.state.value)
         ]
       });
-      alert("new user was added");
     } else {
       alert("number of players is already enough");
     }
