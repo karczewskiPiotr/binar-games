@@ -69,7 +69,7 @@ RSpec.describe GamesController, type: :controller do
             subject { post :create, params: valid_attributes }
 
             it { expect(subject).to redirect_to(Game.last) }
-            
+
             it { expect { subject }.to change(Game, :count).by(1) }
         end
 

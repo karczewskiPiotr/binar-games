@@ -45,20 +45,37 @@ class UsersEventList extends Component {
     const { value, users, addedUsers } = this.state;
     return (
       <>
-        <label>
-          Users:
-          <select value={value} onChange={this.handleChange}>
+        <label className="row">
+          <div className="col-md-6 users-label">Users</div>
+          <select
+            value={value}
+            onChange={this.handleChange}
+            className="col-md-6 users-select"
+          >
             {users.map(user => (
-              <option key={user.id} value={user.nick}>
+              <option
+                className="users-select-option"
+                key={user.id}
+                value={user.nick}
+              >
                 {user.nick}
               </option>
             ))}
           </select>
         </label>
-        <button onClick={this.handleSubmit}>Add user</button>
+        <div className="row">
+          <div className="col-md-8" />
+          <button
+            onClick={this.handleSubmit}
+            className="users-select-button col-md-2"
+          >
+            Add
+          </button>
+        </div>
+
         {addedUsers.map(addedUser => (
           <React.Fragment key={addedUser.id}>
-            <li>{addedUser.nick}</li>
+            <li className="users-select-list">{addedUser.nick}</li>
             <input
               type="hidden"
               name="event[user_ids][]"

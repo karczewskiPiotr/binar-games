@@ -205,6 +205,8 @@
 }
 // display added event (event/events/id)
 .show-event-page {
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
   max-width: 800px;
   min-width: 500px;
   margin-left: auto;
@@ -215,7 +217,8 @@
 .show-event-page-title,
 .show-event-page-description,
 .show-event-page-time,
-.show-event-page-users {
+.show-event-page-users,
+.show-event-page-game {
   width: 100%;
   margin: 25px 0 0 0;
   border-radius: 18px;
@@ -224,17 +227,47 @@
 .show-event-page-title {
   margin: 25px 0 0 0;
 }
-
+.show-event-page-game,
 .show-event-page-title,
 .show-event-page-description,
 .show-event-page-time,
-.show-event-page-users > h3 {
-  padding: 25px;
+.show-event-page-users {
+  padding: 15px;
 }
 
-.show-event-page-users-list {
-  padding-left: 25px;
+.users-select {
+  font-size: 15px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
 }
+
+.users-select-button {
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+  outline: 0;
+  font-size: 10px;
+}
+
+.users-label,
+.users-select-option,
+.event_private {
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+
+.users-select-list {
+  list-style-type: none;
+  color: rgb(81, 2, 128);
+}
+
 #table {
   margin-top: 100px;
 }
