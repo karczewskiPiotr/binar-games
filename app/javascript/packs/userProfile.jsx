@@ -3,6 +3,13 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 
 class UserProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    };
+  }
+
   componentWillMount() {
     axios
       .get("/api/v1/users/current", {}, { "Content-Type": "application/json" })
@@ -14,7 +21,7 @@ class UserProfile extends Component {
   }
 
   render() {
-    return <div className="profile"> czosnek </div>;
+    return <div className="profile"> {this.state.users.avatar}</div>;
   }
 }
 
