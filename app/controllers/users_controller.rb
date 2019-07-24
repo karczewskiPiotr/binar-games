@@ -3,5 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def index; end
+  def user_profile
+    @user_profile = current_user
+  end
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :games
   resources :events , only: [:index, :create, :show, :new]
+  get "user_profile", to: 'users#user_profile'
 
   devise_scope :user do
     root to: "devise/sessions#new"
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
       resources :games, only: [:index, :show]
       resources :categories, only: [:index, :show]
       resources :users, only: [:index]
+      get '/users/current', to: 'users#current'
     end
   end
 end
