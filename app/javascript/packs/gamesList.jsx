@@ -63,7 +63,7 @@ const GamesList = () => {
     if (state.filterCondition == "all") {
       return state.games;
     } else {
-      return game.category.includes(state.filterCondition);
+      return game.category.toLowerCase().includes(state.filterCondition);
     }
   };
 
