@@ -17,36 +17,37 @@
           .header_style
             .card-header Sign up
           .card-body.body_style
-            .form-group.row#new_login
-              .col-md-6#col_nl
+            .form-group.row.new_login
+              .col-md-6.col_nl
                 = f.label :email
-              .col-md-6#col_new_login
+              .col-md-6.col_new_login
                 = f.email_field :email, autofocus: true, autocomplete: "email_new"
-            .form-group.row#new_pass
-              .col-md-6#col_np
-                = f.label :password
+            .form-group.row.letters
               .limit_letters
                 - if @minimum_password_length
-                  %em
-                    (#{@minimum_password_length} characters minimum)
-              .col-md-6#col_new_pass
+                  %em.letters_form
+                    #{@minimum_password_length} characters minimum)
+            .form-group.row.new_pass
+              .col-md-6.col_np
+                = f.label :password
+              .col-md-6.col_new_pass
                 = f.password_field :password, autocomplete: "new-password"
-            .form-group.row#new_pass_conf
-              .col-md-6#col_npc
+            .form-group.row.new_pass_conf
+              .col-md-6.col_npc
                 = f.label :password_confirmation
-              .col-md-6#col_new_conf
+              .col-md-6.col_new_conf
                 = f.password_field :password_confirmation, autocomplete: "new-password"
-            .form-group.row#new_nick
-              .col-md-6#col_nn
+            .form-group.row.new_nick
+              .col-md-6.col_nn
                 = f.label :nick
-              .col-md-6#col_new_nick
+              .col-md-6.col_new_nick
                 = f.text_field :nick, autofocus: true
-            .form-group.row#ava
-              .col-md-6#col_na
+            .form-group.row.ava
+              .col-md-6.col_na
                 = f.label :avatar
-              .col-md-6#col_ava
+              .col-md-6.col_ava
                 = f.file_field :avatar
-              .col-md-6.offset-md-4#col_but
+              .col-md-6.offset-md-4.col_but
                 .sign_button  
                   = f.submit "Sign up", class: 'btn'
     .l_box
