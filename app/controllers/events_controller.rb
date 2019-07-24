@@ -8,8 +8,6 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
-    @event.users << User.find_by(nick: params[:event][:users])
-    @users = User.all.pluck(:nick)
     if @event.save
       redirect_to @event
     else
@@ -19,14 +17,14 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build
-    @users = User.all.pluck(:nick)
+    @users = User.all
     @game = Game.pluck(:title)
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :event_time, :event_date, :private).
+    params.require(:event).permit(:title, :description, :event_time, :event_date, :private, user_ids: []).
       merge(owner_id: current_user.id, game_id: Game.find_by(title: params[:event][:game]).id)
   end
 
