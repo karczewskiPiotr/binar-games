@@ -94,6 +94,16 @@ const GamesList = () => {
           compare(a.category.toLowerCase(), b.category.toLowerCase()) ||
           compare(a.rating, b.rating)
         );
+      case "rating_asc":
+        return (
+          compare(b.rating, a.rating) ||
+          compare(b.title.toLowerCase(), a.title.toLowerCase())
+        );
+      case "rating_desc":
+        return (
+          compare(a.rating, b.rating) ||
+          compare(b.title.toLowerCase(), a.title.toLowerCase())
+        );
     }
   };
 
@@ -114,18 +124,36 @@ const GamesList = () => {
     <>
       <div className="row search-filter">
         <Searchbar handleSearch={handleSearch} />
-        <FilterDropdwon handleFiltration={handleFiltration} currentCondition={state.sortCondition}/>
+        <FilterDropdwon
+          handleFiltration={handleFiltration}
+          currentCondition={state.sortCondition}
+        />
       </div>
       <div className="row header">
         <div className="col-md">
           Title
-          <SortButton handleSort={handleSort} sortedElement="title" currentCondition={state.sortCondition}/>
+          <SortButton
+            handleSort={handleSort}
+            sortedElement="title"
+            currentCondition={state.sortCondition}
+          />
         </div>
         <div className="col-md">
           Category
-          <SortButton handleSort={handleSort} sortedElement="category" currentCondition={state.sortCondition}/>
+          <SortButton
+            handleSort={handleSort}
+            sortedElement="category"
+            currentCondition={state.sortCondition}
+          />
         </div>
-        <div className="col-md rating">Rating</div>
+        <div className="col-md rating">
+          Rating
+          <SortButton
+            handleSort={handleSort}
+            sortedElement="rating"
+            currentCondition={state.sortCondition}
+          />
+        </div>
       </div>
       {state.loading
         ? "Loading"
