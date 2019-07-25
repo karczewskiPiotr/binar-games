@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Rating from "./Rating";
 import GameDetailsButton from "./gameDetailsButton";
 import GameDetails from "./gameDetails";
