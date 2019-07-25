@@ -27,7 +27,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     return render('edit') unless @game.update_attributes(game_params)
 
-    redirect_to ganes_path
+    redirect_to games_path
   end
 
   private
