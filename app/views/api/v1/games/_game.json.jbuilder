@@ -1,4 +1,4 @@
-json.extract! game, :id, :title, :description, :rating
+json.extract! game, :id, :title, :description, :global_rating
 json.category game.category.name
 unless game.pictures.attachments.size.zero?
   json.pictures(game.pictures) do |picture|

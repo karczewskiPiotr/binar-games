@@ -4,7 +4,7 @@ RSpec.describe Game, type: :model do
     let!(:user) { create(:user) }
 
     describe "attributes" do
-        it { expect(subject.attributes).to include('title', 'description', 'rating') }
+        it { expect(subject.attributes).to include('title', 'description', 'global_rating') }
     end
 
     describe "validation" do

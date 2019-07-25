@@ -33,7 +33,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :rating, :game_guide, pictures: []).
+    params.require(:game).permit(:title, :description, :global_rating, :game_guide, pictures: []).
       merge(category_id: assign_category.id, user_id: current_user.id)
   end
 
