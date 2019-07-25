@@ -18,8 +18,12 @@ const GameDetails = ({ visibility, game }) => {
               <div className="user-rating-header">
                 <h5>Your rating</h5>
               </div>
-              <div className="user-rating">
-                <Rating rating={2} />
+              <div className="rating">
+                <Rating
+                  rating={game.user.rating}
+                  gameId={game.id}
+                  interactive={true}
+                />
               </div>
             </div>
           </div>

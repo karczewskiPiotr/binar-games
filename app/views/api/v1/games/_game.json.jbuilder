@@ -10,4 +10,6 @@ if game.game_guide.attached?
 end
 json.user do
   json.extract! game.user, :id, :nick, :email
+  rating = Rating.find_by(rated_game_id: game.id, rating_user_id: current_user.id)
+  json.rating rating.score unless rating.nil?
 end
