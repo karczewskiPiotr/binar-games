@@ -63,7 +63,7 @@ const GamesList = () => {
     if (state.filterCondition == "all") {
       return state.games;
     } else {
-      return game.category.includes(state.filterCondition);
+      return game.category.toLowerCase().includes(state.filterCondition);
     }
   };
 
@@ -158,7 +158,7 @@ const GamesList = () => {
       {state.loading
         ? "Loading"
         : getGames().map(game => (
-            <Game key={game.id} fetchGames={fetchGames} game={game} />
+            <Game key={game.id} game={game} />
           ))}
     </>
   );
