@@ -159,7 +159,7 @@ const GamesList = () => {
       {state.loading
         ? <div className="loading-games"><LoadingIcon/></div>
         : getGames().map(game => (
-            <Game key={game.id} fetchGames={fetchGames} game={game} />
+            <Game key={game.id} game={game} />
           ))}
     </>
   );
