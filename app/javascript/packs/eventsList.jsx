@@ -5,6 +5,8 @@ import Event from "../components/events/event";
 import SortEventsBtn from "../components/events/sortEventsBtn";
 import LoadingIcon from "../components/loadingIcon";
 
+const compare = (a, b) => (b > a) - (b < a);
+
 const EventsList = () => {
   const [state, updateState] = useState({
     events: [],
@@ -28,17 +30,18 @@ const fetchEvents = () => {
       updateState({
         events: response.data.data.sort((a,b) => {
           return(
-            (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-            (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-            (b.event_time < a.event_time) - (b.event_time > a.event_time)
+            compare(b.title.toLowerCase(), a.title.toLowerCase()) ||
+            compare(a.event_date, b.event_date) ||
+            compare(a.event_time, b.event_time)
+           
           )
         }).filter(
           event => !event.is_owner),
         events_owned: response.data.data.sort((a,b) => {
           return(
-            (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-            (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-            (b.event_time < a.event_time) - (b.event_time > a.event_time)
+            compare(b.title.toLowerCase(), a.title.toLowerCase()) ||
+            compare(a.event_date, b.event_date) ||
+            compare(a.event_time, b.event_time)
           )
         }).filter(
           event => event.is_owner),
@@ -63,40 +66,39 @@ const fetchEvents = () => {
     switch(state.sortCondition){
       case "title_asc":
         return(
-          (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-          (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-          (b.event_time < a.event_time) - (b.event_time > a.event_time)
+          compare(b.title.toLowerCase(), a.title.toLowerCase()) ||
+          compare(a.event_date, b.event_date) ||
+          compare(a.event_time, b.event_time)
         )
       case "title_desc":
         return(
-          (b.title.toLowerCase() > a.title.toLowerCase()) - (b.title.toLowerCase() < a.title.toLowerCase()) ||
-          (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-          (b.event_time < a.event_time) - (b.event_time > a.event_time)
+          compare(a.title.toLowerCase(), b.title.toLowerCase()) ||
+          compare(a.event_date, b.event_date) ||
+          compare(a.event_time, b.event_time)
         )
       case "date_asc":
         return(
-          (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-          (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-          (b.event_time < a.event_time) - (b.event_time > a.event_time)
+          compare(b.event_date, a.event_date) ||
+          compare(a.title.toLowerCase(), b.title.toLowerCase()) ||
+          compare(a.event_time, b.event_time)
         )
       case "date_desc":
         return(
-          (b.event_date > a.event_date) - (b.event_date < a.event_date) ||
-          (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-          (b.event_time < a.event_time) - (b.event_time > a.event_time)
+          compare(a.event_date, b.event_date) ||
+          compare(a.title.toLowerCase(), b.title.toLowerCase()) ||
+          compare(a.event_time, b.event_time)
         )
       case "time_asc":
         return(
-          (b.event_time > a.event_time) - (b.event_time < a.event_time) ||
-          (b.event_date > a.event_date) - (b.event_date < a.event_date) ||
-          (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) 
-          
+          compare(b.event_time, a.event_time) ||
+          compare(a.event_date, b.event_date) ||
+          compare(a.title.toLowerCase(), b.title.toLowerCase()) 
         )
       case "time_desc":
         return(
-          (b.event_time < a.event_time) - (b.event_time > a.event_time) ||
-          (b.event_date > a.event_date) - (b.event_date < a.event_date) ||
-          (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) 
+          compare(a.event_time, b.event_time) ||
+          compare(a.event_date, b.event_date) ||
+          compare(a.title.toLowerCase(), b.title.toLowerCase()) 
           
         )
     }
@@ -105,40 +107,39 @@ const fetchEvents = () => {
   switch(state.sortConditionOwned){
     case "title_owned_asc":
       return(
-        (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-        (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-        (b.event_time < a.event_time) - (b.event_time > a.event_time)
+        compare(b.title.toLowerCase(), a.title.toLowerCase()) ||
+        compare(a.event_date, b.event_date) ||
+        compare(a.event_time, b.event_time)
       )
     case "title_owned_desc":
       return(
-        (b.title.toLowerCase() > a.title.toLowerCase()) - (b.title.toLowerCase() < a.title.toLowerCase()) ||
-        (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-        (b.event_time < a.event_time) - (b.event_time > a.event_time)
+        compare(a.title.toLowerCase(), b.title.toLowerCase()) ||
+        compare(a.event_date, b.event_date) ||
+        compare(a.event_time, b.event_time)
       )
     case "date_owned_asc":
       return(
-        (b.event_date < a.event_date) - (b.event_date > a.event_date) ||
-        (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-        (b.event_time < a.event_time) - (b.event_time > a.event_time)
+        compare(b.event_date, a.event_date) ||
+        compare(a.title.toLowerCase(), b.title.toLowerCase()) ||
+        compare(a.event_time, b.event_time)
       )
     case "date_owned_desc":
       return(
-        (b.event_date > a.event_date) - (b.event_date < a.event_date) ||
-        (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) ||
-        (b.event_time < a.event_time) - (b.event_time > a.event_time)
+        compare(a.event_date, b.event_date) ||
+        compare(a.title.toLowerCase(), b.title.toLowerCase()) ||
+        compare(a.event_time, b.event_time)
       )
     case "time_owned_asc":
       return(
-        (b.event_time > a.event_time) - (b.event_time < a.event_time) ||
-        (b.event_date > a.event_date) - (b.event_date < a.event_date) ||
-        (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) 
-        
+        compare(b.event_time, a.event_time) ||
+        compare(a.event_date, b.event_date) ||
+        compare(a.title.toLowerCase(), b.title.toLowerCase()) 
       )
     case "time_owned_desc":
       return(
-        (b.event_time < a.event_time) - (b.event_time > a.event_time) ||
-        (b.event_date > a.event_date) - (b.event_date < a.event_date) ||
-        (b.title.toLowerCase() < a.title.toLowerCase()) - (b.title.toLowerCase() > a.title.toLowerCase()) 
+        compare(a.event_time, b.event_time) ||
+        compare(a.event_date, b.event_date) ||
+        compare(a.title.toLowerCase(), b.title.toLowerCase()) 
         
       )
   }
