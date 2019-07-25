@@ -4,6 +4,7 @@ class Api::V1::UsersController < ApiController
   end
   def current
     @user = current_user
+    @events = Event.all
   end
 
 end

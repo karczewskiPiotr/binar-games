@@ -3,6 +3,75 @@
   min-width: 500px;
   margin: 50px auto 0 auto;
   border-radius: 16px;
-  height: 400px;
+  height: 600px;
   background-color: hsla(0, 0%, 100%, 0.75);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-header {
+  padding: 25px 0 25px 0;
+  letter-spacing: 2px;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+}
+
+.profile-card-out {
+  background: #c00; /* fallback */
+  background: linear-gradient(135deg, transparent 35px, rgb(92, 32, 233) 0) top
+      left,
+    linear-gradient(225deg, transparent 10px, rgb(92, 32, 233) 0) top right,
+    linear-gradient(315deg, transparent 35px, rgb(92, 32, 233) 0) bottom right,
+    linear-gradient(45deg, transparent 10px, rgb(92, 32, 233) 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.profile-card {
+  background: #c00;
+  background: linear-gradient(135deg, transparent 30px, rgb(4, 230, 255) 0) top
+      left,
+    linear-gradient(225deg, transparent 10px, rgb(4, 230, 255) 0) top right,
+    linear-gradient(315deg, transparent 30px, rgb(4, 230, 255) 0) bottom right,
+    linear-gradient(45deg, transparent 10px, rgb(4, 230, 255) 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  padding: 3px;
+  width: 95%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-card-img {
+  border: 12px solid #5c20e9b9;
+  width: 75%;
+  height: 50%;
+  border-radius: ;
+}
+.profile-card-nick,
+.profile-card-points,
+.profile-card-ranking {
+  padding-top: 15px;
+  text-shadow: 0 3px hsla(0, 0%, 100%, 0.75);
+  color: #5c20e9b9;
+}
+
+.profile-card-cup,
+.profile-card-star {
+  width: 50px;
+  height: 50px;
 }
