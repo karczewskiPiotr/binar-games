@@ -1,2 +1,7 @@
 .add-event-button-wrapper
     = button_to 'ADD EVENT', new_event_path, class: "add-event-button", method: :get
+.events-list-wrapper
+    .events-list
+        #events
+            = javascript_pack_tag 'eventsList'
+            
