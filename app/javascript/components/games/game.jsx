@@ -16,7 +16,7 @@ const Game = ({ game }) => {
         <div className="col-md">{game.title}</div>
         <div className="col-md">{game.category}</div>
         <div className="col-md rating">
-          <Rating rating={game.rating} />
+          <Rating rating={game.global_rating} />
         </div>
         <div className="col-md-auto game-details-button-wrapper">
           <GameDetailsButton

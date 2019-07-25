@@ -71,37 +71,37 @@ const GamesList = () => {
     switch (state.sortCondition) {
       case "default":
         return (
-          compare(a.rating, b.rating) ||
+          compare(a.global_rating, b.global_rating) ||
           compare(b.title.toLowerCase(), a.title.toLowerCase())
         );
       case "title_asc":
         return (
           compare(b.title.toLowerCase(), a.title.toLowerCase()) ||
-          compare(a.rating, b.rating)
+          compare(a.global_rating, b.global_rating)
         );
       case "title_desc":
         return (
           compare(a.title.toLowerCase(), b.title.toLowerCase()) ||
-          compare(a.rating, b.rating)
+          compare(a.global_rating, b.global_rating)
         );
       case "category_asc":
         return (
           compare(b.category.toLowerCase(), a.category.toLowerCase()) ||
-          compare(a.rating, b.rating)
+          compare(a.global_rating, b.global_rating)
         );
       case "category_desc":
         return (
           compare(a.category.toLowerCase(), b.category.toLowerCase()) ||
-          compare(a.rating, b.rating)
+          compare(a.global_rating, b.global_rating)
         );
       case "rating_asc":
         return (
-          compare(b.rating, a.rating) ||
+          compare(b.global_rating, a.global_rating) ||
           compare(b.title.toLowerCase(), a.title.toLowerCase())
         );
       case "rating_desc":
         return (
-          compare(a.rating, b.rating) ||
+          compare(a.global_rating, b.global_rating) ||
           compare(b.title.toLowerCase(), a.title.toLowerCase())
         );
     }

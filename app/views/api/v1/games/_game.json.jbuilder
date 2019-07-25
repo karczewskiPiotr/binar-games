@@ -1,4 +1,4 @@
-json.extract! game, :id, :title, :description, :rating
+json.extract! game, :id, :title, :description, :global_rating
 json.category game.category.name
 unless game.pictures.attachments.size.zero?
   json.pictures(game.pictures) do |picture|
@@ -10,4 +10,6 @@ if game.game_guide.attached?
 end
 json.user do
   json.extract! game.user, :id, :nick, :email
+  rating = Rating.find_by(rated_game_id: game.id, rating_user_id: current_user.id)
+  json.rating rating.score unless rating.nil?
 end

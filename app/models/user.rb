@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :games
   has_many :organized_events, class_name: 'Event', foreign_key: 'owner_id'
   has_and_belongs_to_many :events
+  has_many :ratings, foreign_key: 'rating_user_id'
+  has_many :rated_games, through: :ratings, class_name: 'Game', foreign_key: 'rated_game_id'
 
   private
 

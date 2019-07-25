@@ -68,7 +68,7 @@ RSpec.describe GamesController, type: :controller do
         context 'valid attributes' do
             subject { post :create, params: valid_attributes }
 
-            it { expect(subject).to redirect_to(Game.last) }
+            it { expect(subject).to redirect_to(games_path) }
 
             it { expect { subject }.to change(Game, :count).by(1) }
         end
@@ -89,7 +89,7 @@ RSpec.describe GamesController, type: :controller do
         context 'valid attributes' do
             subject { put :update, params: valid_attributes }
       
-            it { expect(subject).to redirect_to(game) }
+            it { expect(subject).to redirect_to(games_path) }
       
             it 'updates game' do
               subject
