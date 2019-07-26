@@ -1,20 +1,20 @@
 .show-event-page
     .row.justify-content-center
         .show-event-page-title
-            %h3= "Your event:"  
-            %div= @event.title
+            %h3.show-labelt= "Title:"  
+            %p.event-title= @event.title
         .show-event-page-description
-            %h3= "Details:"
-            %div= @event.description
+            %h3.show-labeld= "Details:"
+            %p.event-desc= @event.description
         .show-event-page-time
-            %h3= "Meeting time:"
-            %div= @event.event_date
-            %div= @event.event_time.strftime("%H:%M")
+            %h3.show-labeldt= "Date:"
+            %div.event-date= @event.event_date
+            %div.event-date= @event.event_time.to_formatted_s(:time)
         .show-event-page-game
-            %h3= "Game:"
-            %div= @event.game.title
+            %h3.show-labelg= "Game:"
+            %div.event-game= @event.game.title
         .show-event-page-users
-            %h3= "Players:"
+            %h3.show-labelp= "Players:"
             - @event.users.each do |user|
-                %div= user.nick
+                %div.event-players= user.nick
 

@@ -2,6 +2,81 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.events-list-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+.events-list {
+  
+  display: inline-block;
+  font-size: 17px;
+  max-width: 1500px;
+  min-width: 1000px;
+}
+.header {
+  margin: 0px 30px;
+  padding: 20px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  margin-bottom: 10px;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  border-radius: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.event {
+  margin: 10px 40px 0px;
+  padding: 15px;
+  font-size: 70%;
+  color:black;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.event:hover{
+  color:#5c20e9b9;
+}
+.event-rows{
+  margin: 0% 2%;
+}
+
+.owned{
+  margin: 10px 251px 0px;
+  padding: 15px;
+  width:50%;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  text-transform: uppercase;
+}
+.others{
+  margin: 50px 251px 0px;
+  padding: 15px;
+  width:50%;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  text-transform: uppercase;
+}
+.sort-event-btn{
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    margin-left: 10px;
+}
+.sort-event-btn:focus {
+  outline: none;
+}
+.fas{
+  width: 80%;
+  color: red;
+}
 .add-event-form {
   display: flex;
   justify-content: center;
@@ -219,7 +294,7 @@
 .show-event-page-time,
 .show-event-page-users,
 .show-event-page-game {
-  width: 100%;
+  width: 90%;
   margin: 25px 0 0 0;
   border-radius: 18px;
   background-color: hsla(0, 0%, 100%, 0.75);
@@ -232,9 +307,32 @@
 .show-event-page-description,
 .show-event-page-time,
 .show-event-page-users {
-  padding: 15px;
+  padding: 4%;
 }
-
+.event-title,
+.event-date,
+.event-game,
+.event-players{
+  color: #3a3e47;
+  text-align: center;
+  text-shadow: 0 1px #e3f1f1;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+.event-desc{
+  color: #3a3e47;
+  text-shadow: 0 1px #e3f1f1;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+.show-labelt,
+.show-labeld,
+.show-labeldt,
+.show-labelg,
+.show-labelp{
+  line-height: 3%;
+  margin-bottom: 0;
+}
 .users-select {
   font-size: 15px;
   font-family: "Press Start 2P", cursive;

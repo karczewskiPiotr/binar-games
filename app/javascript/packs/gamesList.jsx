@@ -5,6 +5,7 @@ import Game from "../components/games/game";
 import Searchbar from "../components/games/searchbar";
 import FilterDropdwon from "../components/games/filterDropdown";
 import SortButton from "../components/games/sortButton";
+import LoadingIcon from "../components/loadingIcon";
 
 const GamesList = () => {
   const [state, updateState] = useState({
@@ -156,7 +157,7 @@ const GamesList = () => {
         </div>
       </div>
       {state.loading
-        ? "Loading"
+        ? <div className="loading-games"><LoadingIcon/></div>
         : getGames().map(game => (
             <Game key={game.id} game={game} />
           ))}
