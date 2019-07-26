@@ -20,15 +20,12 @@
 }
 
 .profile-card-out {
-  background: #c00; /* fallback */
-  background: linear-gradient(135deg, transparent 35px, rgb(92, 32, 233) 0) top
-      left,
-    linear-gradient(225deg, transparent 10px, rgb(92, 32, 233) 0) top right,
-    linear-gradient(315deg, transparent 35px, rgb(92, 32, 233) 0) bottom right,
-    linear-gradient(45deg, transparent 10px, rgb(92, 32, 233) 0) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-  width: 60%;
+  background: linear-gradient(359deg, #1ef0f2, #5966ac);
+  -webkit-animation: AnimationName 17s ease infinite;
+  -moz-animation: AnimationName 17s ease infinite;
+  animation: AnimationName 17s ease infinite;
+  background-size: 400% 400%;
+  width: 75%;
   height: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -36,15 +33,15 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  border-radius: 5px;
 }
 
 .profile-card {
-  background: #c00;
-  background: linear-gradient(135deg, transparent 30px, rgb(4, 230, 255) 0) top
-      left,
-    linear-gradient(225deg, transparent 10px, rgb(4, 230, 255) 0) top right,
-    linear-gradient(315deg, transparent 30px, rgb(4, 230, 255) 0) bottom right,
-    linear-gradient(45deg, transparent 10px, rgb(4, 230, 255) 0) bottom left;
+  background: #c00; /* fallback */
+  background: linear-gradient(135deg, transparent 35px, #1ef0f2 0) top left,
+    linear-gradient(225deg, transparent 10px, #1ef0f2 0) top right,
+    linear-gradient(315deg, transparent 35px, #1ef0f2 0) bottom right,
+    linear-gradient(45deg, transparent 10px, #1ef0f2 0) bottom left;
   background-size: 50% 50%;
   background-repeat: no-repeat;
   padding: 3px;
@@ -54,24 +51,73 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 5px;
 }
-
+.profile-card-background {
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 15px solid #1ef0f2;
+  border-radius: 50%;
+  overflow: hidden;
+}
 .profile-card-img {
-  border: 12px solid #5c20e9b9;
-  width: 75%;
-  height: 50%;
-  border-radius: ;
+  width: 100%;
+  height: 100%;
 }
 .profile-card-nick,
 .profile-card-points,
 .profile-card-ranking {
   padding-top: 15px;
-  text-shadow: 0 3px hsla(0, 0%, 100%, 0.75);
+  text-shadow: 0 3px rgb(4, 230, 255);
   color: #5c20e9b9;
 }
 
 .profile-card-cup,
-.profile-card-star {
+.profile-card-star,
+.profile-card-event {
+  transition: all 0.2s ease-in-out;
   width: 50px;
   height: 50px;
+}
+
+.profile-card-cup:hover,
+.profile-card-star:hover,
+.profile-card-event:hover {
+  transform: scale(1.1);
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 56% 0%;
+  }
+  50% {
+    background-position: 45% 100%;
+  }
+  100% {
+    background-position: 56% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 56% 0%;
+  }
+  50% {
+    background-position: 45% 100%;
+  }
+  100% {
+    background-position: 56% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 56% 0%;
+  }
+  50% {
+    background-position: 45% 100%;
+  }
+  100% {
+    background-position: 56% 0%;
+  }
 }
