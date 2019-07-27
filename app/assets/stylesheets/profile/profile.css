@@ -13,7 +13,6 @@
   letter-spacing: 1px;
   font-size: 17px;
 }
-
 .profile {
   max-width: 800px;
   min-width: 500px;
@@ -21,9 +20,13 @@
   border-radius: 16px;
   height: 600px;
   background-color: #ffffffbf;
-  overflow: hidden;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+}
+.card-image {
+  width: 100px;
+  height: 100px;
 }

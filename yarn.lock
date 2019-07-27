@@ -6105,6 +6105,11 @@ react-bootstrap@^1.0.0-beta.9:
     uncontrollable "^6.1.0"
     warning "^4.0.3"
 
+react-card-flip@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/react-card-flip/-/react-card-flip-0.8.1.tgz#53cd036d5145a10a5c45f2419252d6b5f8e47d8e"
+  integrity sha512-iuyRAya8anf5aaR6BTCYyF4Z767WEgzkYSUfjxEG2zwQYvXHv98NtngAQRM+lqmwYLPTv/5cuCIOsZapy38x0g==
+
 react-context-toolbox@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-context-toolbox/-/react-context-toolbox-2.0.2.tgz#35637287cb23f801e6ed802c2bb7a97e1f04e3fb"
@@ -6227,6 +6232,7 @@ react-spinners-kit@^1.9.0:
     prop-types "^15.6.2"
     react "^16.5.2"
     react-dom "^16.5.1"
+
 react-tooltip@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-3.10.0.tgz#268b5ef519fd8a1369288d1f086f42c90d5da7ef"
