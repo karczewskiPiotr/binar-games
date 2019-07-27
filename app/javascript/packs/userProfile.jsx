@@ -3,14 +3,16 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import cup from "../../../winner-cup.png";
 import star from "../../../star.png";
-import event from "../../../event.png";
+import event from "../../../event1.png";
+import nickbeck from "../../../nickbackground.png";
 import ReactTooltip from "react-tooltip";
 
 class UserProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      isLoding: false
     };
   }
 
@@ -19,7 +21,8 @@ class UserProfile extends Component {
       .get("/api/v1/users/current", {}, { "Content-Type": "application/json" })
       .then(res => {
         this.setState({
-          users: res.data.data
+          users: res.data.data,
+          isLoading: true
         });
       });
   }
@@ -32,17 +35,27 @@ class UserProfile extends Component {
           <h1 className="profile-header">Your Profile</h1>
           <div className="row profile-card-out">
             <div className="profile-card">
-              <div className="profile-card-background">
-                <img
-                  className="profile-card-img"
-                  src={this.state.users.avatar}
-                  alt="user avatar"
-                />
-              </div>
               <div className="profile-card-nick">
-                <h2>{this.state.users.nick}</h2>
+                <h2 className="profile-card-nick-h2">
+                  {this.state.users.nick}
+                </h2>
               </div>
-              <div className="row">
+              <div className="profile-avatar-stats">
+                <img
+                  className="profile-card-cup"
+                  src={cup}
+                  data-tip="your position in ranking"
+                />
+                <div className="profile-card-ranking">: 0</div>
+
+                <div className="profile-card-background">
+                  <img
+                    className="profile-card-img"
+                    src={this.state.users.avatar}
+                    alt="user avatar"
+                  />
+                </div>
+
                 <img
                   className="profile-card-star"
                   src={star}
@@ -52,13 +65,8 @@ class UserProfile extends Component {
                   {" "}
                   : {this.state.users.points}{" "}
                 </div>
-                <img
-                  className="profile-card-cup"
-                  src={cup}
-                  data-tip="your ranking position"
-                />
-                <div className="profile-card-ranking">: 0</div>
               </div>
+
               <div className="row">
                 <img
                   className="profile-card-event"

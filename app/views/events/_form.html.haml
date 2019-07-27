@@ -4,10 +4,10 @@
         %h1.events-header= "Add event:"
         .row.justify-content-center
             .col-md-8
-                .form-group.row#event_name
+                .form-group.row#event_title
                     .col-md-6#col_en
                         = form.label :title 
-                    .col-md-6#col_event_name
+                    .col-md-6#col_event_title
                         = form.text_field :title
                 .form-group.row#event_desc
                     .col-md-6#col_ed
@@ -28,17 +28,18 @@
                     .col-md-6#col_eg
                         = form.label :game
                     .col-md-6#col_event_game
-                        = form.select(:game, options_for_select(@game)) 
-                .form-group.row#event_players
+                        = form.select(:game, options_for_select(@game))
+                .form-group.row
                     .users-list
                         = javascript_pack_tag 'usersEventList'
-                .form-group.row.event_private
-                    .col-md-6#col_pp
-                        = form.label :private
-                    .col-md-6#colprivate
-                        = form.check_box :private
                 .form-group.row#add_btn
-                    .col-md-6.offset-md-4
+                    .col-md-3#col_pp
+                        = form.label :private
+                    .col-md-3#colprivate
+                        = form.check_box :private
+                    .col-md-6
                         .add_event  
                             %button.btn.bg-transparent{type: "submit"}
                                 = form.submit 'Add Event'
+               
+                   
