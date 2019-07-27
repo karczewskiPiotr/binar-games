@@ -17,7 +17,8 @@
     "react-router-dom": "^5.0.1",
     "react-select": "^3.0.4",
     "react-spinners-kit": "^1.9.0",
-    "react-medium-image-zoom": "^3.1.1"
+    "react-medium-image-zoom": "^3.1.1",
+    "react-tooltip": "^3.10.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",

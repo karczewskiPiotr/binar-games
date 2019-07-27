@@ -6,7 +6,7 @@ import Profile from "../components/profileAcces";
 class MainNav extends React.Component {
   render() {
     let links = [
-      { label: "Profile", link: "#" },
+      { label: "Profile", link: "/user_profile" },
       { label: "Users", link: "/users" },
       { label: "Games", link: "/games" },
       { label: "Events", link: "/events" }

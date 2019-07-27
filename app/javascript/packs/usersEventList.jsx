@@ -44,12 +44,12 @@ class UsersEventList extends Component {
     const { value, users, addedUsers } = this.state;
     return (
       <>
-        <label className="row">
-          <div className="col-md-6 users-label">Users</div>
+        <div className="users">
+          <div className="users-label">Users</div>
           <select
             value={value}
             onChange={this.handleChange}
-            className="col-md-6 users-select"
+            className="users-select"
           >
             {users.map(user => (
               <option
@@ -61,17 +61,10 @@ class UsersEventList extends Component {
               </option>
             ))}
           </select>
-        </label>
-        <div className="row">
-          <div className="col-md-8" />
-          <button
-            onClick={this.handleSubmit}
-            className="users-select-button col-md-2"
-          >
+          <button onClick={this.handleSubmit} className="users-select-button">
             Add
           </button>
         </div>
-
         {addedUsers.map(addedUser => (
           <React.Fragment key={addedUser.id}>
             <li className="users-select-list">{addedUser.nick}</li>
