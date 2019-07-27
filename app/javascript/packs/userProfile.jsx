@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import cup from "../../../winner-cup.png";
-import star from "../../../star.png";
-import event from "../../../event1.png";
-import nickbeck from "../../../nickbackground.png";
 import ReactTooltip from "react-tooltip";
 
 class UserProfile extends Component {
@@ -28,58 +24,7 @@ class UserProfile extends Component {
   }
 
   render() {
-    return (
-      <>
-        <div className="profile">
-          <ReactTooltip />
-          <h1 className="profile-header">Your Profile</h1>
-          <div className="row profile-card-out">
-            <div className="profile-card">
-              <div className="profile-card-nick">
-                <h2 className="profile-card-nick-h2">
-                  {this.state.users.nick}
-                </h2>
-              </div>
-              <div className="profile-avatar-stats">
-                <img
-                  className="profile-card-cup"
-                  src={cup}
-                  data-tip="your position in ranking"
-                />
-                <div className="profile-card-ranking">: 0</div>
-
-                <div className="profile-card-background">
-                  <img
-                    className="profile-card-img"
-                    src={this.state.users.avatar}
-                    alt="user avatar"
-                  />
-                </div>
-
-                <img
-                  className="profile-card-star"
-                  src={star}
-                  data-tip="your points"
-                />
-                <div className="profile-card-points">
-                  {" "}
-                  : {this.state.users.points}{" "}
-                </div>
-              </div>
-
-              <div className="row">
-                <img
-                  className="profile-card-event"
-                  src={event}
-                  data-tip="your last few events"
-                />
-                <div className="profile-card-events" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    );
+    return <div className="profile" />;
   }
 }
 
