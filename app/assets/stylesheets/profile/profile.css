@@ -1,10 +1,26 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  min-width: 500px;
+  margin: 50px auto 0 auto;
+  border-radius: 16px;
+  height: 50px;
+  background-color: #ffffffbf;
+  text-shadow: 0 3px #04e6ff;
+  color: #5c20e9b9;
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
 .profile {
   max-width: 800px;
   min-width: 500px;
   margin: 50px auto 0 auto;
   border-radius: 16px;
   height: 600px;
-  background-color: hsla(0, 0%, 100%, 0.75);
+  background-color: #ffffffbf;
   overflow: hidden;
   display: flex;
   justify-content: flex-start;

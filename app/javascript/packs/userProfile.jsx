@@ -24,7 +24,12 @@ class UserProfile extends Component {
   }
 
   render() {
-    return <div className="profile" />;
+    return (
+      <>
+        <div className="profile-header">Your Profile</div>
+        <div className="profile" />;
+      </>
+    );
   }
 }
 
