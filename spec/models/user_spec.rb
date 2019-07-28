@@ -22,4 +22,16 @@ RSpec.describe User, type: :model do
             expect(user2).not_to be_valid
         end
       end
+
+    
+        it("should follow and unfollow a user") do
+          mike = users(:mike)
+          mike2 = users(:mike2)
+          expect(mike.following?(mike2)).to eq(false)
+          mike.follow(mike2)
+          expect(mike.following?(mike2)).to eq(true)
+          expect(mike2.followers.include?(mike)).to eq(true)
+          mike.unfollow(mike2)
+          expect(mike.following?(mike2)).to eq(false)
+        end
 end
