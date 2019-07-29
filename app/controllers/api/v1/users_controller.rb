@@ -7,10 +7,6 @@ class Api::V1::UsersController < ApiController
     @followers = current_user.following
   end
 
-  # def update
-
-  # end
-
   def follow
     @user = User.find(params[:user_id])
     current_user.follow(@user)

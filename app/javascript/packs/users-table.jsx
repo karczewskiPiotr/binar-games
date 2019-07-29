@@ -5,21 +5,19 @@ import axios from 'axios';
 
 class UsersTable extends React.Component {
   compare = (a, b) => (b > a) - (b < a);
-
-    
-    
+   
     state = {
         users: [],
         following: []
     };
 
     componentWillMount() {
-        axios.get('/api/v1/users.json', {}, { 'Content-Type': 'application/json' })
+        axios.get('/api/v1/users', {}, { 'Content-Type': 'application/json' })
             .then(res => {
                 this.setState({ users: res.data.data.sort((a,b) => this.compare(a.points,b.points) || this.compare(b.nick.toUpperCase(),a.nick.toUpperCase()) )})
                 
             });
-            axios.get('/api/v1/users/current/following.json', {}, { 'Content-Type': 'application/json' })
+            axios.get('/api/v1/users/current/following', {}, { 'Content-Type': 'application/json' })
             .then(resp => {
                 
                 this.setState({ following: resp.data.data })
@@ -28,14 +26,14 @@ class UsersTable extends React.Component {
     }
 
     click = (user_id) => {
-        axios.post('/api/v1/users/current/following.json', 
+        axios.post('/api/v1/users/current/following', 
         {user_id: user_id}
         ).then(this.componentWillMount())
     }
     
 
     click2 = (user_id) => {
-      axios.post('/api/v1/users/current/unfollow.json',
+      axios.post('/api/v1/users/current/unfollow',
         {user_id: user_id}
       ).then(this.componentWillMount())
     }
