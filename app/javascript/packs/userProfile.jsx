@@ -52,7 +52,7 @@ class UserProfile extends Component {
                   }
                 />
                 <button
-                  className="card-button btn-hover color-3"
+                  className="card-button btn-hover btn-color"
                   onClick={this.handleClick}
                 >
                   Flip Card
@@ -112,7 +112,7 @@ class UserProfile extends Component {
                     ))}
               </div>
               <button
-                className="card-button btn-hover color-3"
+                className="card-button btn-hover btn-color"
                 onClick={this.handleClick}
               >
                 Back

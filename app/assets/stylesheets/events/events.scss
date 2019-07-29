@@ -90,142 +90,6 @@
   text-shadow: 0 3px #04e6ff;
 }
 
-#col_en {
-  width: 50%;
-  margin-left: -11%;
-}
-#col_event_title {
-  width: 50%;
-  margin-left: 10px;
-}
-#event_title label {
-  color: #3a3e47;
-  width: 119%;
-  margin-top: 1.1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_title input[type="text"] {
-  padding: 2%;
-  width: 146%;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-}
-#col_ed {
-  width: 50%;
-  margin-left: -11%;
-}
-#col_event_desc {
-  width: 50%;
-  margin-left: 2%;
-}
-#event_desc label {
-  color: #3a3e47;
-  width: 119%;
-  margin-top: 1.1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_desc textarea {
-  padding: 2%;
-  font-size: 50%;
-  font-family: "Press Start 2P", cursive;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  height: 220%;
-  width: 146%;
-  scroll-behavior: smooth;
-}
-#col_et {
-  color: #3a3e47;
-  width: 50%;
-  margin-left: -5%;
-  margin-top: 13%;
-}
-
-#col_event_t {
-  margin-left: -3%;
-  margin-top: 13%;
-}
-#col_event_t input[type="time"] {
-  width: 142%;
-  text-align: center;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-}
-
-#col_dd {
-  width: 50%;
-  margin-left: -12%;
-}
-#col_event_d {
-  margin-left: 4%;
-}
-#event_d label {
-  width: 119%;
-  margin-top: 1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_d input[type="date"] {
-  padding: 2%;
-  width: 142%;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-}
-
-#col_eg {
-  width: 50%;
-  margin-left: -11%;
-}
-#col_event_game {
-  margin-left: 3%;
-}
-#event_game label {
-  width: 119%;
-  margin-top: 1.1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_game select {
-  padding: 2%;
-  width: 142%;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-}
-#col_pp {
-  text-shadow: 0 1px #4b5fcf;
-  padding-top: 8px;
-}
 .add-user-form {
   width: 400px;
 }
@@ -235,8 +99,8 @@
   margin-top: 55px;
 }
 .add_event {
-  width: 80%;
-  margin-left: -24%;
+  width: 100%;
+  margin-right: 15px;
 }
 .add_event input[type="submit"] {
   width: 100%;
@@ -269,6 +133,77 @@
   min-width: 800px;
   height: 50px;
   font-size: 17px;
+}
+// add event form
+
+.col_en,
+.col_ed,
+.col_et,
+.col_dd,
+.col_eg,
+.col_pp,
+.users-label {
+  text-shadow: 0 3px rgb(4, 230, 255);
+}
+
+.event_title input[type="text"] {
+  padding-left: 10px;
+  width: 130%;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.event_desc textarea {
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  height: 100%;
+  width: 130%;
+  scroll-behavior: smooth;
+}
+
+.col_event_t input[type="time"] {
+  width: 130%;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.event_d input[type="date"] {
+  width: 130%;
+  font-size: 70%;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.event_game select {
+  width: 130%;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+.add-event-button-submit {
+  width: 135%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 // display added event (event/events/id)
 .show-event-page {
@@ -331,7 +266,8 @@
   justify-content: space-evenly;
 }
 .users-select {
-  width: 33%;
+  border-color: #4b5fcf;
+  width: 41%;
   font-size: 15px;
   font-family: "Press Start 2P", cursive;
   text-align: center;
@@ -339,7 +275,9 @@
   box-sizing: border-box;
 }
 .users-label {
-  width: 27%;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  padding-left: 15px;
+  margin-right: auto;
   box-sizing: border-box;
 }
 
@@ -356,11 +294,15 @@
 
 .users-label,
 .users-select-option,
-.event_private {
-  text-shadow: 0 1px #4b5fcf;
+.col_private {
   text-align: center;
 }
-
+.col_pp {
+  padding-top: 8px;
+}
+.colprivate {
+  padding-bottom: 15px;
+}
 .users-select-list {
   list-style-type: none;
 }

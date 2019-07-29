@@ -179,7 +179,7 @@
 .btn-hover:focus {
   outline: none;
 }
-.btn-hover.color-3 {
+.btn-hover.btn-color {
   background-image: linear-gradient(
     to right,
     #ffffffbf,
@@ -260,7 +260,6 @@
   max-width: 500px;
   height: 220px;
   background-color: #ffffffbf;
-
   margin-top: 15px;
   -webkit-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
   -moz-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
