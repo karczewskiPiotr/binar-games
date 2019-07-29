@@ -39,7 +39,7 @@ class UsersTable extends React.Component {
     }
    
     render() {
-        let users = this.state.users
+       
         let following = this.state.following
         
         return (
