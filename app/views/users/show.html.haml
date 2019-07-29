@@ -1,3 +1,4 @@
 %h1= @user.nick
 %p= @user.email
 %div= image_tag(@user.avatar, :size => '260x180')
+= render 'shared/stats'
