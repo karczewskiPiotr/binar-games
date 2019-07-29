@@ -23,15 +23,17 @@ RSpec.describe User, type: :model do
         end
       end
 
-    
+    describe 'utility' do
+          let(:user1) { create(:user) }
+          let(:user2) { create(:user) }
+        
         it("should follow and unfollow a user") do
-          mike = users(:mike)
-          mike2 = users(:mike2)
-          expect(mike.following?(mike2)).to eq(false)
-          mike.follow(mike2)
-          expect(mike.following?(mike2)).to eq(true)
-          expect(mike2.followers.include?(mike)).to eq(true)
-          mike.unfollow(mike2)
-          expect(mike.following?(mike2)).to eq(false)
+          expect(user1.following?(user2)).to eq(false)
+          user1.follow(user2)
+          expect(user1.following?(user2)).to eq(true)
+          expect(user2.followers.include?(user1)).to eq(true)
+          user1.unfollow(user2)
+          expect(user1.following?(user2)).to eq(false)
         end
+      end
 end

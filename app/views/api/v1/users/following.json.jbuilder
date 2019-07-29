@@ -1,3 +1,3 @@
 json.data do
-    json.array! @followers, :id
+  json.array! @followers, :id
 end
