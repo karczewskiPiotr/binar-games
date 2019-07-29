@@ -2,13 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .events-list-wrapper {
   text-align: center;
   margin-top: 50px;
 }
 .events-list {
-  
   display: inline-block;
   font-size: 17px;
   max-width: 1500px;
@@ -29,23 +27,23 @@
   margin: 10px 40px 0px;
   padding: 15px;
   font-size: 70%;
-  color:black;
+  color: black;
   background-color: hsla(0, 0%, 100%, 0.75);
   border-radius: 18px;
   text-align: center;
 }
 
-.event:hover{
-  color:#5c20e9b9;
+.event:hover {
+  color: #5c20e9b9;
 }
-.event-rows{
+.event-rows {
   margin: 0% 2%;
 }
 
-.owned{
+.owned {
   margin: 10px 251px 0px;
   padding: 15px;
-  width:50%;
+  width: 50%;
   background-color: hsla(0, 0%, 100%, 0.75);
   border-radius: 18px 18px 0 0;
   text-align: center;
@@ -53,10 +51,10 @@
   color: #5c20e9b9;
   text-transform: uppercase;
 }
-.others{
+.others {
   margin: 50px 251px 0px;
   padding: 15px;
-  width:50%;
+  width: 50%;
   background-color: hsla(0, 0%, 100%, 0.75);
   border-radius: 18px 18px 0 0;
   text-align: center;
@@ -64,186 +62,45 @@
   color: #5c20e9b9;
   text-transform: uppercase;
 }
-.sort-event-btn{
-    padding: 0px;
-    border: none;
-    background-color: transparent;
-    margin-left: 10px;
+.sort-event-btn {
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  margin-left: 10px;
 }
 .sort-event-btn:focus {
   outline: none;
 }
-.fas{
+.fas {
   width: 80%;
   color: red;
 }
 .add-event-form {
-  display: flex;
-  justify-content: center;
   border-radius: 18px;
-  margin: 0;
-  width: 56.99%;
-  padding: 0;
-  position: absolute;
-  top: 35%;
-  left: 21.5%;
+  margin: 50px auto 0 auto;
+  max-width: 800px;
+  min-width: 500px;
   background-color: rgba(255, 255, 255, 0.75);
 }
+
 .events-header {
-  width: 60%;
-  margin: 15px;
-  width: 100%;
+  padding: 15px 0 15px 0;
   text-align: center;
-  color: #510280;
-}
-#col_en {
-  width: 50%;
-  margin-left: -11%;
-}
-#col_event_name {
-  width: 50%;
-  margin-left: 0%;
-}
-#event_name label {
-  width: 119%;
-  margin-top: 1.1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  color: rgb(81, 2, 128);
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_name input[type="text"] {
-  padding: 2%;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-}
-#col_ed {
-  width: 50%;
-  margin-left: -11%;
-}
-#col_event_desc {
-  width: 50%;
-  margin-left: 2%;
-}
-#event_desc label {
-  width: 119%;
-  margin-top: 1.1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  color: rgb(81, 2, 128);
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_desc textarea {
-  padding: 2%;
-  font-size: 50%;
-  font-family: "Press Start 2P", cursive;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  height: 220%;
-  width: 146%;
-  scroll-behavior: smooth;
-}
-#col_et {
-  width: 50%;
-  margin-left: -12%;
-  margin-top: 13%;
-}
-#col_event_t {
-  margin-left: 4%;
-  margin-top: 13%;
-}
-#event_t label {
-  width: 119%;
-  margin-top: 1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  color: rgb(81, 2, 128);
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_t input[type="time"] {
-  padding: 2%;
-  width: 142%;
-  text-align: center;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
+  color: #5c20e9b9;
+  text-shadow: 0 3px #04e6ff;
 }
 
-#col_dd {
-  width: 50%;
-  margin-left: -12%;
-}
-#col_event_d {
-  margin-left: 4%;
-}
-#event_d label {
-  width: 119%;
-  margin-top: 1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  color: rgb(81, 2, 128);
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_d input[type="date"] {
-  padding: 2%;
-  width: 142%;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
+.add-user-form {
+  width: 400px;
 }
 
-#col_eg {
-  width: 50%;
-  margin-left: -11%;
-}
-#col_event_game {
-  margin-left: 3%;
-}
-#event_game label {
-  width: 119%;
-  margin-top: 1.1%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  color: rgb(81, 2, 128);
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-}
-#event_game select {
-  padding: 2%;
-  width: 142%;
-  font-size: 70%;
-  font-family: "Press Start 2P", cursive;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-}
-
+//
 .add-event-form {
   margin-top: 55px;
 }
 .add_event {
-  width: 80%;
-  margin-left: -24%;
+  width: 100%;
+  margin-right: 15px;
 }
 .add_event input[type="submit"] {
   width: 100%;
@@ -252,7 +109,6 @@
   font-size: 80%;
   font-family: "Press Start 2P", cursive;
   font-weight: bold;
-  color: rgb(81, 2, 128);
   text-shadow: 0 1px #e3f1f1;
   background: #a9def5;
   border: 1px solid;
@@ -265,7 +121,7 @@
   text-align: center;
 }
 .add-event-button {
-  margin-top: 50px;
+  margin-top: 40px;
   width: 100%;
   text-align: center;
   background-color: hsla(0, 0%, 100%, 0.75);
@@ -278,10 +134,81 @@
   height: 50px;
   font-size: 17px;
 }
+// add event form
+
+.col_en,
+.col_ed,
+.col_et,
+.col_dd,
+.col_eg,
+.col_pp,
+.users-label {
+  text-shadow: 0 3px rgb(4, 230, 255);
+}
+
+.event_title input[type="text"] {
+  padding-left: 10px;
+  width: 130%;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.event_desc textarea {
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  height: 100%;
+  width: 130%;
+  scroll-behavior: smooth;
+}
+
+.col_event_t input[type="time"] {
+  width: 130%;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.event_d input[type="date"] {
+  width: 130%;
+  font-size: 70%;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.event_game select {
+  width: 130%;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+.add-event-button-submit {
+  width: 135%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
 // display added event (event/events/id)
 .show-event-page {
   text-shadow: 0 3px rgb(4, 230, 255);
-  color: #5c20e9b9;
+  color: rgb(46, 44, 44);
   max-width: 800px;
   min-width: 500px;
   margin-left: auto;
@@ -312,14 +239,14 @@
 .event-title,
 .event-date,
 .event-game,
-.event-players{
+.event-players {
   color: #3a3e47;
   text-align: center;
   text-shadow: 0 1px #e3f1f1;
   margin-top: 3%;
   margin-bottom: 0;
 }
-.event-desc{
+.event-desc {
   color: #3a3e47;
   text-shadow: 0 1px #e3f1f1;
   margin-top: 3%;
@@ -329,21 +256,33 @@
 .show-labeld,
 .show-labeldt,
 .show-labelg,
-.show-labelp{
+.show-labelp {
   line-height: 3%;
   margin-bottom: 0;
 }
+.users {
+  width: 155%;
+  display: flex;
+  justify-content: space-evenly;
+}
 .users-select {
+  border-color: #4b5fcf;
+  width: 41%;
   font-size: 15px;
   font-family: "Press Start 2P", cursive;
   text-align: center;
-  border: 1px solid blue;
   border-radius: 14px;
+  box-sizing: border-box;
+}
+.users-label {
+  text-shadow: 0 3px rgb(4, 230, 255);
+  padding-left: 15px;
+  margin-right: auto;
   box-sizing: border-box;
 }
 
 .users-select-button {
-  color: rgb(81, 2, 128);
+  width: 12%;
   text-shadow: 0 1px #e3f1f1;
   background: #a9def5;
   border: 1px solid;
@@ -355,15 +294,17 @@
 
 .users-label,
 .users-select-option,
-.event_private {
-  color: rgb(81, 2, 128);
-  text-shadow: 0 1px #4b5fcf;
+.col_private {
   text-align: center;
 }
-
+.col_pp {
+  padding-top: 8px;
+}
+.colprivate {
+  padding-bottom: 15px;
+}
 .users-select-list {
   list-style-type: none;
-  color: rgb(81, 2, 128);
 }
 
 #table {

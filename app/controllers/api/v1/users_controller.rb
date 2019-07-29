@@ -3,6 +3,7 @@ class Api::V1::UsersController < ApiController
     @users = User.all
   end
 
+
   def following
     @followers = current_user.following
   end

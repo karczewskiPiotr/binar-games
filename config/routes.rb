@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :games
   resources :events , only: [:index, :create, :show, :new]
+  get "user_profile", to: 'users#user_profile'
 
   devise_scope :user do
     root to: "devise/sessions#new"
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
       post 'users/current/following', to: 'users#follow'
       post 'users/current/unfollow', to: 'users#unfollow'
       resources :events, only: [:index]
+      get '/users/current', to: 'users#current'
     end
   end
 
