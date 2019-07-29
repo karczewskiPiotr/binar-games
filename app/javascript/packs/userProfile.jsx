@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import ReactTooltip from "react-tooltip";
 import ReactCardFlip from "react-card-flip";
-import logo from "../../../bin.png";
-import cup from "../../../cup.png";
 
 class UserProfile extends Component {
   constructor(props) {
@@ -58,7 +56,7 @@ class UserProfile extends Component {
                   Flip Card
                 </button>
                 <div className="logo-card">
-                  <img className="logo-card-img" src={logo} />
+                  <img className="logo-card-img" src="./profile/bin.png" />
                   <div className="logo-card-text">
                     <div className="binar">inar</div>
                     <div className="games">Games</div>
@@ -75,7 +73,11 @@ class UserProfile extends Component {
                   >
                     RANKING
                   </div>
-                  <img className="back-card-stats-ranking-img" src={cup} /> : 1
+                  <img
+                    className="back-card-stats-ranking-img"
+                    src="./profile/cup.png"
+                  />{" "}
+                  : 1
                 </div>
                 <div className="back-card-stats-row">
                   <div className="back-card-stats-points">
