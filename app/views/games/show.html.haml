@@ -3,24 +3,32 @@
         
         .row.justify-content-center
             .col-md-8
-                .form-group.row#game_name
-                    .col-md-6#col_gn
-                        = form.label :title
-                    .col-md-6#col_game_name
-                        = form.text_field :title
-                .form-group.row#game_desc
-                    .col-md-6#col_gd
-                        = form.label :description
-                    .col-md-6#col_game_desc
-                        = form.text_area :description
-                .form-group.row#game_cat
-                    .col-md-6#col_gc
-                        = form.label :category
-                    .col-md-6#col_game_cat
-                        = form.text_field :category
-                .form-group.row#game_pic
-                    
-                    Amount of pictures: #{@game.pictures.count}
+                .form-group.row.game_name
+                    .col-md-6.col_gn
+                        Title: 
+                    .col-md-6.col_game_name
+                        #{@game.title}
+                .form-group.row.game_desc
+                    .col-md-6.col_gd
+                        Description: 
+                    .col-md-6.col_game_desc
+                        #{@game.description}
+                .form-group.row.game_cat
+                    .col-md-6.col_gc
+                        Category: 
+                    .col-md-6.col_game_cat
+                        #{@game.category.name}
+                .form-group.row.game_guide
+                    .col-md-6.col_gg
+                        Guide:
+                    .col-md-6.col_game_guide
+                        - if @game.game_guide.attached?
+                            = link_to @game.game_guide.filename, url_for(@game.game_guide), target: '_blank' 
+                .form-group.row.game_pic
+                    .col-md-6.col_num    
+                        Owned pictures: 
+                    .col-md-6.col_game_num
+                        #{@game.pictures.count}
                 .form-group.row.img_show        
                     .pic_display                
                         - @game.pictures.each do |picture|

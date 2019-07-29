@@ -4,8 +4,9 @@ import axios from 'axios';
 
 
 class UsersTable extends React.Component {
+  compare = (a, b) => (b > a) - (b < a);
 
-    compare = (a,b) => (b>a) - (b<a);
+    
     
     state = {
         users: [],

@@ -25,7 +25,14 @@ export default class Profile extends React.Component {
               <a className="dropdown-font" href="#">
                 Settings
               </a>
-              <a rel="nofollow" data-method="delete" className="dropdown-font" href="/users/sign_out">Sign out</a>
+              <a
+                rel="nofollow"
+                data-method="delete"
+                className="dropdown-font"
+                href="/users/sign_out"
+              >
+                Sign out
+              </a>
             </div>
           </div>
         </div>

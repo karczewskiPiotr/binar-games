@@ -4,6 +4,8 @@ class Game < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_many :events
+  has_many :ratings, foreign_key: 'rated_game_id'
+  has_many :rating_users, through: :ratings, class_name: 'User', foreign_key: 'rating_user_id'
 
   validates :title, presence: true, length: { maximum: 35 }
   validates :description, presence: true, length: { maximum: 255 }

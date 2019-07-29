@@ -1,13 +1,33 @@
 .games-list-wrapper {
   text-align: center;
+  margin-top: 50px;
   .games-list {
     text-align: left;
     display: inline-block;
     font-size: 17px;
     max-width: 1500px;
     min-width: 1000px;
+    .search-filter {
+      margin: 0px 30px;
+      margin-bottom: 20px;
+      .search {
+        background-color: hsla(0, 0%, 100%, 0.75);
+        border-radius: 18px;
+        height: 50px;
+        border: none;
+        margin-right: 5px;
+      }
+      .search:focus {
+        outline: none;
+        box-shadow: 0 3px rgb(4, 230, 255);
+      }
+      .filter {
+        margin-left: 5px;
+        padding: 0px;
+      }
+    }
     .header {
-      margin: 50px 30px 0px;
+      margin: 0px 30px;
       padding: 20px;
       background-color: hsla(0, 0%, 100%, 0.75);
       margin-bottom: 10px;
@@ -29,6 +49,75 @@
       margin: 0px 3px;
     }
   }
+  .sort-button {
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    margin-left: 10px;
+  }
+  .sort-button:focus {
+    outline: none;
+  }
+  .game-details-button-wrapper {
+    padding: 0px;
+    .details-button {
+      padding: 0px;
+      border: none;
+      background-color: transparent;
+      padding: 0px !important;
+    }
+    .details-button:focus {
+      outline: none;
+    }
+  }
+  .game-details-wrapper {
+    max-width: 860px;
+    background-color: hsla(0, 0%, 100%, 0.75);
+    margin: 10px 80px 0px 80px;
+    padding: 20px 20px;
+    border-radius: 18px;
+    .game-cover {
+      border-radius: 50%;
+    }
+    .description-wrapper {
+      .description-content {
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+    .user-rating-wrapper {
+      .user-rating {
+        margin-right: 50px;
+      }
+    }
+    .divider {
+      margin: 15px 0px;
+      height: 2px;
+      background-color: #5c20e9b9;
+    }
+    .pictures-header {
+      margin-bottom: 20px;
+    }
+    .pictures {
+      .picture-miniature {
+        box-shadow: 3px 3px #5c20e9b9;
+      }
+    }
+    .guide {
+      font-size: 15px;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color: #5c20e9b9;
+        text-shadow: 0 3px rgb(4, 230, 255);
+      }
+    }
+  }
+}
+.loading-games{
+  margin-left: 48%;
 }
 .new-game-button-wrapper {
   margin-top: 50px;

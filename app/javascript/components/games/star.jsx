@@ -1,6 +1,10 @@
 import React from "react";
 
-const Star = ({ full }) => {
+const Star = ({ full, handleHover, handleClick, handleLeave, index }) => {
+  const handleMouseOver = () => {
+    handleHover(index);
+  };
+
   return (
     <svg
       version="1.1"
@@ -9,6 +13,9 @@ const Star = ({ full }) => {
       viewBox="0 0 512 512"
       height="1.5em"
       className="star"
+      onMouseOver={handleMouseOver}
+      onMouseLeave={handleLeave}
+      onClick={handleClick}
     >
       <g transform="scale(.95) translate(15,15)">
         <path

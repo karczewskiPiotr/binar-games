@@ -2,6 +2,81 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.events-list-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+.events-list {
+  
+  display: inline-block;
+  font-size: 17px;
+  max-width: 1500px;
+  min-width: 1000px;
+}
+.header {
+  margin: 0px 30px;
+  padding: 20px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  margin-bottom: 10px;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  border-radius: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.event {
+  margin: 10px 40px 0px;
+  padding: 15px;
+  font-size: 70%;
+  color:black;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.event:hover{
+  color:#5c20e9b9;
+}
+.event-rows{
+  margin: 0% 2%;
+}
+
+.owned{
+  margin: 10px 251px 0px;
+  padding: 15px;
+  width:50%;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  text-transform: uppercase;
+}
+.others{
+  margin: 50px 251px 0px;
+  padding: 15px;
+  width:50%;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  text-transform: uppercase;
+}
+.sort-event-btn{
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    margin-left: 10px;
+}
+.sort-event-btn:focus {
+  outline: none;
+}
+.fas{
+  width: 80%;
+  color: red;
+}
 .add-event-form {
   display: flex;
   justify-content: center;
@@ -21,15 +96,15 @@
   text-align: center;
   color: #510280;
 }
-#col_en{
+#col_en {
   width: 50%;
   margin-left: -11%;
 }
-#col_event_name{
+#col_event_name {
   width: 50%;
   margin-left: 0%;
 }
-#event_name label{
+#event_name label {
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -38,24 +113,24 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_name input[type=text]{
+#event_name input[type="text"] {
   padding: 2%;
   font-size: 70%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
 }
-#col_ed{
+#col_ed {
   width: 50%;
   margin-left: -11%;
 }
-#col_event_desc{
+#col_event_desc {
   width: 50%;
   margin-left: 2%;
 }
-#event_desc label{
+#event_desc label {
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -64,10 +139,10 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_desc textarea{
+#event_desc textarea {
   padding: 2%;
   font-size: 50%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
@@ -77,16 +152,16 @@
   width: 146%;
   scroll-behavior: smooth;
 }
-#col_et{
+#col_et {
   width: 50%;
   margin-left: -12%;
   margin-top: 13%;
 }
-#col_event_t{
+#col_event_t {
   margin-left: 4%;
   margin-top: 13%;
 }
-#event_t label{
+#event_t label {
   width: 119%;
   margin-top: 1%;
   font-size: 90%;
@@ -95,26 +170,26 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_t input[type=time]{
+#event_t input[type="time"] {
   padding: 2%;
-    width: 142%;
-    text-align: center;
-    font-size: 70%;
-    font-family: 'Press Start 2P', cursive;
-    display: inline-block;
-    border: 1px solid blue;
-    border-radius: 14px;
-    box-sizing: border-box;
+  width: 142%;
+  text-align: center;
+  font-size: 70%;
+  font-family: "Press Start 2P", cursive;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
 }
 
-#col_dd{
+#col_dd {
   width: 50%;
   margin-left: -12%;
 }
-#col_event_d{
+#col_event_d {
   margin-left: 4%;
 }
-#event_d label{
+#event_d label {
   width: 119%;
   margin-top: 1%;
   font-size: 90%;
@@ -123,26 +198,26 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_d input[type=date]{
+#event_d input[type="date"] {
   padding: 2%;
   width: 142%;
   font-size: 70%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   text-align: center;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
-#col_eg{
+#col_eg {
   width: 50%;
   margin-left: -11%;
 }
-#col_event_game{
+#col_event_game {
   margin-left: 3%;
 }
-#event_game label{
+#event_game label {
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -151,23 +226,27 @@
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-#event_game select{
+#event_game select {
   padding: 2%;
   width: 142%;
   font-size: 70%;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   text-align: center;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
 }
-.add_event{
-  width:80%;
+
+.add-event-form {
+  margin-top: 55px;
+}
+.add_event {
+  width: 80%;
   margin-left: -24%;
 }
-.add_event input[type=submit]{
-  width:100%;
+.add_event input[type="submit"] {
+  width: 100%;
   padding: 4%;
   margin: 0;
   font-size: 80%;
@@ -182,42 +261,40 @@
   outline: 0;
 }
 
-.events-wrapper {
-  margin: 0;
-  width: 56.99%;
-  padding: 0;
-  position: absolute;
-  top: 35%;
-  left: 21.5%;
-  background-color: antiquewhite;
-  height: 200px;
-  border-radius: 18px;
-  background-color: rgba(255, 255, 255, 0.75);
-  box-sizing: border-box;
-}
-.events-wrapper-header {
-  padding-top: 45px;
+.add-event-button-wrapper {
   text-align: center;
-  padding: 0;
-  margin-top: 2%;
-  color: #510280;
 }
-.add_event_link{
-  font-size: 82%;
-  color: #510280;
+.add-event-button {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  border-radius: 18px;
+  text-transform: uppercase;
+  max-width: 800px;
+  min-width: 800px;
+  height: 50px;
+  font-size: 17px;
 }
 // display added event (event/events/id)
 .show-event-page {
-  width: 800px;
-  margin: 55px 0 0 280px;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+  max-width: 800px;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 18px;
 }
 
 .show-event-page-title,
 .show-event-page-description,
 .show-event-page-time,
-.show-event-page-users {
-  width: 100%;
+.show-event-page-users,
+.show-event-page-game {
+  width: 90%;
   margin: 25px 0 0 0;
   border-radius: 18px;
   background-color: hsla(0, 0%, 100%, 0.75);
@@ -225,17 +302,70 @@
 .show-event-page-title {
   margin: 25px 0 0 0;
 }
-
+.show-event-page-game,
 .show-event-page-title,
 .show-event-page-description,
 .show-event-page-time,
-.show-event-page-users > h3 {
-  padding: 25px;
+.show-event-page-users {
+  padding: 4%;
+}
+.event-title,
+.event-date,
+.event-game,
+.event-players{
+  color: #3a3e47;
+  text-align: center;
+  text-shadow: 0 1px #e3f1f1;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+.event-desc{
+  color: #3a3e47;
+  text-shadow: 0 1px #e3f1f1;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+.show-labelt,
+.show-labeld,
+.show-labeldt,
+.show-labelg,
+.show-labelp{
+  line-height: 3%;
+  margin-bottom: 0;
+}
+.users-select {
+  font-size: 15px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
 }
 
-.show-event-page-users-list {
-  padding-left: 25px;
+.users-select-button {
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+  outline: 0;
+  font-size: 10px;
 }
+
+.users-label,
+.users-select-option,
+.event_private {
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+
+.users-select-list {
+  list-style-type: none;
+  color: rgb(81, 2, 128);
+}
+
 #table {
   margin-top: 100px;
 }

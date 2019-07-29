@@ -1,7 +1,7 @@
 
 .add-event-form
     = form_for @event do |form|
-        %h1.events-header= "Dodaj event:"
+        %h1.events-header= "Add event:"
         .row.justify-content-center
             .col-md-8
                 .form-group.row#event_name
@@ -28,13 +28,11 @@
                     .col-md-6#col_eg
                         = form.label :game
                     .col-md-6#col_event_game
-                        = form.select(:game, options_for_select(@game))
+                        = form.select(:game, options_for_select(@game)) 
                 .form-group.row#event_players
-                    .col-md-6#col_ep
-                        = form.label :users
-                    .col-md-6#col_players
-                        = form.select(:users, options_for_select(@users))
-                .form-group.row#event_private
+                    .users-list
+                        = javascript_pack_tag 'usersEventList'
+                .form-group.row.event_private
                     .col-md-6#col_pp
                         = form.label :private
                     .col-md-6#colprivate

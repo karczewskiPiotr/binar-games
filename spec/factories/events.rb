@@ -1,8 +1,9 @@
 FactoryBot.define do
-  factory :event do
-    title { "MyString" }
-    description { "MyText" }
-    event_time { "2019-07-16 09:16:15" }
-    event_date { "2019-07-16" }
+    factory :event do
+      user
+      title { Faker::Lorem.characters(10) }
+      description { Faker::Lorem.characters(23) }
+      event_time { Faker::Time.between(DateTime.now - 1, DateTime.now) }
+      event_date { Faker::Date.forward(23) } 
   end
 end

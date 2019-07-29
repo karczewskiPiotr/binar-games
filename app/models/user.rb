@@ -25,6 +25,8 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
+  has_many :ratings, foreign_key: 'rating_user_id'
+  has_many :rated_games, through: :ratings, class_name: 'Game', foreign_key: 'rated_game_id'
 
   private
 
