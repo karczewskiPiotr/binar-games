@@ -99,6 +99,7 @@
   margin-left: 10px;
 }
 #event_title label {
+  color: #3a3e47;
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -125,6 +126,7 @@
   margin-left: 2%;
 }
 #event_desc label {
+  color: #3a3e47;
   width: 119%;
   margin-top: 1.1%;
   font-size: 90%;
@@ -146,13 +148,17 @@
   scroll-behavior: smooth;
 }
 #col_et {
+  color: #3a3e47;
   width: 50%;
-  margin-left: -12%;
+  margin-left: -5%;
   margin-top: 13%;
 }
+
 #col_event_t {
-  margin-left: 4%;
+  margin-left: -3%;
   margin-top: 13%;
+}
+#col_event_t input[type="time"] {
   width: 142%;
   text-align: center;
   font-size: 70%;
