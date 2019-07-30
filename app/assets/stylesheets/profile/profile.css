@@ -273,3 +273,22 @@
   font-size: 12px;
   text-decoration: none;
 }
+
+.toggle-list {
+  margin: 0 auto;
+  max-width: 800px;
+  height: 100%;
+  min-height: 200px;
+  background-color: #ffffffbf;
+  border-radius: 15px;
+  -webkit-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
+  box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.toggle-list-h2 {
+  text-shadow: 0 2px rgb(4, 230, 255);
+}

@@ -10,7 +10,9 @@ class UserProfile extends Component {
     this.state = {
       users: [],
       isLoading: false,
-      isFlipped: false
+      isFlipped: false,
+      buttonPressed: false,
+      buttonPressed1: false
     };
   }
 
@@ -25,9 +27,49 @@ class UserProfile extends Component {
       });
   }
 
-  handleClick = e => {
+  renderComponent = (compName, e) => {
+    this.setState({
+      render: compName
+    });
+  };
+
+  _renderSubComp() {
+    switch (this.state.render) {
+      case "Events":
+        return <Events />;
+      case "Achievement":
+        return <Achievement />;
+    }
+  }
+
+  handleClickFlip = e => {
     e.preventDefault();
     this.setState({ isFlipped: !this.state.isFlipped });
+  };
+
+  handleClick = (compName, e) => {
+    this.setState({
+      render: compName
+    });
+  };
+
+  onClick = event => {
+    this.handleClick("Events");
+    (this.buttonPress = () => {
+      this.setState({
+        buttonPressed: !this.state.buttonPressed,
+        buttonPressed1: false
+      });
+    })();
+  };
+  onClick1 = event => {
+    this.handleClick("Achievement");
+    (this.buttonPress1 = () => {
+      this.setState({
+        buttonPressed: false,
+        buttonPressed1: !this.state.buttonPressed1
+      });
+    })();
   };
 
   render() {
@@ -51,7 +93,7 @@ class UserProfile extends Component {
                 />
                 <button
                   className="card-button btn-hover btn-color"
-                  onClick={this.handleClick}
+                  onClick={this.handleClickFlip}
                 >
                   Flip Card
                 </button>
@@ -99,6 +141,22 @@ class UserProfile extends Component {
                 </div>
               </div>
               <div className="back-card-events">
+                <button
+                  onClick={this.onClick}
+                  className={
+                    this.state.buttonPressed ? "buttonWhite" : "button"
+                  }
+                >
+                  Events
+                </button>
+                <button
+                  onClick={this.onClick1}
+                  className={
+                    this.state.buttonPressed1 ? "buttonWhite" : "button"
+                  }
+                >
+                  Achievement
+                </button>
                 <div className="back-card-events-text" data-tip="your events">
                   EVENTS
                 </div>
@@ -122,12 +180,43 @@ class UserProfile extends Component {
             </div>
           </ReactCardFlip>
         </div>
+        {this.state.buttonPressed === false ? <div /> : this._renderSubComp()}
+        {this.state.buttonPressed1 === false ? <div /> : this._renderSubComp()}
       </>
     );
   }
 }
 
+class Events extends React.Component {
+  render() {
+    return (
+      <div className="toggle-list">
+        <h2 className="-toggle-list-h2">Your Events</h2>
+        <div className="">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia
+          hendrerit massa lobortis imperdiet. asdfasdfasdfas
+        </div>
+      </div>
+    );
+  }
+}
+
+class Achievement extends React.Component {
+  render() {
+    return (
+      <div className="toggle-list">
+        <h2 className="toggle-list-h2">Your Achievements</h2>
+        <div className="">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia
+          hendrerit massa lobortis imperdiet.
+        </div>
+      </div>
+    );
+  }
+}
+
 export default UserProfile;
+
 ReactDOM.render(
   <UserProfile />,
   document.getElementsByClassName("userProfile")[0]
