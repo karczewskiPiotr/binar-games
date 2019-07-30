@@ -156,11 +156,13 @@ const GamesList = () => {
           />
         </div>
       </div>
-      {state.loading
-        ? <div className="loading-games"><LoadingIcon/></div>
-        : getGames().map(game => (
-            <Game key={game.id} game={game} />
-          ))}
+      {state.loading ? (
+        <div className="loading-games">
+          <LoadingIcon />
+        </div>
+      ) : (
+        getGames().map(game => <Game key={game.id} game={game} />)
+      )}
     </>
   );
 };

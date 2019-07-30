@@ -37,31 +37,33 @@ class UsersTable extends React.Component {
   click = user_id => {
     axios
       .post("/api/v1/users/current/following", { user_id: user_id })
-      .then( axios
-        .get(
+      .then(() => {
+        return axios.get(
           "/api/v1/users/current/following",
           {},
           { "Content-Type": "application/json" }
-        )
-        .then(resp => {
-          this.setState({ following: resp.data.data });
-          console.log(this.state.following);
-        }))
+        );
+      })
+      .then(resp => {
+        this.setState({ following: resp.data.data });
+        console.log(this.state.following);
+      });
   };
 
   click2 = user_id => {
     axios
       .post("/api/v1/users/current/unfollow", { user_id: user_id })
-      .then(axios
-        .get(
+      .then(() => {
+        return axios.get(
           "/api/v1/users/current/following",
           {},
           { "Content-Type": "application/json" }
-        )
-        .then(resp => {
-          this.setState({ following: resp.data.data });
-          console.log(this.state.following);
-        }));
+        );
+      })
+      .then(resp => {
+        this.setState({ following: resp.data.data });
+        console.log(this.state.following);
+      });
   };
 
   render() {
