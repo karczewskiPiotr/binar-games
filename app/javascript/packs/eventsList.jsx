@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import Sticky from "react-sticky-el";
 import Event from "../components/events/event";
 import SortEventsBtn from "../components/events/sortEventsBtn";
 import LoadingIcon from "../components/loadingIcon";
@@ -146,7 +147,7 @@ const EventsList = () => {
   return (
     <>
       <div className="owned">My events:</div>
-      <div className="row header">
+      <Sticky className="row header" stickyStyle={styleOnStick}>
         <div className="col-md">
           Title
           <SortEventsBtn
@@ -171,7 +172,7 @@ const EventsList = () => {
             currentCondition={state.sortConditionOwned}
           />
         </div>
-      </div>
+      </Sticky>
       {state.loading ? (
         <LoadingIcon />
       ) : (
@@ -186,7 +187,7 @@ const EventsList = () => {
         </FlipMove>
       )}
       <div className="others"> Other events: </div>
-      <div className="row header">
+      <Sticky className="row header" stickyStyle={styleOnStick}>
         <div className="col-md">
           Title
           <SortEventsBtn
@@ -211,7 +212,7 @@ const EventsList = () => {
             currentCondition={state.sortCondition}
           />
         </div>
-      </div>
+      </Sticky>
       {state.loading ? (
         <LoadingIcon />
       ) : (
@@ -230,3 +231,11 @@ const EventsList = () => {
 };
 
 ReactDOM.render(<EventsList />, document.getElementById("events"));
+
+const styleOnStick = {
+  zIndex: 100,
+  marginTop: "20px",
+  minWidth: "1040px",
+  maxWidth: "1040px",
+  backgroundColor: "#CACBEE"
+};

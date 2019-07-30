@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import Sticky from "react-sticky-el";
 import Game from "../components/games/game";
 import Searchbar from "../components/games/searchbar";
 import FilterDropdwon from "../components/games/filterDropdown";
@@ -131,7 +132,7 @@ const GamesList = () => {
           currentCondition={state.sortCondition}
         />
       </div>
-      <div className="row header">
+      <Sticky className="row header" stickyStyle={styleOnStick}>
         <div className="col-md">
           Title
           <SortButton
@@ -156,7 +157,7 @@ const GamesList = () => {
             currentCondition={state.sortCondition}
           />
         </div>
-      </div>
+      </Sticky>
       {state.loading ? (
         <div className="loading-games">
           <LoadingIcon />
@@ -168,7 +169,7 @@ const GamesList = () => {
               <div key={game.id}>
                 <Game game={game} />
               </div>
-            )
+            );
           })}
         </FlipMove>
       )}
@@ -180,3 +181,10 @@ ReactDOM.render(
   <GamesList />,
   document.getElementsByClassName("games-list")[0]
 );
+
+const styleOnStick = {
+  zIndex: 100,
+  marginTop: "20px",
+  maxWidth: "1000px",
+  backgroundColor: "#CACBEE"
+};

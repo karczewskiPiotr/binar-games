@@ -1,47 +1,47 @@
 .error_messages
-= render "devise/shared/error_messages", resource: resource
-%h2{:id=>"log"}
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: session_path(resource_name), html: { method: :put }) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email_new"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  %div
-    = f.label :nick
-    %br/
-    = f.text_field :nick, autofocus: true
-  %div
-    = f.label "Avatar"
-    %br/
-    = f.file_field :avatar
-  %div
-    = image_tag(@user.avatar, :size => '260x180')
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+  = render "devise/shared/error_messages", resource: resource
+.add-edit-form
+  = form_for(resource, as: resource_name, url: edit_user_registration_path(resource_name), html: { method: :put }) do |f|
+    %h1.edit-header= "Edit Profile:"
+    .row.justify-content-center
+      .col-md-8.info
+        .form-group.row.edit-email
+          .col-md-6
+            = f.label :email
+          .col-md-6
+            = f.email_field :email, autofocus: true, autocomplete: "email_new"
+        .form-group.row
+          .confir
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              Currently waiting confirmation for: #{resource.unconfirmed_email}
+        .form-group.row.edit-pass
+          .col-md-6
+            = f.label :password
+          .col-md-6
+            = f.password_field :password, autocomplete: "new-password"
+        .form-group.row.edit-passconf
+          .col-md-6
+            = f.label :password_confirmation
+          .col-md-6
+            = f.password_field :password_confirmation, autocomplete: "new-password"
+        .form-group.row.edit-passcurrent
+          .col-md-6
+            = f.label :current_password
+          .col-md-6
+            = f.password_field :current_password, autocomplete: "current-password"
+        .form-group.row.edit-nick
+          .col-md-6
+            = f.label :nick
+          .col-md-6
+            = f.text_field :nick, autofocus: true
+        .form-group.row.edit-ava
+          .col-md-6
+            = f.label "Avatar"
+          .col-md-6
+            = f.file_field :avatar
+        .form-group.row.edit-update
+          .col-md-6.offset-md-4
+            .edit-bt  
+              = f.submit "Update"
+                
+         

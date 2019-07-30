@@ -1,6 +1,7 @@
 - if @game.errors.any?
-    .putain
-        %p The form contains #{pluralize(@game.errors.count, "error")}
-        %ul
-            - @game.errors.full_messages.each do |error_message|
-                %li= error_message
+    .notice
+        .putain
+            %p.errtitle The form contains #{pluralize(@game.errors.count, "error")}
+            %ul
+                - @game.errors.full_messages.each do |error_message|
+                    %li= error_message

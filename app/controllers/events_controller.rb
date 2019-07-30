@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    @game = Game.pluck(:title)
     @event = current_user.events.build(event_params)
     if @event.save
       redirect_to @event

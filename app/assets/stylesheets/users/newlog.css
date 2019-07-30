@@ -25,124 +25,131 @@
   margin-top:10%;
   
 }
-.login.form-group.row{
-  width:55%;
-  height:40%;
-}
-#user_email {
-  margin: 1%;
-  padding: 3%;
-}
-.login input[type="email"]{
-  padding:7%;
-}
-.login label{
-  margin-top: 4%;
-  margin-left: 10%;
-  padding: 2%;
-  width: 98%;
-  font-size: 90%;
-  font-family: "Press Start 2P", cursive;
-  color: rgb(81, 2, 128);
-  text-shadow: 0 1px #4b5fcf;
-  text-align: center;
-  
+.login{
+  width: 70%;
 }
 .col_log{
-margin-left:3%;
+  padding-top: 1%;
 }
-.col_login{
-  height: 100%;
-  margin-top: -15%;
-  margin-left: 57%;
-}
-
-.col_login input[type="email"] {
-  
-  font-family: "Press Start 2P", cursive;
-  font-size: 70%;
-  width:216%;
-  border: 1px solid blue;
-  border-radius: 14px;
-  box-sizing: border-box;
-  
-}
-
-.pass label{
-  
-  margin-right: 1%;
-  padding: 2%;
-  width: 57%;
+.login label{
   font-size: 90%;
-  font-family: "Press Start 2P", cursive;
   color: rgb(81, 2, 128);
   text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
-.col_pass{
-  width:30%;
-  height:100%;
-  margin-left: 29%;
-  margin-top: -9%;
-  
-}
-.col_p{
-  margin-left: 0%;
-}
-.col_pass input[type="password"] {
-  height: 15%;
-  font-family: "Press Start 2P", cursive;
+.col_login input[type="email"] {
+  max-width: 170px;
   font-size: 70%;
-  width:100%;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
+  margin-left: 10%;
 }
-#user_password {
-  margin: 1%;
-  padding: 3%;
+.pass{
+  width: 70%;
 }
-
-.rest{
-  width:80%;
-  height:100%;
-  
+.col_p{
+  padding-top: 1%;
+}
+.pass label{
+  font-size: 90%;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+.col_pass input[type="password"] {
+  max-width: 170px;
+  font-size: 70%;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  margin-left: 10%;
 }
 
 .col_rest{
-  width:50%;
-  margin-top:-3%;
-  margin-left: 40%;
+  margin-left: 38% !important;
+  margin-top: -4%;
 }
-.col_button{
-  width:50%;
-  margin-left: 54.5%;
-  margin-top: -10%;
+.checkbox label{
+  font-family: 'Play', sans-serif; 
+  color: #320447;
+  font-size: 90%;
+  margin: 0;
+  vertical-align: text-top;
 }
-.btn{
-  position: relative;
-  left: 1%;
-  width: 142%;
+ input[type="checkbox"] {
+  box-sizing: border-box;
+  cursor:pointer;
 }
+.checkbox{
+  height: 100%;
+  margin-top: -3%;
+  margin-left: 6%;
+}
+
+
+@media screen and (min-width: 1025px){
+  .login label{
+    font-size: 90%;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    margin-left: 54%;
+  }
+  .col_login input[type="email"] {
+    max-width: 180px;
+    font-size: 70%;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+    margin-left: 10%;
+  }
+  .pass label{
+    font-size: 90%;
+    color: rgb(81, 2, 128);
+    text-shadow: 0 1px #4b5fcf;
+    margin-left: 40%;
+  }
+  .col_pass input[type="password"] {
+    max-width: 180px;
+    font-size: 70%;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+    margin-left: 10%;
+  }
+  .log_button {
+    width: 40%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    float: right;
+    position: relative;
+    left: 30%;
+    top: 45%;
+  }
+  .col_rest{
+    margin-left: 34% !important;
+  }
+  .checkbox{
+    height: 100%;
+    margin-left: 13%;
+  }
+}
+
 .log_button {
   width: 40%;
   height: 100%;
   padding: 0;
   margin: 0;
   float: right;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 58%;
-  right: -84%;
+  position: relative;
+  left: 16%;
+  top: 45%;
+  
 }
-
 .log_button input[type="submit"] {
   padding: 7%;
   margin: 0;
-  width: 112%;
-  font-size: 80%;
-  font-family: "Press Start 2P", cursive;
   font-weight: bold;
   color: rgb(81, 2, 128);
   text-shadow: 0 1px #e3f1f1;
@@ -153,38 +160,6 @@ margin-left:3%;
   outline: 0;
 }
 
-.checkbox {
-  width: 100%;
-  color: #320447;
-  float: left;
-  font-size: 60%;
-  line-height: 30px;
-  border: none;
-  margin-left: 17%;
-  margin-top: 0%;
- 
-}
-.checkbox label{
-  position: relative;
-  top: -1%;
-  left: 14%;
-  font-family: 'Play', sans-serif;
-  font-size: 126%;
-}
-
-#user_remember_me input[type="checkbox"]{
-  cursor: pointer;
-  position: relative;
-}
-
-input[type="checkbox"] {
-  box-sizing: border-box;
-  padding: 0;
-  cursor:pointer;
-  position: absolute;;
-  top: 26%;
-  width: 9%;
-}
 .link_box{
   position: relative;
   right:10%;
