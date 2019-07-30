@@ -187,8 +187,11 @@ class UserProfile extends Component {
             </div>
           </ReactCardFlip>
         </div>
-        {this.state.showEvent === false ? <div /> : this._renderSubComp()}
-        {this.state.showAchievement === false ? <div /> : this._renderSubComp()}
+        {(this.state.showEvent || this.state.showAchievement) === false ? (
+          <div />
+        ) : (
+          this._renderSubComp()
+        )}
       </>
     );
   }
@@ -200,14 +203,32 @@ class Events extends React.Component {
       <div className="toggle-list fade-in">
         <h2 className="toggle-list-h2">Your Events</h2>
         <div className="toggle-list-text">
-          {this.props.events.map(event => {
-            return (
-              <div>
-                {event.title} <br /> {event.event_time.slice(11, 16)}
-                <br /> {event.event_date} <hr />
+          <main class="st_viewport">
+            <div class="st_wrap_table" data-table_id="0">
+              <header class="st_table_header">
+                <div class="st_row">
+                  <div class="st_column _title">Title</div>
+                  <div class="st_column _event_time">Time</div>
+                  <div class="st_column _event_date">Date</div>
+                </div>
+              </header>
+              <div class="st_table">
+                {this.props.events.map(event => {
+                  return (
+                    <div class="st_row">
+                      <div class="st_column _title">{event.title}</div>
+                      <div class="st_column _event_time">
+                        {event.event_time.slice(11, 16)}
+                      </div>
+                      <div class="st_column _event_date">
+                        {event.event_date}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            </div>
+          </main>
         </div>
       </div>
     );
