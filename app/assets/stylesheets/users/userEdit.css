@@ -1,0 +1,83 @@
+.info{
+  margin-left: -9%;
+}
+.add-edit-form {
+  display: flex;
+  justify-content: center;
+  border-radius: 18px;
+  margin: 0;
+  width: 56.99%;
+  padding: 0;
+  position: absolute;
+  top: 35%;
+  left: 21.5%;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.edit-header{
+  text-align: center;
+  color: #510280;
+  margin:3% -2% 3% 0;
+}
+.edit-email label,
+.edit-pass label,
+.edit-nick label,
+.edit-ava label{
+  color: #510280;
+  font-size: 90%;
+}
+.edit-passconf label,
+.edit-passcurrent label{
+  color: #510280;
+  font-size: 70%;
+}
+
+.edit-email input[type="email"],
+.edit-pass input[type="password"]{
+  padding: 2%;
+  font-size: 70%;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.edit-passconf input[type="password"],
+.edit-passcurrent input[type="password"],
+.edit-nick input[type="text"]{
+  padding: 3%;
+  font-size: 70%;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.edit-ava input[type="file"]{
+  padding: 2%;
+  font-size: 59%;
+  font-family: 'Play', sans-serif;
+  display: inline-block;
+  
+}
+
+.edit-bt input[type="submit"]{
+  padding: 8%;
+  font-size: 80%;
+  font-weight: bold;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 1024px){
+  .add-edit-form{
+    top: 19%;
+  }
+  .edit-bt{
+    position: relative;
+    left: 6%;
+  }
+}

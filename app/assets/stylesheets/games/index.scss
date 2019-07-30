@@ -61,7 +61,6 @@
   .game-details-button-wrapper {
     padding: 0px;
     .details-button {
-      padding: 0px;
       border: none;
       background-color: transparent;
       padding: 0px !important;
@@ -105,6 +104,9 @@
     }
     .guide {
       font-size: 15px;
+      margin: auto;
+      line-height: 24px;
+      display: inline-block;
       a {
         text-decoration: none;
         color: black;
@@ -116,7 +118,7 @@
     }
   }
 }
-.loading-games{
+.loading-games {
   margin-left: 48%;
 }
 .new-game-button-wrapper {
@@ -134,4 +136,7 @@
     height: 50px;
     font-size: 17px;
   }
+}
+.pdf-icon {
+  margin-right: 10px;
 }

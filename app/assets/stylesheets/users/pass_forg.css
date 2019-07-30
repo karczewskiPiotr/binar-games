@@ -1,35 +1,21 @@
-.give_email{
-    position: relative;
-    top: 60%;
-    left: 0%;
-    margin-top: 1%;
-}
-.col_e{
-    margin-left:9%;
-}
-.col_email{
-    margin-left:5%;
-}
+
 .give_email label{
-   
-    position: absolute;
-    left: 5%;
-    margin-top: 2.5%;
     padding: 2%;
-    width: 40%;
+    margin-left: 30%;
     font-size: 90%;
     font-family: "Press Start 2P", cursive;
     color: rgb(81, 2, 128);
     text-shadow: 0 1px #4b5fcf;
     text-align: center;
 }
+.col_email{
+    margin-left: -10%;
+  }
 .col_email input[type=email]{
-    width: 120%;
-    position: relative;
-    left: 53%;
-    top: 15%;
-    padding: 2% 3%;
     
+    
+    padding: 2% 3%;
+    max-width: 180px;
     font-size: 70%;
     font-family: 'Press Start 2P', cursive;
     display: inline-block;
@@ -39,17 +25,18 @@
 }
 
 .send_button{
-    width: 40%;
+    width: 50%;
     padding: 0;
     align-content: center;
     margin: 0;
     border: none;
     position: relative;
-    right: -7%;
-    top: 68%;
+    top: 58%;
+    left: 6%;
+   
 }
 .send_button input[type=submit]{
-    padding: 10%;
+    padding: 4%;
     width: 107%;
     font-size: 72%;
     font-weight: bold;
@@ -63,12 +50,22 @@
     outline: 0;
 }
 .link_forget{
-    width: 18%;
+    width: 24%;
     position: relative;
-    left: 35.5%;
+    left: 32%;
     margin: 0;
     font-family: 'Press Start 2P', cursive;
     font-size: 90%;
     text-align: left;
     line-height: 160%;
+}
+
+
+@media screen and (min-width: 1025px){
+    .give_email label{
+        margin-left: 50%;
+    }
+    .send_button{
+        left: 6%;
+    }
 }

@@ -1,44 +1,46 @@
 
-.add-event-form
+%main.add-event-form
     = form_for @event do |form|
         %h1.events-header= "Add event:"
         .row.justify-content-center
             .col-md-8
-                .form-group.row#event_name
-                    .col-md-6#col_en
+                .form-group.row.event_title
+                    .col-md-6.col_en
                         = form.label :title 
-                    .col-md-6#col_event_name
+                    .col-md-6.col_event_title
                         = form.text_field :title
-                .form-group.row#event_desc
-                    .col-md-6#col_ed
+                .form-group.row.event_desc
+                    .col-md-6.col_ed
                         = form.label :description
-                    .col-md-6#col_event_desc
+                    .col-md-6.col_event_desc
                         = form.text_area :description
-                .form-group.row#event_t
-                    .col-md-6#col_et
+                .form-group.row.event_t
+                    .col-md-6.col_et
                         = form.label :event_time
-                    .col-md-6#col_event_t
+                    .col-md-6.col_event_t
                         = form.time_field :event_time
-                .form-group.row#event_d
-                    .col-md-6#col_dd
+                .form-group.row.event_d
+                    .col-md-6.col_dd
                         = form.label :event_date
-                    .col-md-6#col_event_d
+                    .col-md-6.col_event_d
                         = form.date_field :event_date
-                .form-group.row#event_game
-                    .col-md-6#col_eg
+                .form-group.row.event_game
+                    .col-md-6.col_eg
                         = form.label :game
-                    .col-md-6#col_event_game
-                        = form.select(:game, options_for_select(@game)) 
-                .form-group.row#event_players
+                    .col-md-6.col_event_game
+                        = form.select(:game, options_for_select(@game))
+                .form-group.row
                     .users-list
                         = javascript_pack_tag 'usersEventList'
                 .form-group.row.event_private
-                    .col-md-6#col_pp
+                    .col-md-3.col_pp
                         = form.label :private
-                    .col-md-6#colprivate
+                    .col-md-3.colprivate
                         = form.check_box :private
-                .form-group.row#add_btn
-                    .col-md-6.offset-md-4
+                .form-group.row.add_btn
+                    .col-md-6
                         .add_event  
-                            %button.btn.bg-transparent{type: "submit"}
+                            %button.bg-transparent.add-event-button-submit{type: "submit", style: "border: none"}
                                 = form.submit 'Add Event'
+               
+                   
