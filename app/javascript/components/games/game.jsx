@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Rating from "./Rating";
 import GameDetailsButton from "./gameDetailsButton";
 import GameDetails from "./gameDetails";
+import { CSSTransition } from "react-transition-group";
 
 const Game = ({ game }) => {
   const [state, updateState] = useState({ detailsVisible: false });
@@ -25,7 +26,15 @@ const Game = ({ game }) => {
           />
         </div>
       </div>
-      <GameDetails visibility={state.detailsVisible} game={game} />
+      <CSSTransition
+        in={state.detailsVisible}
+        appear={true}
+        mountOnEnter={true}
+        timeout={500}
+        classNames="slide"
+      >
+        <GameDetails game={game} />
+      </CSSTransition>
     </>
   );
 };

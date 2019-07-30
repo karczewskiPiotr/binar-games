@@ -23,10 +23,12 @@
               .col-md-6.col_new_login
                 = f.email_field :email, autofocus: true, autocomplete: "email_new"
             .form-group.row.letters
-              .limit_letters
-                - if @minimum_password_length
-                  %em.letters_form
-                    #{@minimum_password_length} characters minimum)
+              .col-md-6
+              .col-md-6
+                .limit_letters
+                  - if @minimum_password_length
+                    %em.letters_form
+                      #{@minimum_password_length} characters minimum)
             .form-group.row.new_pass
               .col-md-6.col_np
                 = f.label :password

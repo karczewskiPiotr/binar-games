@@ -10,16 +10,19 @@ const Rating = ({ rating, interactive, gameId }) => {
   });
 
   const updateUserRating = () => {
-    axios
-      .patch(`/api/v1/games/${gameId}`, {
-        id: gameId,
-        rating: state.hoverRating
-      })
-      .then(
-        updateState(rest => {
-          return { ...rest, rating: state.hoverRating };
+    console.log(interactive);
+    if (interactive) {
+      axios
+        .patch(`/api/v1/games/${gameId}`, {
+          id: gameId,
+          rating: state.hoverRating
         })
-      );
+        .then(
+          updateState(rest => {
+            return { ...rest, rating: state.hoverRating };
+          })
+        );
+    }
   };
 
   const handleHover = rating => {

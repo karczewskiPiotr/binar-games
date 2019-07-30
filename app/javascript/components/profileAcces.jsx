@@ -22,7 +22,12 @@ export default class Profile extends React.Component {
           <div className="dropdown">
             <button className="dropbtn">More</button>
             <div className="dropdown-content">
-              <a className="dropdown-font" href="#">
+              <a 
+                rel="nofollow"
+                className="dropdown-font" 
+                data-method="get"
+                href="/users/edit"
+              >
                 Settings
               </a>
               <a
