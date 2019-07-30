@@ -30,7 +30,6 @@ class UsersTable extends React.Component {
       )
       .then(resp => {
         this.setState({ following: resp.data.data });
-        console.log(this.state.following);
       });
   }
 
@@ -46,7 +45,6 @@ class UsersTable extends React.Component {
       })
       .then(resp => {
         this.setState({ following: resp.data.data });
-        console.log(this.state.following);
       });
   };
 
@@ -62,7 +60,6 @@ class UsersTable extends React.Component {
       })
       .then(resp => {
         this.setState({ following: resp.data.data });
-        console.log(this.state.following);
       });
   };
 
@@ -79,7 +76,7 @@ class UsersTable extends React.Component {
                   <th>Number</th>
                   <th>Nick</th>
                   <th>Points</th>
-                  <th>Fav</th>
+                  <th>Follow</th>
                 </tr>
               </thead>
               <tbody>

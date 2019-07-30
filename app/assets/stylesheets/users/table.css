@@ -1,42 +1,37 @@
-
 .bg {
-    max-width: 1500px;
-    min-width: 1000px;
-    text-align: center;
-    border-radius: 18px;
-    display: inline-block; 
-    background-color: hsla(0, 0%, 100% ,0.75);
+  padding: 0px 20px;
+  max-width: 1500px;
+  min-width: 1000px;
+  text-align: center;
+  border-radius: 18px;
+  display: inline-block;
+  background-color: hsla(0, 0%, 100%, 0.75);
 }
-.tab_row{
-    margin: 10px 40px 0px;
-      padding: 15px;
-      background-color: hsla(0, 0%, 100%, 0.75);
-      border-radius: 18px;
+.tab_row {
+  margin: 10px 40px 0px;
+  padding: 15px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  border-radius: 18px;
 }
-.listDiv{
-    text-align: center;
-   background:transparent;
+.listDiv {
+  text-align: center;
+  background: transparent;
 }
 
-.heart{
-    height: 20 px;
-    width: 20px;
+.heart {
+  height: 20px;
+  width: 20px;
 }
-.line_row{
-    border-style: solid;
-    border-color:green;
-
-}
-.table {
-    width: 94% !important; /*Inaczej border wyjezdza*/
+.line_row {
+  border-style: solid;
+  border-color: green;
 }
 .topnavbar {
-    width: 98%;
-    border: 0;
-    margin-left: 3%;
-    
+  width: 98%;
+  border: 0;
+  margin-left: 3%;
 }
 .tab_head {
-    text-shadow: 0 3px #04e6ff;
-    color: #5c20e9b9;
+  text-shadow: 0 3px #04e6ff;
+  color: #5c20e9b9;
 }
