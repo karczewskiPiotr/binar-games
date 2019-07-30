@@ -49,38 +49,38 @@ class UsersEventList extends Component {
     const { value, users, addedUsers } = this.state;
     return (
       <>
-        {/* <div className="row userrow "> */}
-          <div className="col-md-6 ">
-            <label className="users-label">Users</label>
-          </div>
-          <div className="col-md-6 ">
-            <select
-              value={value}
-              onChange={this.handleChange}
-              className="users-select"
-            >
-              {users.map((user, index) => (
-                <option
-                  className="users-select-option"
-                  key={user.id}
-                  value={user.nick}
-                >
-                  {user.nick}
-                </option>
-              ))}
-            </select>
-            
-          </div>
-          <div className=" users-btn">
-            <button
-              onClick={this.handleSubmit}
-              className="users-select-button "
-            >
-              <FontAwesomeIcon icon={faPlusSquare} size="3x"/>
-            </button>
-          </div> 
+       
+        <div className="col-md-6 ">
+          <label className="users-label">Users</label>
+        </div>
+        <div className="col-md-6 ">
+          <select
+            value={value}
+            onChange={this.handleChange}
+            className="users-select"
+          >
+            {users.map((user, index) => (
+              <option
+                className="users-select-option"
+                key={user.id}
+                value={user.nick}
+              >
+                {user.nick}
+              </option>
+            ))}
+          </select>
+          
+        </div>
+        <div className=" users-btn">
+          <button
+            onClick={this.handleSubmit}
+            className="users-select-button "
+          >
+            <FontAwesomeIcon icon={faPlusSquare} size="3x"/>
+          </button>
+        </div> 
          
-        {/* </div> */}
+        
       
         {addedUsers.map(addedUser => (
           <React.Fragment key={addedUser.id}>
