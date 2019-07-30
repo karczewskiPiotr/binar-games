@@ -1,0 +1,59 @@
+.show-event-page {
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: rgb(46, 44, 44);
+  max-width: 800px;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 18px;
+}
+
+.show-event-page-title,
+.show-event-page-description,
+.show-event-page-time,
+.show-event-page-users,
+.show-event-page-game {
+  width: 90%;
+  margin: 25px 0 0 0;
+  border-radius: 18px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+}
+.show-event-page-title {
+  margin: 25px 0 0 0;
+}
+.show-event-page-game,
+.show-event-page-title,
+.show-event-page-description,
+.show-event-page-time,
+.show-event-page-users {
+  padding: 4%;
+}
+.event-title,
+.event-date,
+.event-game,
+.event-players {
+  color: #3a3e47;
+  text-align: center;
+  text-shadow: 0 1px #e3f1f1;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+.event-desc {
+  color: #3a3e47;
+  text-shadow: 0 1px #e3f1f1;
+  margin-top: 3%;
+  margin-bottom: 0;
+}
+.show-labelt,
+.show-labeld,
+.show-labeldt,
+.show-labelg,
+.show-labelp {
+  line-height: 3%;
+  margin-bottom: 0;
+}
+.users {
+  width: 155%;
+  display: flex;
+  justify-content: space-evenly;
+}

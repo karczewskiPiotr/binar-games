@@ -3,7 +3,7 @@
     = form_for @event do |form|
         %h1.events-header= "Add event:"
         .row.justify-content-center
-            .col-md-8
+            .col-md-9
                 .form-group.row.event_title
                     .col-md-6.col_en
                         = form.label :title 
@@ -29,16 +29,15 @@
                         = form.label :game
                     .col-md-6.col_event_game
                         = form.select(:game, options_for_select(@game))
-                .form-group.row
-                    .users-list
-                        = javascript_pack_tag 'usersEventList'
+                .form-group.row.players.users-list
+                    = javascript_pack_tag 'usersEventList'
                 .form-group.row.event_private
-                    .col-md-3.col_pp
+                    .col-md-6
                         = form.label :private
-                    .col-md-3.colprivate
+                    .col-md-6.colprivate
                         = form.check_box :private
                 .form-group.row.add_btn
-                    .col-md-6
+                    .col-md-6.col_merde
                         .add_event  
                             %button.bg-transparent.add-event-button-submit{type: "submit", style: "border: none"}
                                 = form.submit 'Add Event'
