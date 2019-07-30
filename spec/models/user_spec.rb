@@ -22,22 +22,4 @@ RSpec.describe User, type: :model do
             expect(user2).not_to be_valid
         end
       end
-
-    describe 'utility' do
-          let(:user1) { create(:user) }
-          let(:user2) { create(:user) }
-        
-        it("should follow a user") do
-          expect(user1.following?(user2)).to eq(false)
-          user1.follow(user2)
-          expect(user1.following?(user2)).to eq(true)
-        end
-
-        it ("should unfollow a user") do
-          user1.follow(user2)
-          expect(user2.followers.include?(user1)).to eq(true)
-          user1.unfollow(user2)
-          expect(user1.following?(user2)).to eq(false)
-        end
-      end
 end
