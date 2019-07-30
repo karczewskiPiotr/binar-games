@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.where(owner: current_user.id).order('created_at DESC')
+   
   end
 
   def create

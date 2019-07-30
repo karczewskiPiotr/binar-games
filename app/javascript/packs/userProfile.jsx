@@ -11,8 +11,8 @@ class UserProfile extends Component {
       users: [],
       isLoading: false,
       isFlipped: false,
-      buttonPressed: false,
-      buttonPressed1: false
+      showEvent: false,
+      showAchievement: false
     };
   }
 
@@ -36,7 +36,15 @@ class UserProfile extends Component {
   _renderSubComp() {
     switch (this.state.render) {
       case "Events":
-        return <Events />;
+        return (
+          <Events
+            events={
+              !this.state.isLoading
+                ? "loading"
+                : this.state.users.organized_events
+            }
+          />
+        );
       case "Achievement":
         return <Achievement />;
     }
@@ -44,7 +52,11 @@ class UserProfile extends Component {
 
   handleClickFlip = e => {
     e.preventDefault();
-    this.setState({ isFlipped: !this.state.isFlipped });
+    this.setState({
+      isFlipped: !this.state.isFlipped,
+      showEvent: false,
+      showAchievement: false
+    });
   };
 
   handleClick = (compName, e) => {
@@ -57,8 +69,8 @@ class UserProfile extends Component {
     this.handleClick("Events");
     (this.buttonPress = () => {
       this.setState({
-        buttonPressed: !this.state.buttonPressed,
-        buttonPressed1: false
+        showEvent: !this.state.showEvent,
+        showAchievement: false
       });
     })();
   };
@@ -66,8 +78,8 @@ class UserProfile extends Component {
     this.handleClick("Achievement");
     (this.buttonPress1 = () => {
       this.setState({
-        buttonPressed: false,
-        buttonPressed1: !this.state.buttonPressed1
+        showEvent: false,
+        showAchievement: !this.state.showAchievement
       });
     })();
   };
@@ -121,67 +133,62 @@ class UserProfile extends Component {
                   />{" "}
                   : 1
                 </div>
-                <div className="back-card-stats-row">
-                  <div className="back-card-stats-points">
-                    <div
-                      className="back-card-stats-points-text"
-                      data-tip="your scored points"
-                    >
-                      POINTS
-                    </div>
-                    <div>{this.state.users.points}</div>
-                  </div>
+
+                <div className="back-card-stats-points">
                   <div
-                    className="back-card-stats-games"
-                    data-tip="number of your games"
+                    className="back-card-stats-points-text"
+                    data-tip="your scored points"
                   >
-                    <div className="back-card-stats-points-text">GAMES</div>
-                    <div>{this.state.users.points}</div>
+                    POINTS
                   </div>
+                  <div>{this.state.users.points}</div>
+                </div>
+                <div
+                  className="back-card-stats-games"
+                  data-tip="number of your games"
+                >
+                  <div className="back-card-stats-points-text">GAMES</div>
+                  <div>{this.state.users.points}</div>
                 </div>
               </div>
-              <div className="back-card-events">
+              <div className="back-card-buttons">
                 <button
                   onClick={this.onClick}
                   className={
-                    this.state.buttonPressed ? "buttonWhite" : "button"
+                    this.state.showEvent
+                      ? "back-card-button button-color"
+                      : "btn-hover btn-color back-card-button"
                   }
                 >
-                  Events
+                  <img className="button-logo-img" src="./profile/event.png" />
                 </button>
+
                 <button
                   onClick={this.onClick1}
                   className={
-                    this.state.buttonPressed1 ? "buttonWhite" : "button"
+                    this.state.showAchievement
+                      ? "back-card-button button-color"
+                      : "btn-hover btn-color back-card-button "
                   }
                 >
-                  Achievement
+                  <img
+                    className="button-logo-img"
+                    src="./profile/achievements.png"
+                  />
                 </button>
-                <div className="back-card-events-text" data-tip="your events">
-                  EVENTS
-                </div>
-                {!this.state.isLoading
-                  ? "loading"
-                  : this.state.users.organized_events.map(event => (
-                      <a
-                        className="event-link"
-                        href={"http://localhost:3000/events/" + event.id}
-                      >
-                        {event.title}
-                      </a>
-                    ))}
               </div>
+
               <button
                 className="card-button btn-hover btn-color"
-                onClick={this.handleClick}
+                onClick={this.handleClickFlip}
               >
                 Back
               </button>
             </div>
           </ReactCardFlip>
         </div>
-        {this.state.buttonPressed === false ? <div /> : this._renderSubComp()}
-        {this.state.buttonPressed1 === false ? <div /> : this._renderSubComp()}
+        {this.state.showEvent === false ? <div /> : this._renderSubComp()}
+        {this.state.showAchievement === false ? <div /> : this._renderSubComp()}
       </>
     );
   }
@@ -190,11 +197,17 @@ class UserProfile extends Component {
 class Events extends React.Component {
   render() {
     return (
-      <div className="toggle-list">
-        <h2 className="-toggle-list-h2">Your Events</h2>
-        <div className="">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia
-          hendrerit massa lobortis imperdiet. asdfasdfasdfas
+      <div className="toggle-list fade-in">
+        <h2 className="toggle-list-h2">Your Events</h2>
+        <div className="toggle-list-text">
+          {this.props.events.map(event => {
+            return (
+              <div>
+                {event.title} <br /> {event.event_time.slice(11, 16)}
+                <br /> {event.event_date} <hr />
+              </div>
+            );
+          })}
         </div>
       </div>
     );
@@ -204,9 +217,9 @@ class Events extends React.Component {
 class Achievement extends React.Component {
   render() {
     return (
-      <div className="toggle-list">
+      <div className="toggle-list fade-in">
         <h2 className="toggle-list-h2">Your Achievements</h2>
-        <div className="">
+        <div className="toggle-list-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia
           hendrerit massa lobortis imperdiet.
         </div>

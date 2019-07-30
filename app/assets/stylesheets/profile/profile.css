@@ -10,7 +10,9 @@
   flex-direction: column;
   overflow: hidden;
 }
-
+button {
+  outline: 0;
+}
 .front-card-out,
 .back-card-out {
   min-width: 350px;
@@ -187,6 +189,7 @@
     #84d1f5
   );
 }
+
 .back-card-out {
   justify-content: flex-start;
 }
@@ -204,6 +207,7 @@
 }
 
 .back-card-stats-ranking {
+  border-radius: 15px;
   width: 100%;
   height: 100px;
   margin-top: 15px;
@@ -237,7 +241,8 @@
 .back-card-stats-points,
 .back-card-stats-games {
   background-color: #ffffffbf;
-  width: 140px;
+  width: 100%;
+  margin-top: 15px;
   height: 75px;
   text-align: center;
   font-size: 12px;
@@ -251,6 +256,39 @@
   -webkit-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
   -moz-box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
   box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.34);
+  border-radius: 15px;
+}
+.back-card-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.back-card-button {
+  background-image: url("/profile/event.png");
+  width: 135px;
+  height: 75px;
+  outline: 0;
+}
+.button-color {
+  background-image: linear-gradient(to right, #04e6ff, #84d1f5);
+  color: #3a3e47;
+  text-shadow: 0 3px rgb(4, 230, 255);
+  width: 135px;
+  height: 75px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 20px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  outline: 0;
+}
+.button-logo-img {
+  width: 45px;
+  height: 45px;
 }
 
 .back-card-events {
@@ -289,6 +327,25 @@
   align-items: center;
   flex-direction: column;
 }
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .toggle-list-h2 {
   text-shadow: 0 2px rgb(4, 230, 255);
+}
+.toggle-list-text {
+  margin: 0 15px;
 }
