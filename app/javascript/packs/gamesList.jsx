@@ -6,6 +6,7 @@ import Searchbar from "../components/games/searchbar";
 import FilterDropdwon from "../components/games/filterDropdown";
 import SortButton from "../components/games/sortButton";
 import LoadingIcon from "../components/loadingIcon";
+import FlipMove from "react-flip-move";
 
 const GamesList = () => {
   const [state, updateState] = useState({
@@ -156,11 +157,21 @@ const GamesList = () => {
           />
         </div>
       </div>
-      {state.loading
-        ? <div className="loading-games"><LoadingIcon/></div>
-        : getGames().map(game => (
-            <Game key={game.id} game={game} />
-          ))}
+      {state.loading ? (
+        <div className="loading-games">
+          <LoadingIcon />
+        </div>
+      ) : (
+        <FlipMove appearAnimation="elevator">
+          {getGames().map(game => {
+            return (
+              <div key={game.id}>
+                <Game game={game} />
+              </div>
+            )
+          })}
+        </FlipMove>
+      )}
     </>
   );
 };
