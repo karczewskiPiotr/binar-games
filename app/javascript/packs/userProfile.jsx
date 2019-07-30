@@ -34,7 +34,7 @@ class UserProfile extends Component {
     return (
       <>
         <div className="profile">
-          <ReactTooltip />{" "}
+          <ReactTooltip />
           <ReactCardFlip
             isFlipped={this.state.isFlipped}
             flipSpeedBackToFront={0.3}
@@ -106,6 +106,7 @@ class UserProfile extends Component {
                   ? "loading"
                   : this.state.users.organized_events.map(event => (
                       <a
+                        key={event.id}
                         className="event-link"
                         href={"http://localhost:3000/events/" + event.id}
                       >
