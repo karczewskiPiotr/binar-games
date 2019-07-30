@@ -12,6 +12,10 @@
   max-width: 1500px;
   min-width: 1000px;
 }
+.row{
+  margin-left: 0px !important;
+  margin-right: 8px !important;
+}
 .header {
   margin: 0px 30px;
   padding: 20px;
@@ -23,6 +27,7 @@
   text-transform: uppercase;
   text-align: center;
 }
+
 .event {
   margin: 10px 40px 0px;
   padding: 15px;
@@ -77,12 +82,17 @@
 }
 .add-event-form {
   border-radius: 18px;
-  margin: 50px auto 0 auto;
-  max-width: 800px;
-  min-width: 500px;
+  margin: 0;
+  width: 56.99%;
+  padding: 0;
+  position: relative;
+  top: 35%;
+  left: 21.5%;
   background-color: rgba(255, 255, 255, 0.75);
 }
-
+#new_event{
+  align-content: center;
+}
 .events-header {
   padding: 15px 0 15px 0;
   text-align: center;
@@ -90,65 +100,25 @@
   text-shadow: 0 3px #04e6ff;
 }
 
-.add-user-form {
-  width: 400px;
-}
 
-//
-.add-event-form {
-  margin-top: 55px;
-}
-.add_event {
-  width: 100%;
-  margin-right: 15px;
-}
-.add_event input[type="submit"] {
-  width: 100%;
-  padding: 4%;
-  margin: 0;
+.event_title label {
+  width: 119%;
+  margin-top: 1.1%;
   font-size: 80%;
   font-family: "Press Start 2P", cursive;
-  font-weight: bold;
-  text-shadow: 0 1px #e3f1f1;
-  background: #a9def5;
-  border: 1px solid;
-  border-color: #4b5fcf #031680 #4b5fcf;
-  border-radius: 16px;
-  outline: 0;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
 }
 
 .add-event-button-wrapper {
   text-align: center;
 }
-.add-event-button {
-  margin-top: 40px;
-  width: 100%;
-  text-align: center;
-  background-color: hsla(0, 0%, 100%, 0.75);
-  text-shadow: 0 3px rgb(4, 230, 255);
-  color: #5c20e9b9;
-  border-radius: 18px;
-  text-transform: uppercase;
-  max-width: 800px;
-  min-width: 800px;
-  height: 50px;
-  font-size: 17px;
-}
-// add event form
-
-.col_en,
-.col_ed,
-.col_et,
-.col_dd,
-.col_eg,
-.col_pp,
-.users-label {
-  text-shadow: 0 3px rgb(4, 230, 255);
-}
-
 .event_title input[type="text"] {
-  padding-left: 10px;
-  width: 130%;
+  padding: 2%;
+  margin-left: 0%;
+  width: 141%;
+  font-size: 70%;
   font-family: "Press Start 2P", cursive;
   display: inline-block;
   border: 1px solid blue;
@@ -156,21 +126,48 @@
   box-sizing: border-box;
 }
 
+.event_desc label {
+  width: 119%;
+  margin-top: 1.1%;
+  font-size: 80%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
 .event_desc textarea {
-  padding: 10px;
+  padding: 2%;
+  font-size: 50%;
   font-family: "Press Start 2P", cursive;
   display: inline-block;
   border: 1px solid blue;
   border-radius: 14px;
   box-sizing: border-box;
   word-wrap: break-word;
-  height: 100%;
-  width: 130%;
+  height: 253%;
+  width: 141%;
   scroll-behavior: smooth;
 }
-
-.col_event_t input[type="time"] {
-  width: 130%;
+.col_et {
+  
+  margin-top: 13%;
+}
+.col_event_t {
+  
+  margin-top: 13%;
+}
+.event_t label {
+  width: 119%;
+  margin-top: 1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+.event_t input[type="time"] {
+  padding: 2%;
+  width: 142%;
   text-align: center;
   font-family: "Press Start 2P", cursive;
   display: inline-block;
@@ -179,8 +176,18 @@
   box-sizing: border-box;
 }
 
+.event_d label {
+  width: 119%;
+  margin-top: 1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
 .event_d input[type="date"] {
-  width: 130%;
+  padding: 2%;
+  width: 142%;
   font-size: 70%;
   font-family: "Press Start 2P", cursive;
   text-align: center;
@@ -190,8 +197,20 @@
   box-sizing: border-box;
 }
 
+.event_game label {
+  width: 119%;
+  margin-top: 1.1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
 .event_game select {
-  width: 130%;
+  padding: 2%;
+  width: 142%;
+  font-size: 70%;
+  background-color: hsla(0, 0%, 100%, 0.75);
   font-family: "Press Start 2P", cursive;
   text-align: center;
   display: inline-block;
@@ -199,12 +218,89 @@
   border-radius: 14px;
   box-sizing: border-box;
 }
-.add-event-button-submit {
-  width: 135%;
-  background-color: transparent;
-  border: none;
-  padding: 0;
+.col_pp {
+  margin-left: 9%;
 }
+.event_private label{
+  width: 119%;
+  margin-top: 1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+}
+
+.event_private input[type="checkbox"]{
+  padding: 2%;
+  margin-top: 12%;
+  margin-left: 34%;
+  width: 111%;
+  font-size: 70%;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+.users-btn{
+  width: 0%;
+  position: relative ;
+  left: -2%;
+}
+
+
+.add-event-form {
+  margin-top: 55px;
+}
+.add-event-button-wrapper {
+  margin-top: 50px;
+  text-align: center;
+  .add-event-button {
+    text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.75);
+    text-shadow: 0 3px rgb(4, 230, 255);
+    color: #5c20e9b9;
+    border-radius: 18px;
+    text-transform: uppercase;
+    max-width: 800px;
+    min-width: 800px;
+    height: 50px;
+    font-size: 17px;
+  }
+  .add-event-button:focus{
+    outline: none;
+  }
+}
+.add_event{
+  position: relative;
+  left: 80%;
+  
+}
+
+.add_event input[type="submit"] {
+  padding: 4%;
+  margin: 0;
+  font-size: 80%;
+  font-family: "Press Start 2P", cursive;
+  font-weight: bold;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+}
+
+.userrow{
+  
+  min-width: 570px;
+}
+.column-content{
+  min-width: 500px;
+}
+
 // display added event (event/events/id)
 .show-event-page {
   text-shadow: 0 3px rgb(4, 230, 255);
@@ -266,13 +362,16 @@
   justify-content: space-evenly;
 }
 .users-select {
-  border-color: #4b5fcf;
-  width: 41%;
-  font-size: 15px;
+  font-size: 65%;
+  padding: 2%;
+  width: 118%;
+  margin-left: -16%;
+  background-color: hsla(0, 0%, 100%, 0.75);
   font-family: "Press Start 2P", cursive;
   text-align: center;
   border-radius: 14px;
   box-sizing: border-box;
+  border: 1px solid blue;
 }
 .users-label {
   text-shadow: 0 3px rgb(4, 230, 255);
@@ -282,19 +381,35 @@
 }
 
 .users-select-button {
-  width: 12%;
-  text-shadow: 0 1px #e3f1f1;
-  background: #a9def5;
-  border: 1px solid;
-  border-color: #4b5fcf #031680 #4b5fcf;
-  border-radius: 16px;
-  outline: 0;
+  color: #510280;
+  margin-left: 87%;
+  margin-top: -4.5%;
+  background: transparent;
+  outline: none;
+  border: none;
   font-size: 10px;
 }
+.users-select-button:focus{
+  outline: none;
+}
 
-.users-label,
+.users-label{
+  width: 96%;
+  margin-left: 0%;
+  margin-top: 1.1%;
+  font-size: 90%;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  text-align: center;
+  }
 .users-select-option,
-.col_private {
+.event_private {
+  width: 119%;
+  margin-top: 1%;
+  font-size: 90%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
   text-align: center;
 }
 .col_pp {
@@ -305,8 +420,63 @@
 }
 .users-select-list {
   list-style-type: none;
+  color: rgb(81, 2, 128);
+  text-align: center;
+  margin-left: 6%;
+  font-family: 'Play', sans-serif; 
+  font-size: 20px;
 }
 
 #table {
   margin-top: 100px;
+}
+
+
+
+@media screen and (max-width: 1930px){
+  // .players{
+  //   margin-left: 7% !important;
+  // }
+  .users-select{
+    width: 169%;
+    margin-left: 2%;
+  }
+}
+@media screen and (max-width: 1024px){
+  .event_title input[type="text"] {
+    width: 112%;
+  }
+  .event_desc textarea {
+    width: 112%;
+  }
+  .event_d input[type="date"] {
+    width: 112%;
+  }
+  .event_t input[type="time"] {
+    width: 112%;
+  }
+  .event_game select{
+    width: 112%;
+  }
+  .userrow{
+    
+    min-width: 468px;
+  }
+  .users-label{
+    margin-left: -12%;
+  }
+  .users-select{
+    max-width: 76%;
+    margin-left: -35%;
+  }
+  .users-btn{
+    
+    left: -29%;
+  }
+  .event_private input[type="checkbox"]{
+    margin-top: 20%;
+  }
+  .add_event{
+    left: 60%;
+  }
 }
