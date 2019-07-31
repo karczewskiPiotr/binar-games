@@ -68,7 +68,7 @@ class UserProfile extends Component {
     });
   };
 
-  onClick = event => {
+  onClickEvent = event => {
     this.handleClick("Events");
     (this.buttonPress = () => {
       this.setState({
@@ -77,7 +77,7 @@ class UserProfile extends Component {
       });
     })();
   };
-  onClick1 = event => {
+  onClickAchi = event => {
     this.handleClick("Achievement");
     (this.buttonPress1 = () => {
       this.setState({
@@ -156,7 +156,7 @@ class UserProfile extends Component {
               </div>
               <div className="back-card-buttons">
                 <button
-                  onClick={this.onClick}
+                  onClick={this.onClickEvent}
                   className={
                     this.state.showEvent
                       ? "back-card-button button-color"
@@ -167,7 +167,7 @@ class UserProfile extends Component {
                 </button>
 
                 <button
-                  onClick={this.onClick1}
+                  onClick={this.onClickAchi}
                   className={
                     this.state.showAchievement
                       ? "back-card-button button-color"
