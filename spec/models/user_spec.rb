@@ -5,6 +5,20 @@ RSpec.describe User, type: :model do
         it { expect(subject.attributes).to include('email', 'nick') }
     end
 
+    describe "relations" do
+      it { is_expected.to have_many(:games) }
+      it { is_expected.to have_many(:organized_events) }
+      it { is_expected.to have_many(:active_relationships) }
+      it { is_expected.to have_many(:passive_relationships) }
+      it { is_expected.to have_many(:following) }
+      it { is_expected.to have_many(:followers) }
+      it { is_expected.to have_many(:ratings) }
+      it { is_expected.to have_many(:rated_games) }
+      it { is_expected.to have_many(:invitations) }
+      it { is_expected.to have_many(:events).through(:invitations) } 
+    end
+    
+
     describe "validation" do
         it { is_expected.to validate_presence_of(:nick) }
         it { is_expected.to validate_uniqueness_of(:nick) }

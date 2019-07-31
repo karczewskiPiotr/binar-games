@@ -19,6 +19,6 @@ RSpec.describe Event, type: :model do
     describe "relations" do
       it { is_expected.to belong_to(:owner) }
       it { is_expected.to belong_to(:game) }
-      it { is_expected.to have_and_belong_to_many(:users) }
+      it { is_expected.to have_many(:users).through(:invitations) }
     end
 end
