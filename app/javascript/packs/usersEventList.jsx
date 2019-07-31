@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import {faPlusSquare} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 class UsersEventList extends Component {
   constructor(props) {
@@ -17,7 +19,8 @@ class UsersEventList extends Component {
       .get("/api/v1/users", {}, { "Content-Type": "application/json" })
       .then(res => {
         this.setState({
-          users: res.data.data
+          users: res.data.data,
+          value: res.data.data[0].nick
         });
       });
   }
@@ -27,13 +30,15 @@ class UsersEventList extends Component {
   };
 
   handleSubmit = event => {
+    let userToBeAdded = this.state.users.find(
+      user => user.nick === this.state.value
+    );
     if (this.state.addedUsers.length < 4) {
-      this.setState({
-        addedUsers: [
-          ...this.state.addedUsers,
-          this.state.users.find(user => user.nick === this.state.value)
-        ]
-      });
+      if (!this.state.addedUsers.includes(userToBeAdded)) {
+        this.setState({
+          addedUsers: [...this.state.addedUsers, userToBeAdded]
+        });
+      }
     } else {
       alert("number of players is already enough");
     }
@@ -44,14 +49,17 @@ class UsersEventList extends Component {
     const { value, users, addedUsers } = this.state;
     return (
       <>
-        <div className="users">
-          <div className="users-label">Users</div>
+       
+        <div className="col-md-6 ">
+          <label className="users-label">Users</label>
+        </div>
+        <div className="col-md-6 ">
           <select
             value={value}
             onChange={this.handleChange}
             className="users-select"
           >
-            {users.map(user => (
+            {users.map((user, index) => (
               <option
                 className="users-select-option"
                 key={user.id}
@@ -61,10 +69,19 @@ class UsersEventList extends Component {
               </option>
             ))}
           </select>
-          <button onClick={this.handleSubmit} className="users-select-button">
-            Add
-          </button>
+          
         </div>
+        <div className=" users-btn">
+          <button
+            onClick={this.handleSubmit}
+            className="users-select-button "
+          >
+            <FontAwesomeIcon icon={faPlusSquare} size="3x"/>
+          </button>
+        </div> 
+         
+        
+      
         {addedUsers.map(addedUser => (
           <React.Fragment key={addedUser.id}>
             <li className="users-select-list">{addedUser.nick}</li>

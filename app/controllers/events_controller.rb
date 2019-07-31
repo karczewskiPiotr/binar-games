@@ -4,10 +4,10 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.where(owner: current_user.id).order('created_at DESC')
-   
   end
 
   def create
+    @game = Game.pluck(:title)
     @event = current_user.events.build(event_params)
     if @event.save
       redirect_to @event

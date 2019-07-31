@@ -91,7 +91,7 @@ class UserProfile extends Component {
     return (
       <>
         <div className="profile">
-          <ReactTooltip />{" "}
+          <ReactTooltip />
           <ReactCardFlip
             isFlipped={this.state.isFlipped}
             flipSpeedBackToFront={0.3}
