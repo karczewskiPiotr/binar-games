@@ -149,7 +149,11 @@ class UserProfile extends Component {
                   data-tip="number of your games"
                 >
                   <div className="back-card-stats-points-text">GAMES</div>
-                  <div>{this.state.users.points}</div>
+                  <div>
+                    {!this.state.isLoading
+                      ? "loading"
+                      : this.state.users.user_games.length}
+                  </div>
                 </div>
               </div>
               <div className="back-card-buttons">
@@ -223,23 +227,23 @@ class Events extends React.Component {
           {this.state.showOwnedEvents ? "created events" : "take a part"}
         </button>
         <div className="toggle-list-text">
-          <main class="st_viewport">
-            <div class="st_wrap_table" data-table_id="0">
-              <header class="st_table_header">
-                <div class="st_row">
-                  <div class="st_column _title">Title</div>
-                  <div class="st_column _event_time">Time</div>
-                  <div class="st_column _event_date">Date</div>
+          <main className="st_viewport">
+            <div className="st_wrap_table" data-table_id="0">
+              <header className="st_table_header">
+                <div className="st_row">
+                  <div className="st_column _title">Title</div>
+                  <div className="st_column _event_time">Time</div>
+                  <div className="st_column _event_date">Date</div>
                 </div>
               </header>
 
-              <div class="st_table">
+              <div className="st_table">
                 {this.state.showOwnedEvents
                   ? this.props.events.map(event => {
                       return (
-                        <div class="st_row fade-in">
+                        <div className="st_row fade-in">
                           <ReactTooltip />
-                          <div class="st_column _title">
+                          <div className="st_column _title">
                             <a
                               href={"http://localhost:3000/events/" + event.id}
                               data-tip="more details"
@@ -247,10 +251,10 @@ class Events extends React.Component {
                               {event.title}
                             </a>
                           </div>
-                          <div class="st_column _event_time">
+                          <div className="st_column _event_time">
                             {event.event_time.slice(11, 16)}
                           </div>
-                          <div class="st_column _event_date">
+                          <div className="st_column _event_date">
                             {event.event_date}
                           </div>
                         </div>
@@ -258,18 +262,18 @@ class Events extends React.Component {
                     })
                   : this.props.ownEvents.map(event => {
                       return (
-                        <div class="st_row fade-in">
-                          <div class="st_column _title">
+                        <div className="st_row fade-in">
+                          <div className="st_column _title">
                             <a
                               href={"http://localhost:3000/events/" + event.id}
                             >
                               {event.title}
                             </a>
                           </div>
-                          <div class="st_column _event_time">
+                          <div className="st_column _event_time">
                             {event.event_time.slice(11, 16)}
                           </div>
-                          <div class="st_column _event_date">
+                          <div className="st_column _event_date">
                             {event.event_date}
                           </div>
                         </div>
