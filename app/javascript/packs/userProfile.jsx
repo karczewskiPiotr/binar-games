@@ -39,9 +39,7 @@ class UserProfile extends Component {
         return (
           <Events
             events={
-              !this.state.isLoading
-                ? "loading"
-                : this.state.users.organized_events
+              !this.state.isLoading ? "loading" : this.state.users.org_events
             }
             ownEvents={
               !this.state.isLoading ? "loading" : this.state.users.events

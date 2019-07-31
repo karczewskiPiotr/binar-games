@@ -4,9 +4,12 @@ class Api::V1::UsersController < ApiController
   end
 
   def current
+    beginning_of_month = Date.today.beginning_of_month
+    end_of_month = beginning_of_month.end_of_month
+
     @user = current_user
-    @events = Event.all
-    @user_events = current_user.events
+    @take_part_events = current_user.organized_events.where(event_date: beginning_of_month..end_of_month)
+    @user_events = current_user.events.where(event_date: beginning_of_month..end_of_month)
   end
 
   def following
