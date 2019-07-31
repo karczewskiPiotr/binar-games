@@ -1,6 +1,7 @@
 FactoryBot.define do
     factory :event do
-      user
+      game
+      association :owner, factory: :user
       title { Faker::Lorem.characters(10) }
       description { Faker::Lorem.characters(23) }
       event_time { Faker::Time.between(DateTime.now - 1, DateTime.now) }
