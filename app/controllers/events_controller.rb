@@ -22,6 +22,11 @@ class EventsController < ApplicationController
     @game = Game.pluck(:title)
   end
 
+  def edit 
+    @event = Event.find(params[:id])
+    @event_user = current_user.events
+  end
+
   private
 
   def event_params

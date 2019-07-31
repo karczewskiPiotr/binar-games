@@ -1,5 +1,7 @@
 .show-event-page
     .row.justify-content-center
+        .show-event-button-add-score
+            = button_to 'ADD SCORES', edit_event_path, method: :get, class: 'add-score-button'
         .show-event-page-title
             %h3.show-labelt= "Title:"  
             %p.event-title= @event.title

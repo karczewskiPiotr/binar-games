@@ -1,0 +1,11 @@
+.show-event-page
+  .row.justify-content-center
+    .show-event-page-title
+      %h3.show-labelt= "Title:"  
+      %p.event-title= @event.title
+    .show-event-page-users
+      %h3.show-labelp= "Players:"
+      %div.players
+        = javascript_pack_tag 'addPoints'
+
+            
