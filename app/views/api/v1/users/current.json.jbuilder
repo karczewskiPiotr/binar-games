@@ -2,7 +2,7 @@ json.data do
   json.extract! @user, :id, :nick, :points, :organized_events
   json.events do
     json.array! (@user_events) do |event| 
-      json.extract! event, :title
+      json.extract! event, :title, :event_date, :event_time, :id
     end
   end
   if @user.avatar.attached?

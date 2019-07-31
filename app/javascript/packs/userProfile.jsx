@@ -43,6 +43,9 @@ class UserProfile extends Component {
                 ? "loading"
                 : this.state.users.organized_events
             }
+            ownEvents={
+              !this.state.isLoading ? "loading" : this.state.users.events
+            }
           />
         );
       case "Achievement":
@@ -198,10 +201,29 @@ class UserProfile extends Component {
 }
 
 class Events extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showOwnedEvents: false
+    };
+  }
+
+  changeList = () => {
+    this.setState({
+      showOwnedEvents: !this.state.showOwnedEvents
+    });
+  };
+
   render() {
     return (
       <div className="toggle-list fade-in">
         <h2 className="toggle-list-h2">Your Events</h2>
+        <button
+          className="card-button btn-hover btn-color card-button-event"
+          onClick={this.changeList}
+        >
+          {this.state.showOwnedEvents ? "created events" : "take a part"}
+        </button>
         <div className="toggle-list-text">
           <main class="st_viewport">
             <div class="st_wrap_table" data-table_id="0">
@@ -212,20 +234,49 @@ class Events extends React.Component {
                   <div class="st_column _event_date">Date</div>
                 </div>
               </header>
+
               <div class="st_table">
-                {this.props.events.map(event => {
-                  return (
-                    <div class="st_row">
-                      <div class="st_column _title">{event.title}</div>
-                      <div class="st_column _event_time">
-                        {event.event_time.slice(11, 16)}
-                      </div>
-                      <div class="st_column _event_date">
-                        {event.event_date}
-                      </div>
-                    </div>
-                  );
-                })}
+                {this.state.showOwnedEvents
+                  ? this.props.events.map(event => {
+                      return (
+                        <div class="st_row fade-in">
+                          <ReactTooltip />
+                          <div class="st_column _title">
+                            <a
+                              href={"http://localhost:3000/events/" + event.id}
+                              data-tip="more details"
+                            >
+                              {event.title}
+                            </a>
+                          </div>
+                          <div class="st_column _event_time">
+                            {event.event_time.slice(11, 16)}
+                          </div>
+                          <div class="st_column _event_date">
+                            {event.event_date}
+                          </div>
+                        </div>
+                      );
+                    })
+                  : this.props.ownEvents.map(event => {
+                      return (
+                        <div class="st_row fade-in">
+                          <div class="st_column _title">
+                            <a
+                              href={"http://localhost:3000/events/" + event.id}
+                            >
+                              {event.title}
+                            </a>
+                          </div>
+                          <div class="st_column _event_time">
+                            {event.event_time.slice(11, 16)}
+                          </div>
+                          <div class="st_column _event_date">
+                            {event.event_date}
+                          </div>
+                        </div>
+                      );
+                    })}
               </div>
             </div>
           </main>
