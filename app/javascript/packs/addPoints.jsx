@@ -18,6 +18,11 @@ class AddPoints extends Component {
         });
       });
   }
+  click = points => {
+    axios
+      .post("/api/v1/events/event_user", { points: points });
+  };
+
 render () {
   let users = this.state.users;
 
@@ -27,11 +32,14 @@ render () {
       <div>
       <p>{user.nick}</p> 
       <select>
+      <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
-      <option value="4">4</option>
     </select> 
+    <button onClick={this.click}
+    className="users-select-button "> 
+    </button>
     </div>
 
 
