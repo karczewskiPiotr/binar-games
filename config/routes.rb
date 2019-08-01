@@ -19,6 +19,12 @@ Rails.application.routes.draw do
       post 'users/current/unfollow', to: 'users#unfollow'
       resources :events, only: [:index]
       get '/users/current', to: 'users#current'
+      resources :invitations, only: [:index] do
+        collection do
+          post 'accept'
+          post 'decline'
+        end
+      end
     end
   end
 

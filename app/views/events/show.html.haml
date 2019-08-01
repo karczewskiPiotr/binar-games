@@ -1,24 +1,33 @@
 .show-event-page
-    .row.justify-content-center
-        .show-event-page-title
-            %h3.show-labelt= "Title:"  
-            %p.event-title= @event.title
-        .show-event-page-description
-            %h3.show-labeld= "Details:"
-            %p.event-desc= @event.description
-        .show-event-page-time
-            %h3.show-labeldt= "Date:"
-            %div.event-date= @event.event_date
-            %div.event-date= @event.event_time.to_formatted_s(:time)
-        .show-event-page-game
-            %h3.show-labelg= "Game:"
-            %div.event-game= @event.game.title
-        .show-event-page-users
-            %h3.show-labelp= "Players:"
-            - @event.users.each do |user|
-                %div.event-players= user.nick
-        .show-event-page-achivements
-            %h3.show-labela= "Achievements:"
-            - @event.achivements.each do |achivement|
-                %div.event-achivements= achivement.name
-
+  .row.justify-content-center
+    .show-event-page-title
+      %h3.show-labelt= "Title:"  
+      %p.event-title= @event.title
+    .show-event-page-description
+      %h3.show-labeld= "Details:"
+      %p.event-desc= @event.description
+    .show-event-page-time
+      %h3.show-labeldt= "Date:"
+      %div.event-date= @event.event_date
+      %div.event-date= @event.event_time.to_formatted_s(:time)
+    .show-event-page-game
+      %h3.show-labelg= "Game:"
+      %div.event-game= @event.game.title
+    .show-event-page-users
+      %h3.show-labelp= "Players:"
+      %h5= "Accepted:"
+      - @event.invitations.accepted.each do |invite|
+        %div.event-players
+          = invite.user.nick
+      %h5= "Pending:"
+      - @event.invitations.pending.each do |invite|
+        %div.event-players
+          = invite.user.nick
+      %h5= "Declined:"
+      - @event.invitations.declined.each do |invite|
+        %div.event-players
+          = invite.user.nick
+    .show-event-page-achivements
+      %h3.show-labela= "Achievements:"
+      - @event.achivements.each do |achivement|
+        %div.event-achivements= achivement.name
