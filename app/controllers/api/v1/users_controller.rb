@@ -1,11 +1,15 @@
 class Api::V1::UsersController < ApiController
   def index
-    @users = User.all
+    @users = User.where.not(id: current_user.id)
   end
 
   def current
+    start_month = Date.today.beginning_of_month
+    end_month = start_month.end_of_month
+    @user_games = Game.all
     @user = current_user
-    @events = Event.all
+    @take_events = current_user.organized_events.where(created_at: start_month..end_month).order(event_time: 'DESC')
+    @user_events = current_user.events.where(created_at: start_month..end_month).order(event_time: 'DESC')
   end
 
   def following
