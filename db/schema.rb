@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_083941) do
+ActiveRecord::Schema.define(version: 2019_08_01_090521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,13 +56,6 @@ ActiveRecord::Schema.define(version: 2019_07_25_083941) do
     t.index ["owner_id"], name: "index_events_on_owner_id"
   end
 
-  create_table "events_users", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-    t.index ["event_id"], name: "index_events_users_on_event_id"
-    t.index ["user_id"], name: "index_events_users_on_user_id"
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -73,6 +66,16 @@ ActiveRecord::Schema.define(version: 2019_07_25_083941) do
     t.integer "user_id"
     t.index ["category_id"], name: "index_games_on_category_id"
     t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_invitations_on_event_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -106,6 +109,12 @@ ActiveRecord::Schema.define(version: 2019_07_25_083941) do
     t.string "name"
     t.string "nick"
     t.float "points", default: 0.0
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+    t.integer "expires_at"
+    t.boolean "expires"
+    t.string "refresh_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
