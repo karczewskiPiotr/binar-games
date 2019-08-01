@@ -252,7 +252,7 @@ class Events extends React.Component {
                           <ReactTooltip />
                           <div className="st_column _title">
                             <a
-                              href={"http://localhost:3000/events/" + event.id}
+                              href={`/events/${event.id}`}
                               data-tip="more details"
                             >
                               {event.title}
@@ -271,11 +271,7 @@ class Events extends React.Component {
                       return (
                         <div className="st_row fade-in">
                           <div className="st_column _title">
-                            <a
-                              href={"http://localhost:3000/events/" + event.id}
-                            >
-                              {event.title}
-                            </a>
+                            <a href={`/events/${event.id}`}>{event.title}</a>
                           </div>
                           <div className="st_column _event_time">
                             {event.event_time.slice(11, 16)}
