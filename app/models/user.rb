@@ -19,7 +19,7 @@ class User < ApplicationRecord
     where(email: auth.info['email']).first_or_create do |user|
       user.email = auth.info['email']
       user.nick = auth.info['email'].delete_suffix('@gmail.com')
-      user.password = "from_google"
+      user.password = 'from_google'
       user.token = auth.credentials.token
       user.expires = auth.credentials.expires
       user.expires_at = auth.credentials.expires_at
