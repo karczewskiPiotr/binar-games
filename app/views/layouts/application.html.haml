@@ -8,15 +8,15 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body 
-    %p.notice= notice
-    %p.alert= alert 
+    %p.notice
+      = notice
+    %p.alert
+      = alert 
     #main
       = render 'layouts/main_nav' 
       = yield
-    %div{:class => "bg"}
-    %div{:class => "ripple-background"}
-    %div{:class => "circle xxlarge shade1"}
-    %div{:class => "circle xlarge shade2"}
-    %div{:class => "circle large shade3"}
-    %div{:class => "circle mediun shade4"}
-    %div{:class => "circle small shade5"}
+    .circles
+      %div{:class => "circle xlarge shade2"}
+      %div{:class => "circle large shade3"}
+      %div{:class => "circle mediun shade4"}
+      %div{:class => "circle small shade5"}

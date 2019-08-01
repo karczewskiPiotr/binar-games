@@ -1,16 +1,9 @@
 .error_mess
-  = render "devise/shared/error_messages", resource: resource  
-%body
-  .ripple-background
-    .circle.xlarge.shade2
-    .circle.large.shade3
-    .circle.mediun.shade4
-    .circle.small.shade5
-   
+  = render "devise/shared/error_messages", resource: resource
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   .cotainer
     .row.justify-content-center
-      .col-md-8
+      .col-md-auto
         .card.bg-transparent
           .header_style
             .card-header Forgot your password?
@@ -21,8 +14,10 @@
               .col-md-6.col_email
                 = f.email_field :email, autofocus: true, autocomplete: "email"
               .col-md-6.offset-md-4.send
-                .send_button  
+                .send_button
                   = f.submit "Send", class: 'btn'
-    .link_forget
-      = render "devise/shared/links" 
-          
+    .row.links-wrapper
+      .col.text-center
+        .link_box
+          = render "devise/shared/links"
+
