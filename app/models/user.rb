@@ -43,15 +43,15 @@ class User < ApplicationRecord
   end
 
   def first!
-    self.update(points: self.points + 3)
+    update(points: points + 3)
   end
 
   def second!
-    self.update(points: self.points + 2)
+    update(points: points + 2)
   end
 
   def third!
-    self.update(points: self.points + 1)
+    update(points: points + 1)
   end
 
   private
