@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import {faPlusSquare} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class UsersEventList extends Component {
   constructor(props) {
@@ -49,7 +49,6 @@ class UsersEventList extends Component {
     const { value, users, addedUsers } = this.state;
     return (
       <>
-       
         <div className="col-md-6 ">
           <label className="users-label">Users</label>
         </div>
@@ -69,19 +68,16 @@ class UsersEventList extends Component {
               </option>
             ))}
           </select>
-          
+          <div className="users-btn">
+            <button
+              onClick={this.handleSubmit}
+              className="users-select-button "
+            >
+              <FontAwesomeIcon icon={faPlusSquare} size="3x" />
+            </button>
+          </div>
         </div>
-        <div className=" users-btn">
-          <button
-            onClick={this.handleSubmit}
-            className="users-select-button "
-          >
-            <FontAwesomeIcon icon={faPlusSquare} size="3x"/>
-          </button>
-        </div> 
-         
-        
-      
+
         {addedUsers.map(addedUser => (
           <React.Fragment key={addedUser.id}>
             <li className="users-select-list">{addedUser.nick}</li>
