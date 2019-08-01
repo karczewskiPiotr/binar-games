@@ -42,6 +42,18 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def first!
+    self.update(points: self.points + 3)
+  end
+
+  def second!
+    self.update(points: self.points + 2)
+  end
+
+  def third!
+    self.update(points: self.points + 1)
+  end
+
   private
 
   def avatar_extension
