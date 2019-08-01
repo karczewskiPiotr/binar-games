@@ -168,3 +168,17 @@
   height:40%;
 
 }
+
+.google-wrapper {
+  margin-top: 10px;
+}
+
+.google-login {
+  color: white;
+  font-size: 10px;
+}
+
+.google-login:hover {
+  text-decoration: none;
+  color: rgb(4, 230, 255);
+}

@@ -31,7 +31,10 @@
               .col-md-6.offset-md-4.col_button
                 .log_button  
                   = f.submit "Log in", class: 'btn'
+    .row.google-wrapper
+      .col.text-center
+        = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: 'google-login'
     .link_box
-      = render "devise/shared/links"              
+      = render "devise/shared/links"
 
 
