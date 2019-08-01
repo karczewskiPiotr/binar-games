@@ -33,8 +33,8 @@ class GamesController < ApplicationController
   private
 
   def game_params
-      params.require(:game).permit(:title, :description, :global_rating, :game_guide, :category_id, pictures: []).
-        merge(user_id: current_user.id)
+    params.require(:game).permit(:title, :description, :global_rating, :game_guide, :category_id, pictures: []).
+      merge(user_id: current_user.id)
   end
 
   def handle_record_not_found
