@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
-  
+
   has_one_attached :avatar
   has_many :games
   has_many :organized_events, class_name: 'Event', foreign_key: 'owner_id'
