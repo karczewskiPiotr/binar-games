@@ -8,5 +8,4 @@ class Event < ApplicationRecord
   validates :game, presence: true
   validates :event_time, presence: true
   validates :event_date, presence: true
-  validates :achivements, presence: true
 end
