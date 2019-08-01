@@ -1,6 +1,6 @@
 class Api::V1::InvitationsController < ApiController
   def index
-    @invitations = current_user.invitations
+    @invitations = current_user.invitations.pending
   end
 
   def accept

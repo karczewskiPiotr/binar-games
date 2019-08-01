@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       resources :events, only: [:index]
       get '/users/current', to: 'users#current'
       resources :invitations, only: [:index] do
-        member do
+        collection do
           post 'accept'
           post 'decline'
         end

@@ -85,6 +85,7 @@
   height: 80px;
 }
 .logoName {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }

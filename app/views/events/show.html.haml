@@ -15,6 +15,12 @@
             %div.event-game= @event.game.title
         .show-event-page-users
             %h3.show-labelp= "Players:"
-            - @event.users.each do |user|
-                %div.event-players= user.nick
-
+            %h5= "Accepted:"
+            - @event.invitations.accepted.each do |invite|
+                %div.event-players= invite.user.nick
+            %h5= "Pending:"
+            - @event.invitations.pending.each do |invite|
+                %div.event-players= invite.user.nick
+            %h5= "Declined:"
+            - @event.invitations.declined.each do |invite|
+                %div.event-players= invite.user.nick
