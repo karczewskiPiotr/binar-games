@@ -9,12 +9,13 @@ import React, { Component } from "react";
    handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
-    });
+    }); 
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.id < 5) {
+    
+    if(this.state.text.length > 1) {
       this.props.onSubmit({
         id: this.state.id,
         text: this.state.text,
@@ -25,8 +26,9 @@ import React, { Component } from "react";
         id: this.state.id + 1
       })
     } else {
-      alert("Can't add more then 5 achivements");
+      alert("Added achievements can't be shorter then 3 letters");
     }
+    
   }
   render(){
     return (
@@ -38,7 +40,6 @@ import React, { Component } from "react";
           onChange={this.handleChange}
           placeholder="Add achivement..."
         />
-        {/* <button onClick={this.handleSubmit}> Add</button> */}
       </form>
       
     )

@@ -185,7 +185,7 @@
 
 .add_btn{
   position: relative;
-  top: -18%;
+  top: -10%;
   left: 35%;
 }
 .typing {
@@ -220,7 +220,14 @@
 .event_private{
   margin-bottom: 10%;
 }
-
+.remove-achievement{
+  background: transparent;
+  border: none;
+  margin-top: 1%;
+}
+.remove-achievement:focus{
+  outline: none;
+}
 
 @media screen and (max-width: 1024px){
   .event_title input[type="text"],

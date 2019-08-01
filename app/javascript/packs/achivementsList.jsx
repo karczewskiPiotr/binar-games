@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import AchivementsForm from "../components/achivementsForm";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 class AchivementsList extends Component{
   state = {
@@ -9,16 +11,22 @@ class AchivementsList extends Component{
   };
 
   addOption = achivement => {
-    this.setState({
-      achivements: [achivement, ...this.state.achivements]
-    })
+    if(this.state.achivements.length < 5) {
+      this.setState({
+        achivements: [achivement, ...this.state.achivements]
+      })
+    } else {
+      alert("Can't add more then 5 achievements");
+    }
   }
-  handleDelete = id => {
-    id.preventDefault();
-    console.log(id)
-    // this.setState({
-    //   achivements: this.state.achivements.filter(achivement => achivement.id !== id)
-    // })
+  handleDelete = option => {
+    const newAchivements = this.state.achivements.filter(achivement =>{
+      return achivement !== option
+    })
+    this.setState({
+      achivements: [...newAchivements]
+    })
+  
   }
  
 
@@ -37,7 +45,12 @@ class AchivementsList extends Component{
           {this.state.achivements.map(achivement => (
             <div key={achivement.id}>
               <li className="achivements-select-list">{achivement.text}
-                { <button onClick={this.handleDelete.bind(achivement)}>x</button> }
+                { <button 
+                    onClick={() => this.handleDelete(achivement)}
+                    className="remove-achievement"
+                  > 
+                  <FontAwesomeIcon icon={faTimes} size="xs"/>
+                </button> }
               </li>
               <input name="event[achivements][]" value={achivement.text} type="hidden" />
             </div>
