@@ -26,7 +26,7 @@ class AchivementsList extends Component{
     return (
       <>
         <div className="col-md-6 ">
-          <label className="achivements-label">Achivements</label>
+          <label className="achivements-label">Achievements</label>
         </div>
         <div className="col-md-6 ">
           <div className="a-form">
