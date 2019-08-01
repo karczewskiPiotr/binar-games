@@ -50,6 +50,7 @@ gem 'devise', '~> 4.2'
 gem 'haml'
 gem 'html2haml'
 gem 'jquery-rails'
+gem 'omniauth-google-oauth2'
 gem 'popper_js', '~> 1.14.5'
 gem 'rails-controller-testing'
 gem 'rubocop', require: false

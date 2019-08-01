@@ -30,6 +30,8 @@ RSpec.describe EventsController, type: :controller do
     end
 
     describe 'POST #create' do
+        let(:user) { create(:user) }
+        before { sign_in(user) }
         let(:game) { create(:game)}
         let(:valid_attributes) { { event: { 
             title: 'czosnek', 
@@ -38,6 +40,14 @@ RSpec.describe EventsController, type: :controller do
             event_date: "2321-03-12", 
             private: false, 
             game: game.title } } }
+
+        let(:invalid_attributes) { { event: { 
+            title: "", 
+            description: '', 
+            event_time: '', 
+            event_date: '', 
+            private: '', 
+            game: game.title } } }
        
         context 'valid attributes' do
             subject { post :create, params: valid_attributes }
@@ -45,6 +55,13 @@ RSpec.describe EventsController, type: :controller do
             it { expect(subject).to redirect_to(Event.last) }
             
             it { expect { subject }.to change(Event, :count).by(1) }
+        end
+
+        context 'invalid attributes' do
+            subject { post :create, params: invalid_attributes } 
+
+            it { expect(subject).to render_template('new') }
+            it { expect { subject }.not_to change(Event, :count) }
         end
     end
 end

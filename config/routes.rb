@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
+
   resources :users
   resources :games
   resources :events , only: [:index, :create, :show, :new]
   get "user_profile", to: 'users#user_profile'
 
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
-  
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :games, only: [:index, :show, :update]
@@ -22,6 +22,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :relationships,       only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
 end
