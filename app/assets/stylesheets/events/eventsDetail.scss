@@ -96,3 +96,35 @@
 .status-wrapper {
   margin-bottom: 10px;
 }
+
+#first_id, #second_id, #third_id {
+  padding: 2%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+.results {
+  margin-bottom: 10px;
+}
+
+.winners-button {
+  padding: 2%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}

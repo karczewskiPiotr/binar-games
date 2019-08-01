@@ -25,6 +25,15 @@ class EventsController < ApplicationController
     @game = Game.pluck(:title)
   end
 
+  def results
+    User.find(params[:first_id]).first!
+    User.find(params[:second_id]).second!
+    User.find(params[:third_id]).third!
+    @event = Event.find(params[:event_id])
+    @event.update(finalised: true)
+    redirect_to @event
+  end
+
   private
 
   def event_params

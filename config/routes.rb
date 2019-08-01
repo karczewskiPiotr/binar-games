@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :games
-  resources :events , only: [:index, :create, :show, :new]
+  resources :events, only: [:index, :create, :show, :new] do
+    collection do
+      post 'results'
+    end
+  end
   get "user_profile", to: 'users#user_profile'
 
   namespace :api, defaults: { format: 'json' } do

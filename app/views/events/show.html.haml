@@ -1,5 +1,28 @@
 .show-event-page
   .row.justify-content-center
+    - if @event.event_time < Time.now && @event.event_date < Date.today && !@event.users.empty? && !@event.finalised
+      .show-event-page-users
+        %h3.show-labelp.results= "Results:"
+        = form_with url: results_events_path do |form|
+          = hidden_field_tag "event_id", @event.id
+          .form-group.row#cat
+            .col-md-6 
+              = form.label :first
+            .col-md-6#col_cat
+              = form.select :first_id, @event.users.collect { |user| [user.nick, user.id] }
+          .form-group.row#cat
+            .col-md-6 
+              = form.label :second
+            .col-md-6#col_cat
+              = form.select :second_id, @event.users.collect { |user| [user.nick, user.id] }
+          .form-group.row#cat
+            .col-md-6 
+              = form.label :third
+            .col-md-6#col_cat
+              = form.select :third_id, @event.users.collect { |user| [user.nick, user.id] }
+          .form-group.row
+            .col.text-center
+              = form.submit 'Save results', class: 'winners-button'
     .show-event-page-title
       %h3.show-labelt= "Title:"  
       %p.event-title= @event.title
