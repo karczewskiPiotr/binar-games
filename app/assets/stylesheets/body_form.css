@@ -1,7 +1,3 @@
-html{
-  min-height: 1200px;
-}
-
 head {
   margin-bottom: 7%;
 }
@@ -11,7 +7,6 @@ body {
   height: 52%;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
 #main {
