@@ -98,7 +98,14 @@ class UserProfile extends Component {
             <div className="front-card-out" key="front">
               <div className="front-card">
                 <div className="front-card-nick">{this.state.users.nick}</div>
-                <img className="card-image" src={this.state.users.avatar} />
+                <img
+                  className="card-image"
+                  src={
+                    this.state.users.avatar
+                      ? this.state.users.avatar
+                      : "./profile/defAvatar.png"
+                  }
+                />
                 <div
                   className={
                     !this.state.isFlipped ? "arrow bounce" : "arrow-off"
