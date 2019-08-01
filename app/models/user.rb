@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
+  
   has_one_attached :avatar
   has_many :games
   has_many :organized_events, class_name: 'Event', foreign_key: 'owner_id'
@@ -16,6 +17,18 @@ class User < ApplicationRecord
 
   validate :avatar_extension
   validates :nick, presence: true, uniqueness: true
+
+  def self.from_omniauth(auth)
+    where(email: auth.info['email']).first_or_create do |user|
+      user.email = auth.info['email']
+      user.nick = auth.info['email'].delete_suffix('@gmail.com')
+      user.password = 'from_google'
+      user.token = auth.credentials.token
+      user.expires = auth.credentials.expires
+      user.expires_at = auth.credentials.expires_at
+      user.refresh_token = auth.credentials.refresh_token
+    end
+  end
 
   def follow(other_user)
     following << other_user

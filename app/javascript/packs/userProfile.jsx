@@ -10,7 +10,9 @@ class UserProfile extends Component {
     this.state = {
       users: [],
       isLoading: false,
-      isFlipped: false
+      isFlipped: false,
+      showEvent: false,
+      showAchievement: false
     };
   }
 
@@ -25,9 +27,62 @@ class UserProfile extends Component {
       });
   }
 
-  handleClick = e => {
+  renderComponent = (compName, e) => {
+    this.setState({
+      render: compName
+    });
+  };
+
+  _renderSubComp() {
+    switch (this.state.render) {
+      case "Events":
+        return (
+          <Events
+            events={
+              !this.state.isLoading ? "loading" : this.state.users.org_events
+            }
+            ownEvents={
+              !this.state.isLoading ? "loading" : this.state.users.events
+            }
+          />
+        );
+      case "Achievement":
+        return <Achievement />;
+    }
+  }
+
+  handleClickFlip = e => {
     e.preventDefault();
-    this.setState({ isFlipped: !this.state.isFlipped });
+    this.setState({
+      isFlipped: !this.state.isFlipped,
+      showEvent: false,
+      showAchievement: false
+    });
+  };
+
+  handleClick = (compName, e) => {
+    this.setState({
+      render: compName
+    });
+  };
+
+  onClickEvent = event => {
+    this.handleClick("Events");
+    (this.buttonPress = () => {
+      this.setState({
+        showEvent: !this.state.showEvent,
+        showAchievement: false
+      });
+    })();
+  };
+  onClickAchi = event => {
+    this.handleClick("Achievement");
+    (this.buttonPress1 = () => {
+      this.setState({
+        showEvent: false,
+        showAchievement: !this.state.showAchievement
+      });
+    })();
   };
 
   render() {
@@ -43,7 +98,14 @@ class UserProfile extends Component {
             <div className="front-card-out" key="front">
               <div className="front-card">
                 <div className="front-card-nick">{this.state.users.nick}</div>
-                <img className="card-image" src={this.state.users.avatar} />
+                <img
+                  className="card-image"
+                  src={
+                    this.state.users.avatar
+                      ? this.state.users.avatar
+                      : "./profile/defAvatar.png"
+                  }
+                />
                 <div
                   className={
                     !this.state.isFlipped ? "arrow bounce" : "arrow-off"
@@ -51,7 +113,7 @@ class UserProfile extends Component {
                 />
                 <button
                   className="card-button btn-hover btn-color"
-                  onClick={this.handleClick}
+                  onClick={this.handleClickFlip}
                 >
                   Flip Card
                 </button>
@@ -79,56 +141,172 @@ class UserProfile extends Component {
                   />{" "}
                   : 1
                 </div>
-                <div className="back-card-stats-row">
-                  <div className="back-card-stats-points">
-                    <div
-                      className="back-card-stats-points-text"
-                      data-tip="your scored points"
-                    >
-                      POINTS
-                    </div>
-                    <div>{this.state.users.points}</div>
-                  </div>
+
+                <div className="back-card-stats-points">
                   <div
-                    className="back-card-stats-games"
-                    data-tip="number of your games"
+                    className="back-card-stats-points-text"
+                    data-tip="your scored points"
                   >
-                    <div className="back-card-stats-points-text">GAMES</div>
-                    <div>{this.state.users.points}</div>
+                    POINTS
+                  </div>
+                  <div>{this.state.users.points}</div>
+                </div>
+                <div
+                  className="back-card-stats-games"
+                  data-tip="number of your games"
+                >
+                  <div className="back-card-stats-points-text">GAMES</div>
+                  <div>
+                    {!this.state.isLoading
+                      ? "loading"
+                      : this.state.users.user_games.length}
                   </div>
                 </div>
               </div>
-              <div className="back-card-events">
-                <div className="back-card-events-text" data-tip="your events">
-                  EVENTS
-                </div>
-                {!this.state.isLoading
-                  ? "loading"
-                  : this.state.users.organized_events.map(event => (
-                      <a
-                        key={event.id}
-                        className="event-link"
-                        href={"http://localhost:3000/events/" + event.id}
-                      >
-                        {event.title}
-                      </a>
-                    ))}
+              <div className="back-card-buttons">
+                <button
+                  onClick={this.onClickEvent}
+                  className={
+                    this.state.showEvent
+                      ? "back-card-button button-color"
+                      : "btn-hover btn-color back-card-button"
+                  }
+                >
+                  <img className="button-logo-img" src="./profile/event.png" />
+                </button>
+
+                <button
+                  onClick={this.onClickAchi}
+                  className={
+                    this.state.showAchievement
+                      ? "back-card-button button-color"
+                      : "btn-hover btn-color back-card-button "
+                  }
+                >
+                  <img
+                    className="button-logo-img"
+                    src="./profile/achievements.png"
+                  />
+                </button>
               </div>
+
               <button
                 className="card-button btn-hover btn-color"
-                onClick={this.handleClick}
+                onClick={this.handleClickFlip}
               >
                 Back
               </button>
             </div>
           </ReactCardFlip>
         </div>
+        {(this.state.showEvent || this.state.showAchievement) === false ? (
+          <div />
+        ) : (
+          this._renderSubComp()
+        )}
       </>
     );
   }
 }
 
+class Events extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showOwnedEvents: false
+    };
+  }
+
+  changeList = () => {
+    this.setState({
+      showOwnedEvents: !this.state.showOwnedEvents
+    });
+  };
+
+  render() {
+    return (
+      <div className="toggle-list fade-in">
+        <h2 className="toggle-list-h2">Your Events</h2>
+        <button
+          className="card-button btn-hover btn-color card-button-event"
+          onClick={this.changeList}
+        >
+          {this.state.showOwnedEvents ? "created events" : "take a part"}
+        </button>
+        <div className="toggle-list-text">
+          <main className="st_viewport">
+            <div className="st_wrap_table" data-table_id="0">
+              <header className="st_table_header">
+                <div className="st_row">
+                  <div className="st_column _title">Title</div>
+                  <div className="st_column _event_time">Time</div>
+                  <div className="st_column _event_date">Date</div>
+                </div>
+              </header>
+
+              <div className="st_table">
+                {this.state.showOwnedEvents
+                  ? this.props.events.map(event => {
+                      return (
+                        <div className="st_row fade-in">
+                          <ReactTooltip />
+                          <div className="st_column _title">
+                            <a
+                              href={`/events/${event.id}`}
+                              data-tip="more details"
+                            >
+                              {event.title}
+                            </a>
+                          </div>
+                          <div className="st_column _event_time">
+                            {event.event_time.slice(11, 16)}
+                          </div>
+                          <div className="st_column _event_date">
+                            {event.event_date}
+                          </div>
+                        </div>
+                      );
+                    })
+                  : this.props.ownEvents.map(event => {
+                      return (
+                        <div className="st_row fade-in">
+                          <div className="st_column _title">
+                            <a href={`/events/${event.id}`}>{event.title}</a>
+                          </div>
+                          <div className="st_column _event_time">
+                            {event.event_time.slice(11, 16)}
+                          </div>
+                          <div className="st_column _event_date">
+                            {event.event_date}
+                          </div>
+                        </div>
+                      );
+                    })}
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Achievement extends React.Component {
+  render() {
+    return (
+      <div className="toggle-list fade-in">
+        <h2 className="toggle-list-h2">Your Achievements</h2>
+        <div className="toggle-list-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia
+          hendrerit massa lobortis imperdiet.
+        </div>
+      </div>
+    );
+  }
+}
+
 export default UserProfile;
+
 ReactDOM.render(
   <UserProfile />,
   document.getElementsByClassName("userProfile")[0]

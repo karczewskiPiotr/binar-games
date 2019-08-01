@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .add-event-form {
   border-radius: 18px;
   margin: 0;
@@ -13,7 +12,7 @@
   left: 21.5%;
   background-color: rgba(255, 255, 255, 0.75);
 }
-#new_event{
+#new_event {
   align-content: center;
 }
 .events-header {
@@ -23,7 +22,6 @@
   text-shadow: 0 3px #04e6ff;
 }
 
-
 .event_title label,
 .event_desc label,
 .event_t label,
@@ -31,7 +29,6 @@
 .event_game label,
 .users-label label,
 .event_private label {
-  
   margin-top: 1.1%;
   font-size: 80%;
   font-family: "Press Start 2P", cursive;
@@ -54,7 +51,7 @@
   border-radius: 14px;
   box-sizing: border-box;
 }
-.event_desc{
+.event_desc {
   height: 24%;
 }
 
@@ -106,10 +103,9 @@
   border-radius: 14px;
   box-sizing: border-box;
 }
-.users-label{
+.users-label {
   color: rgb(81, 2, 128);
 }
-
 
 .users-select {
   font-size: 65%;
@@ -125,17 +121,16 @@
 
 .users-select-button {
   color: #510280;
- 
+
   background: transparent;
   outline: none;
   border: none;
   font-size: 10px;
 }
-.users-select-button:focus{
+.users-select-button:focus {
   outline: none;
 }
-.users-select-option{
-  
+.users-select-option {
   margin: 0;
   font-size: 90%;
   font-family: "Press Start 2P", cursive;
@@ -149,19 +144,18 @@
   color: rgb(81, 2, 128);
   text-align: center;
   margin-left: 6%;
-  font-family: 'Play', sans-serif; 
+  font-family: "Play", sans-serif;
   font-size: 20px;
 }
 #table {
   margin-top: 100px;
 }
 
-.event_private{
+.event_private {
   margin-bottom: 10%;
 }
 
-
-.event_private input[type="checkbox"]{
+.event_private input[type="checkbox"] {
   padding: 2%;
   font-size: 70%;
   font-family: "Press Start 2P", cursive;
@@ -171,12 +165,12 @@
   border-radius: 14px;
   box-sizing: border-box;
 }
-.users-btn{
+.users-btn {
   position: absolute;
   left: 79.5%;
 }
 
-.add_btn{
+.add_btn {
   position: absolute;
   left: 37%;
 }
@@ -199,30 +193,26 @@
   border-radius: 16px;
 }
 
-
-
-
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .event_title input[type="text"],
   .event_desc textarea,
   .event_d input[type="date"],
   .event_t input[type="time"],
   .event_game select,
-  .users-select{
+  .users-select {
     width: 112%;
   }
-  .users-btn{
+  .users-btn {
     left: 94%;
   }
-  .event_private input[type="checkbox"]{
+  .event_private input[type="checkbox"] {
     margin-top: 8%;
   }
-  .add_event{
+  .add_event {
     left: 60%;
   }
-  .add_btn{
+  .add_btn {
     top: 116%;
     left: 30%;
   }
 }
-
