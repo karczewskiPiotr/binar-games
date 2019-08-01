@@ -252,3 +252,7 @@
     border-radius: 14px;
     box-sizing: border-box;
 }
+
+#game_category_id:focus {
+    outline: none;
+}
