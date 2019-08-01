@@ -29,41 +29,42 @@
     padding: 10px;
     background-color: transparent;
     border-radius: 18px;
+    &.accept {
+      border-color: greenyellow;
+      &:focus {
+        outline: none;
+        background-color: greenyellow;
+      }
+      &:hover {
+        background-color: greenyellow;
+        outline: none;
+      }
+    }
+    &.decline {
+      border-color: red;
+      &:focus {
+        outline: none;
+        background-color: red;
+      }
+      &:hover {
+        background-color: red;
+        outline: none;
+      }
+    }
   }
-  .accept {
-    border-color: greenyellow;
-  }
-  .decline {
-    border-color: red;
-  }
-  .accept:focus {
-    outline: none;
-    background-color: greenyellow;
-  }
-  .accept:hover {
-    background-color: greenyellow;
-    outline: none;
-  }
-  .decline:focus {
-    outline: none;
-    background-color: red;
-  }
-  .decline:hover {
-    background-color: red;
-    outline: none;
-  }
+
   .event-link {
     margin: 5px 0px;
     a {
       text-decoration: none;
       font-size: 10px;
       color: rgb(66, 85, 183);
-    }
-    a:hover {
-      color: #5c20e9b9;
-      font-size: 10px;
+      &:hover {
+        color: #5c20e9b9;
+        font-size: 10px;
 
-      text-shadow: 0 3px rgb(4, 230, 255);
+        text-shadow: 0 3px rgb(4, 230, 255);
+      }
     }
   }
 }
