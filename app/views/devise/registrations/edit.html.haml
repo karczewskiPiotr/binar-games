@@ -1,5 +1,4 @@
-.error_messages
-  = render "devise/shared/error_messages", resource: resource
+
 .add-edit-form
   = form_for(resource, as: resource_name, url: edit_user_registration_path(resource_name), html: { method: :put }) do |f|
     %h1.edit-header= "Edit Profile:"
@@ -24,11 +23,6 @@
             = f.label :password_confirmation
           .col-md-6
             = f.password_field :password_confirmation, autocomplete: "new-password"
-        .form-group.row.edit-passcurrent
-          .col-md-6
-            = f.label :current_password
-          .col-md-6
-            = f.password_field :current_password, autocomplete: "current-password"
         .form-group.row.edit-nick
           .col-md-6
             = f.label :nick
