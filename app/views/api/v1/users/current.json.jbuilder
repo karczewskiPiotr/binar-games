@@ -6,7 +6,7 @@ json.data do
     end
   end
   json.org_events do
-    json.array!(@take_part_event) do |event|
+    json.array!(@take_events) do |event|
       json.extract! event, :title, :event_date, :event_time, :id
     end
   end
