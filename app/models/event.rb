@@ -4,6 +4,7 @@ class Event < ApplicationRecord
 
   has_many :invitations
   has_many :users, through: :invitations
+  has_many :achivements
 
   validates :title, length: { minimum: 2, maximum: 35 }, presence: true
   validates :description, length: { maximum: 500 }, presence: true

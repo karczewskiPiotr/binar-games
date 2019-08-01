@@ -12,26 +12,23 @@
 .show-event-page-description,
 .show-event-page-time,
 .show-event-page-users,
-.show-event-page-game {
+.show-event-page-game,
+.show-event-page-achivements {
   width: 90%;
   margin: 25px 0 0 0;
+  padding: 4%;
   border-radius: 18px;
   background-color: hsla(0, 0%, 100%, 0.75);
 }
 .show-event-page-title {
   margin: 25px 0 0 0;
 }
-.show-event-page-game,
-.show-event-page-title,
-.show-event-page-description,
-.show-event-page-time,
-.show-event-page-users {
-  padding: 4%;
-}
+
 .event-title,
 .event-date,
 .event-game,
-.event-players {
+.event-players,
+.event-achivements {
   color: #3a3e47;
   text-align: center;
   text-shadow: 0 1px #e3f1f1;
@@ -48,8 +45,9 @@
 .show-labeld,
 .show-labeldt,
 .show-labelg,
-.show-labelp {
-  margin-bottom: 5px;;
+.show-labelp,
+.show-labela {
+  margin-bottom: 5px;
 }
 .users {
   width: 155%;

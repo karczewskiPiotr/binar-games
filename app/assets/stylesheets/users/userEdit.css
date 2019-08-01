@@ -25,8 +25,7 @@
   color: #510280;
   font-size: 90%;
 }
-.edit-passconf label,
-.edit-passcurrent label{
+.edit-passconf label{
   color: #510280;
   font-size: 70%;
 }
@@ -42,7 +41,6 @@
 }
 
 .edit-passconf input[type="password"],
-.edit-passcurrent input[type="password"],
 .edit-nick input[type="text"]{
   padding: 3%;
   font-size: 70%;
