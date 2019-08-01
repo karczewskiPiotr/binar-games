@@ -33,17 +33,8 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    if assign_category
-      params.require(:game).permit(:title, :description, :global_rating, :game_guide, pictures: []).
-        merge(category_id: assign_category.id, user_id: current_user.id)
-    else
-      params.require(:game).permit(:title, :description, :global_rating, :game_guide, pictures: []).
-        merge(user_id: current_user.id)
-    end
-  end
-
-  def assign_category
-    Category.find_or_create_by(name: params[:game][:category]) unless params[:game][:category].strip.downcase == 'all'
+    params.require(:game).permit(:title, :description, :global_rating, :game_guide, :category_id, pictures: []).
+      merge(user_id: current_user.id)
   end
 
   def handle_record_not_found

@@ -54,3 +54,45 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.accept {
+  input[type="submit"] {
+    min-width: 94px;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 18px;
+    border-color: greenyellow;
+    &:focus {
+      outline: none;
+      background-color: greenyellow;
+    }
+    &:hover {
+      background-color: greenyellow;
+      outline: none;
+    }
+  }
+}
+
+.decline {
+  input[type="submit"] {
+    min-width: 94px;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 18px;
+    border-color: red;
+    &:focus {
+      outline: none;
+      background-color: red;
+    }
+    &:hover {
+      background-color: red;
+      outline: none;
+    }
+  }
+}
+
+.status-wrapper {
+  margin-bottom: 10px;
+}

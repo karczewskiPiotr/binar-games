@@ -408,8 +408,6 @@ pre {
 .st_table_header .st_row {
   color: rgb(27, 30, 36);
 }
-.st_table_header .st_column {
-}
 
 .st_table {
   display: -webkit-box;

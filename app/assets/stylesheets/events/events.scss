@@ -110,19 +110,20 @@
 
 .users-select {
   font-size: 65%;
-  width: 90%;
-  padding: 2%;
   background-color: hsla(0, 0%, 100%, 0.75);
   font-family: "Press Start 2P", cursive;
   text-align: center;
+  width: 90%;
+  height: 24px;;
   border-radius: 14px;
   box-sizing: border-box;
   border: 1px solid blue;
 }
-
+.users-btn {
+  display: inline-block;
+}
 .users-select-button {
   color: #510280;
-
   background: transparent;
   outline: none;
   border: none;

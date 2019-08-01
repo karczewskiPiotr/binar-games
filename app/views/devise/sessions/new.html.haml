@@ -1,40 +1,32 @@
-
-%body
-  .ripple-background
-    .circle.xlarge.shade2
-    .circle.large.shade3
-    .circle.mediun.shade4
-    .circle.small.shade5
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .cotainer
-    .row.justify-content-center
-      .col-md-8
-        .card.bg-transparent.border-none
-          .header_style
-            .card-header Welcome to BinarGames
-          .card-body.body_style
-            .form-group.row.login
-              .col-md-6.col_log
-                = f.label :email
-              .col-md-6.col_login
-                = f.email_field :email, autofocus: true, autocomplete: "email"
-            .form-group.row.pass
-              .col-md-6.col_p
-                = f.label :password
-              .col-md-6.col_pass
-                = f.password_field :password, autocomplete: "current-password"
-            .form-group.row.rest
-              .col-md-6.offset-md-4.col_rest
-                .checkbox
-                  = f.check_box :remember_me
-                  = f.label :remember_me
-              .col-md-6.offset-md-4.col_button
-                .log_button  
-                  = f.submit "Log in", class: 'btn'
-    .row.google-wrapper
-      .col.text-center
-        = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: 'google-login'
-    .link_box
-      = render "devise/shared/links"
+  .row.justify-content-center.login-wrapper
+    .col-md-auto
+      .header_style
+        .card-header Welcome to BinarGames
+      .card-body.body_style
+        .form-group.row.justify-content-center
+          .col-md-3.text-right
+            = f.label :email, class: 'form-label'
+          .col-md-auto
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-input'
+        .form-group.row.justify-content-center.password
+          .col-md-3.text-right
+            = f.label :password, class: 'form-label'
+          .col-md-auto
+            = f.password_field :password, autocomplete: "current-password", class: 'form-input'
+        .form-group.row
+          .col-md.col_rest.text-right
+            .checkbox
+              = f.label :remember_me
+              = f.check_box :remember_me
+        .form-group
+          .col-md.col_button.text-right
+            .log-button
+              = f.submit "Log in", class: 'btn'
+  .row.links-wrapper
+    .col.text-center
+      = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: 'link'
+      .link_box
+        = render "devise/shared/links"
 
 
