@@ -242,5 +242,13 @@
     margin-top: -3%;
 }
 
-
-  
+#game_category_id {
+    padding: 2%;
+    font-size: 70%;
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
