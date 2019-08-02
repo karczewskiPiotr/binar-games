@@ -15,8 +15,13 @@
     #main
       = render 'layouts/main_nav' 
       = yield
-    .circles
-      %div{:class => "circle xlarge shade2"}
-      %div{:class => "circle large shade3"}
-      %div{:class => "circle mediun shade4"}
-      %div{:class => "circle small shade5"}
+    -# .circles
+    -#   %div{:class => "circle xlarge shade2"}
+    -#   %div{:class => "circle large shade3"}
+    -#   %div{:class => "circle mediun shade4"}
+    -#   %div{:class => "circle small shade5"}
+  %footer.footer
+    %div.footer-logo
+      = image_tag 'bin.png', class: "footer-logo"
+    %div.footer-names Created by: Piotrek, Natalia, Michał and Rafał
+    = link_to(link_to image_tag('git.png', class: "footer-git"), "https://github.com/karczewskiPiotr/binar-games")

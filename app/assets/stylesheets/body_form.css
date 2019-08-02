@@ -1,5 +1,15 @@
-html{
-  min-height: 1200px;
+html, body {
+  min-height: 100%;
+  margin: 0;
+}
+
+#main {
+  min-height: calc(100vh - 86px);
+  padding-bottom: 40px;
+}
+.footer,
+.push {
+  height: 40px;
 }
 
 body {
