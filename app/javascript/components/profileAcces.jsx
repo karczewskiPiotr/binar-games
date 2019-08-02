@@ -45,7 +45,7 @@ const Profile = () => {
   return (
     <div className="logoName">
       <div className="logo-wrapper">
-        <a href="https://www.google.com/">
+        <a href="/">
           <img className="logo" src={logo} />
         </a>
         <div className="binargames my-auto">
