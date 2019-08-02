@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
-  before_action :authenticate_user!
 
   def new
     @game = Game.new
