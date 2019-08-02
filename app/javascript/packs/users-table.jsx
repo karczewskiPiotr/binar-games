@@ -72,8 +72,8 @@ class UsersTable extends React.Component {
           <div className="bg">
             <table className="table">
               <thead>
-                <tr>
-                  <th>Number</th>
+                <tr className="users-header">
+                  <th>Rank</th>
                   <th>Nick</th>
                   <th>Points</th>
                   <th>Follow</th>
@@ -82,7 +82,7 @@ class UsersTable extends React.Component {
               <tbody>
                 {this.state.users.map(user => (
                   <tr key={user.id}>
-                    <td>{user.id}</td>
+                    <td>{user.rank}</td>
                     <td>{user.nick}</td>
                     <td>{user.points}</td>
                     <td>

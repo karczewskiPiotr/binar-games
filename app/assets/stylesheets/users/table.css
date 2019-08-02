@@ -35,6 +35,10 @@
   text-shadow: 0 3px #04e6ff;
   color: #5c20e9b9;
 }
- #table {
-   margin-top: 50px;
- }
+#table {
+  margin-top: 50px;
+}
+.users-header {
+  text-shadow: 0 3px rgb(4, 230, 255);
+  color: #5c20e9b9;
+}
