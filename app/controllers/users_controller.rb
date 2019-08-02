@@ -18,6 +18,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:nick, :email, :password, :password_confirmation, :id)
+    new_params = params.require(:user).permit(:nick, :email, :password, :password_confirmation, :id, :avatar)
+    if params[:password] || params[:password_confirmation]
+      new_params
+    else
+      new_params.slice(:nick, :email, :id, :avatar)
+    end
   end
 end

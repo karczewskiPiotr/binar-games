@@ -12,26 +12,23 @@
 .show-event-page-description,
 .show-event-page-time,
 .show-event-page-users,
-.show-event-page-game {
+.show-event-page-game,
+.show-event-page-achivements {
   width: 90%;
   margin: 25px 0 0 0;
+  padding: 4%;
   border-radius: 18px;
   background-color: hsla(0, 0%, 100%, 0.75);
 }
 .show-event-page-title {
   margin: 25px 0 0 0;
 }
-.show-event-page-game,
-.show-event-page-title,
-.show-event-page-description,
-.show-event-page-time,
-.show-event-page-users {
-  padding: 4%;
-}
+
 .event-title,
 .event-date,
 .event-game,
-.event-players {
+.event-players,
+.event-achivements {
   color: #3a3e47;
   text-align: center;
   text-shadow: 0 1px #e3f1f1;
@@ -48,12 +45,86 @@
 .show-labeld,
 .show-labeldt,
 .show-labelg,
-.show-labelp {
-  line-height: 3%;
-  margin-bottom: 0;
+.show-labelp,
+.show-labela {
+  margin-bottom: 5px;
 }
 .users {
   width: 155%;
   display: flex;
   justify-content: space-evenly;
+}
+
+.accept {
+  input[type="submit"] {
+    min-width: 94px;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 18px;
+    border-color: greenyellow;
+    &:focus {
+      outline: none;
+      background-color: greenyellow;
+    }
+    &:hover {
+      background-color: greenyellow;
+      outline: none;
+    }
+  }
+}
+
+.decline {
+  input[type="submit"] {
+    min-width: 94px;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 18px;
+    border-color: red;
+    &:focus {
+      outline: none;
+      background-color: red;
+    }
+    &:hover {
+      background-color: red;
+      outline: none;
+    }
+  }
+}
+
+.status-wrapper {
+  margin-bottom: 10px;
+}
+
+#first_id, #second_id, #third_id {
+  padding: 2%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+.results {
+  margin-bottom: 10px;
+}
+
+.winners-button {
+  padding: 2%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
 }

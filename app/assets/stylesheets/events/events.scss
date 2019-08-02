@@ -28,6 +28,7 @@
 .event_d label,
 .event_game label,
 .users-label label,
+.achivements-label,
 .event_private label {
   margin-top: 1.1%;
   font-size: 80%;
@@ -43,7 +44,7 @@
 .event_title input[type="text"] {
   padding: 2%;
   margin-left: 0%;
-  width: 67%;
+  width: 90%;
   font-size: 70%;
   font-family: "Press Start 2P", cursive;
   display: inline-block;
@@ -64,13 +65,13 @@
   border-radius: 14px;
   box-sizing: border-box;
   word-wrap: break-word;
-  height: 100%;
-  width: 66%;
+  height: 160px;
+  width: 90%;
   scroll-behavior: smooth;
 }
 .event_t input[type="time"] {
   padding: 2%;
-  width: 67%;
+  width: 90%;
   text-align: center;
   font-family: "Press Start 2P", cursive;
   display: inline-block;
@@ -81,7 +82,7 @@
 
 .event_d input[type="date"] {
   padding: 2%;
-  width: 67%;
+  width: 90%;
   font-size: 70%;
   font-family: "Press Start 2P", cursive;
   text-align: center;
@@ -93,7 +94,7 @@
 
 .event_game select {
   padding: 2%;
-  width: 67%;
+  width: 90%;
   font-size: 70%;
   background-color: hsla(0, 0%, 100%, 0.75);
   font-family: "Press Start 2P", cursive;
@@ -109,19 +110,20 @@
 
 .users-select {
   font-size: 65%;
-  width: 67%;
-  padding: 2%;
   background-color: hsla(0, 0%, 100%, 0.75);
   font-family: "Press Start 2P", cursive;
   text-align: center;
+  width: 90%;
+  height: 24px;;
   border-radius: 14px;
   box-sizing: border-box;
   border: 1px solid blue;
 }
-
+.users-btn {
+  display: inline-block;
+}
 .users-select-button {
   color: #510280;
-
   background: transparent;
   outline: none;
   border: none;
@@ -140,22 +142,30 @@
 }
 
 .users-select-list {
-  list-style-type: none;
-  color: rgb(81, 2, 128);
-  text-align: center;
-  margin-left: 6%;
-  font-family: "Play", sans-serif;
+  list-style-type: decimal;
+  color: #510280;
+  font-family: 'Play', sans-serif;
   font-size: 20px;
+  margin-left: 2.5%;
+}
+.achivements-select-list{
+  overflow-wrap: break-word;
+  display: list-item;
+  font-family: 'Play', sans-serif; 
+  font-size: 20px;
+}
+
+.display-achivements{
+  color: #510280;
 }
 #table {
   margin-top: 100px;
 }
 
-.event_private {
-  margin-bottom: 10%;
+.event_private{
+  margin-bottom: 24% !important;
 }
-
-.event_private input[type="checkbox"] {
+.event_private input[type="checkbox"]{
   padding: 2%;
   font-size: 70%;
   font-family: "Press Start 2P", cursive;
@@ -167,17 +177,28 @@
 }
 .users-btn {
   position: absolute;
-  left: 79.5%;
+  left: 88.5%;
 }
 
-.add_btn {
-  position: absolute;
-  left: 37%;
+.add_btn{
+  position: relative;
+  top: -10%;
+  left: 35%;
 }
-
+.typing {
+  padding: 2%;
+  width: 90%;
+  font-size: 70%;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
 .add-event-form {
   margin-top: 55px;
-  height: 590px;
+  
 }
 .add_event input[type="submit"] {
   padding: 4%;
@@ -193,7 +214,19 @@
   border-radius: 16px;
 }
 
-@media screen and (max-width: 1024px) {
+.event_private{
+  margin-bottom: 10%;
+}
+.remove-achievement{
+  background: transparent;
+  border: none;
+  margin-top: 1%;
+}
+.remove-achievement:focus{
+  outline: none;
+}
+
+@media screen and (max-width: 1024px){
   .event_title input[type="text"],
   .event_desc textarea,
   .event_d input[type="date"],

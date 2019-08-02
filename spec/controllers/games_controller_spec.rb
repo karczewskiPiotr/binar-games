@@ -62,8 +62,9 @@ RSpec.describe GamesController, type: :controller do
     end
 
     describe 'POST #create' do
-        let(:valid_attributes) { { game: attributes_for(:game).merge(category: Faker::Lorem.characters(9)) } }
-        let(:invalid_attributes) { { game: attributes_for(:game, title: Faker::Lorem.characters(40)).merge(category: Faker::Lorem.characters(9)) } }
+        let!(:category) { create(:category) }
+        let(:valid_attributes) { { game: attributes_for(:game).merge(category_id: category.id) } }
+        let(:invalid_attributes) { { game: attributes_for(:game, title: Faker::Lorem.characters(40)).merge(category_id: category.id) } }
 
         context 'valid attributes' do
             subject { post :create, params: valid_attributes }
