@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApiController
   def index
-    @users = User.where.not(id: current_user.id)
+    @users = User.all
   end
 
   def current
@@ -10,6 +10,7 @@ class Api::V1::UsersController < ApiController
     @user = current_user
     @take_events = current_user.organized_events.where(created_at: start_month..end_month).order(event_time: 'DESC')
     @user_events = current_user.events.where(created_at: start_month..end_month).order(event_time: 'DESC')
+    @rank = User.order(points: :desc).index(current_user) + 1
   end
 
   def following

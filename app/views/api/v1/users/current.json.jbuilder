@@ -1,5 +1,6 @@
 json.data do
   json.extract! @user, :id, :nick, :points
+  json.rank @rank
   json.events do
     json.array!(@user_events) do |event|
       json.extract! event, :title, :event_date, :event_time, :id

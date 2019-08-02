@@ -139,7 +139,7 @@ class UserProfile extends Component {
                     className="back-card-stats-ranking-img"
                     src="./profile/cup.png"
                   />{" "}
-                  : 1
+                  : {this.state.users.rank}
                 </div>
 
                 <div className="back-card-stats-points">
