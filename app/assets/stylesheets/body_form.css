@@ -29,7 +29,8 @@ body {
   border-radius: 10px;
 }
 .circle {
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   border-radius: 50%;
   background: white;
   animation: ripple 15s infinite;
@@ -58,7 +59,6 @@ body {
 }
 
 .xlarge {
-  position: absolute;
   width: 700px;
   height: 700px;
   left: -300px;
