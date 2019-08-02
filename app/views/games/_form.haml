@@ -1,5 +1,5 @@
 
-= form_for @game do |form|   
+= form_for @game do |form|
     .cotainer
         .row.justify-content-center
             .col-md-8
@@ -30,7 +30,7 @@
                             .col-md-6 
                                 = form.label :category
                             .col-md-6#col_cat
-                                = form.text_field :category
+                                = form.select :category_id, Category.all.collect { |category| [category.name, category.id] }
                         .form-group.row#add_btn
                             .col-md-6.offset-md-4
                                 .add_button  

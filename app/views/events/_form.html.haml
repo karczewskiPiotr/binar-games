@@ -31,11 +31,14 @@
                         = form.select(:game, options_for_select(@game))
                 .form-group.row.players.users-list
                     = javascript_pack_tag 'usersEventList'
+                .form-group.row.achivements-list
+                    = javascript_pack_tag 'achivementsList'
                 .form-group.row.event_private
                     .col-md-6
                         = form.label :private
                     .col-md-6.colprivate
                         = form.check_box :private
+                
                 .form-group.row.add_btn
                     .col-md-6.col_merde
                         .add_event  

@@ -1,57 +1,51 @@
-
-%body
-  .ripple-background
-    .circle.xlarge.shade2
-    .circle.large.shade3
-    .circle.mediun.shade4
-    .circle.small.shade5
 .error_mess
   = render "devise/shared/error_messages", resource: resource
 
 %main.login_form
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  .cotainer
-    .row.justify-content-center
-      .col-md-8
-        .card.bg-transparent
-          .header_style
-            .card-header Sign up
-          .card-body.body_style
-            .form-group.row.new_login
-              .col-md-6.col_nl
-                = f.label :email
-              .col-md-6.col_new_login
-                = f.email_field :email, autofocus: true, autocomplete: "email_new"
-            .form-group.row.letters
-              .col-md-6
-              .col-md-6
-                .limit_letters
-                  - if @minimum_password_length
-                    %em.letters_form
-                      #{@minimum_password_length} characters minimum)
-            .form-group.row.new_pass
-              .col-md-6.col_np
-                = f.label :password
-              .col-md-6.col_new_pass
-                = f.password_field :password, autocomplete: "new-password"
-            .form-group.row.new_pass_conf
-              .col-md-6.col_npc
-                = f.label :password_confirmation
-              .col-md-6.col_new_conf
-                = f.password_field :password_confirmation, autocomplete: "new-password"
-            .form-group.row.new_nick
-              .col-md-6.col_nn
-                = f.label :nick
-              .col-md-6.col_new_nick
-                = f.text_field :nick, autofocus: true
-            .form-group.row.ava
-              .col-md-6.col_na
-                = f.label :avatar
-              .col-md-6.col_ava
-                = f.file_field :avatar
-              .col-md-6.offset-md-4.col_but
-                .sign_button  
-                  = f.submit "Sign up", class: 'btn'
-    .l_box
-      = render "devise/shared/links"              
-    
+  .row.justify-content-center
+    .col-md-auto
+      .card.bg-transparent
+        .header_style
+          .card-header Sign up
+        .card-body.body_style
+          .form-group.row.new_login
+            .col-md-6.col_nl
+              = f.label :email
+            .col-md-6.col_new_login
+              = f.email_field :email, autofocus: true, autocomplete: "email_new"
+          .form-group.row.letters
+            .col-md-6
+            .col-md-6
+              .limit_letters
+                - if @minimum_password_length
+                  %em.letters_form
+                    #{@minimum_password_length} characters minimum)
+          .form-group.row.new_pass
+            .col-md-6.col_np
+              = f.label :password
+            .col-md-6.col_new_pass
+              = f.password_field :password, autocomplete: "new-password"
+          .form-group.row.new_pass_conf
+            .col-md-6.col_npc
+              = f.label :password_confirmation
+            .col-md-6.col_new_conf
+              = f.password_field :password_confirmation, autocomplete: "new-password"
+          .form-group.row.new_nick
+            .col-md-6.col_nn
+              = f.label :nick
+            .col-md-6.col_new_nick
+              = f.text_field :nick, autofocus: true
+          .form-group.row.ava
+            .col-md-6.col_na
+              = f.label :avatar
+            .col-md-6.col_ava
+              = f.file_field :avatar
+            .col-md-6.offset-md-4.col_but
+              .sign_button  
+                = f.submit "Sign up", class: 'btn'
+  .row.links-wrapper
+    .col.text-center
+      = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: 'link'
+      .link_box
+        = render "devise/shared/links" 

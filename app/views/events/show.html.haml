@@ -1,20 +1,64 @@
 .show-event-page
-    .row.justify-content-center
-        .show-event-page-title
-            %h3.show-labelt= "Title:"  
-            %p.event-title= @event.title
-        .show-event-page-description
-            %h3.show-labeld= "Details:"
-            %p.event-desc= @event.description
-        .show-event-page-time
-            %h3.show-labeldt= "Date:"
-            %div.event-date= @event.event_date
-            %div.event-date= @event.event_time.to_formatted_s(:time)
-        .show-event-page-game
-            %h3.show-labelg= "Game:"
-            %div.event-game= @event.game.title
-        .show-event-page-users
-            %h3.show-labelp= "Players:"
-            - @event.users.each do |user|
-                %div.event-players= user.nick
-
+  .row.justify-content-center
+    - if @event.event_time < Time.now && @event.event_date < Date.today && !@event.users.empty? && !@event.finalised
+      .show-event-page-users
+        %h3.show-labelp.results= "Results:"
+        = form_with url: results_events_path do |form|
+          = hidden_field_tag "event_id", @event.id
+          .form-group.row#cat
+            .col-md-6 
+              = form.label :first
+            .col-md-6#col_cat
+              = form.select :first_id, @event.users.collect { |user| [user.nick, user.id] }
+          .form-group.row#cat
+            .col-md-6 
+              = form.label :second
+            .col-md-6#col_cat
+              = form.select :second_id, @event.users.collect { |user| [user.nick, user.id] }
+          .form-group.row#cat
+            .col-md-6 
+              = form.label :third
+            .col-md-6#col_cat
+              = form.select :third_id, @event.users.collect { |user| [user.nick, user.id] }
+          .form-group.row
+            .col.text-center
+              = form.submit 'Save results', class: 'winners-button'
+    .show-event-page-title
+      %h3.show-labelt= "Title:"  
+      %p.event-title= @event.title
+    .show-event-page-description
+      %h3.show-labeld= "Details:"
+      %p.event-desc= @event.description
+    .show-event-page-time
+      %h3.show-labeldt= "Date:"
+      %div.event-date= @event.event_date
+      %div.event-date= @event.event_time.to_formatted_s(:time)
+    .show-event-page-game
+      %h3.show-labelg= "Game:"
+      %div.event-game= @event.game.title
+    - unless @event.invitations.where(user_id: current_user.id).empty?
+      .show-event-page-users
+        %h3.show-labelp= "Change status:"
+        .row.status-wrapper
+          .col.text-center
+            = button_to 'Accept', accept_api_v1_invitations_path, form_class: 'accept', method: :post, params: {id: Invitation.find_by(event_id: @event.id, user_id: current_user.id)}
+          .col.text-center
+            = button_to 'Decline', decline_api_v1_invitations_path, form_class: 'decline', method: :post, params: {id: Invitation.find_by(event_id: @event.id, user_id: current_user.id)}
+    .show-event-page-users
+      %h3.show-labelp= "Players:"
+      %h5= "Accepted:"
+      - @event.invitations.accepted.each do |invite|
+        %div.event-players
+          = invite.user.nick
+      %h5= "Pending:"
+      - @event.invitations.pending.each do |invite|
+        %div.event-players
+          = invite.user.nick
+      %h5= "Declined:"
+      - @event.invitations.declined.each do |invite|
+        %div.event-players
+          = invite.user.nick
+    .show-event-page-achivements
+      %h3.show-labela= "Achievements:"
+      - @event.achivements.each do |achivement|
+        %div.event-achivements= achivement.name

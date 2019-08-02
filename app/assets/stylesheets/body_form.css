@@ -1,21 +1,23 @@
-html{
-  min-height: 1200px;
-}
-
-head {
-  margin-bottom: 7%;
-}
-body {
-  background-image: linear-gradient(rgb(75, 19, 179), hsl(175, 100%, 50%));
-  width: 100%;
-  height: 52%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
+html, body {
+  min-height: 100%;
+  margin: 0;
 }
 
 #main {
-  margin-top: -4%;
+  min-height: calc(100vh - 86px);
+  padding-bottom: 40px;
+}
+.footer,
+.push {
+  height: 40px;
+}
+
+body {
+  background-image: linear-gradient(rgb(75, 19, 179), hsl(175, 100%, 50%));
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .header_style {
   background-color: hsla(0, 0%, 100%, 0.5);
@@ -27,7 +29,8 @@ body {
   border-radius: 10px;
 }
 .circle {
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   border-radius: 50%;
   background: white;
   animation: ripple 15s infinite;
@@ -56,7 +59,6 @@ body {
 }
 
 .xlarge {
-  position: absolute;
   width: 700px;
   height: 700px;
   left: -300px;

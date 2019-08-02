@@ -1,0 +1,65 @@
+.login-wrapper {
+  margin-top: 100px;
+}
+.card-header {
+  align-content: center;
+  font-size: 24px;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(81, 2, 128);
+  text-align: center;
+  text-shadow: 0 3px rgb(4, 230, 255);
+}
+.form-label {
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #4b5fcf;
+  font-size: 14px;
+}
+.form-input {
+  font-size: 13px;
+  border: 1px solid blue;
+  border-radius: 14px;
+  padding: 0px 5px;
+  &:focus {
+    outline: none;
+  }
+}
+.password {
+  margin-bottom: 0px !important;
+}
+.checkbox {
+  margin-right: 50px;
+  line-height: 14px;
+  label {
+    font-family: "Play", sans-serif;
+    color: #320447;
+    font-size: 14px;
+    margin: 0;
+    vertical-align: text-top;
+  }
+  input[type="checkbox"] {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+.log-button input[type="submit"] {
+  margin: 0px 30px 0px 0px;
+  font-weight: bold;
+  color: rgb(81, 2, 128);
+  text-shadow: 0 1px #e3f1f1;
+  background: #a9def5;
+  border: 1px solid;
+  border-color: #4b5fcf #031680 #4b5fcf;
+  border-radius: 16px;
+  outline: 0;
+}
+.links-wrapper {
+  margin-top: 10px;
+  .link {
+    color: white;
+    font-size: 12px;
+    &:hover {
+      text-decoration: none;
+      color: rgb(4, 230, 255);
+    }
+  }
+}

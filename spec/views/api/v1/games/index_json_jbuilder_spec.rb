@@ -5,7 +5,7 @@ RSpec.describe "/api/v1/games/index", type: :view do
     let(:game2) { create(:game, :with_attachments) }
     let(:user) { create(:user) }
     before do
-        allow(view).to receive(:current_user).and_return(user)
+        sign_in(user)
         @games = [game1, game2]
         render template: '/api/v1/games/index'
     end

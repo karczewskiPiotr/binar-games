@@ -16,3 +16,10 @@
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Play&display=swap');
  @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+ .notice, .alert {
+   margin: 0px;
+   text-align: center;
+   color: rgb(4, 230, 255);
+   text-shadow: 0 3px rgb(6, 0, 10);
+ }

@@ -10,6 +10,9 @@ class EventsController < ApplicationController
     @game = Game.pluck(:title)
     @event = current_user.events.build(event_params)
     if @event.save
+      params[:event][:achivements]&.map do |achivement|
+        @event.achivements.create(name: achivement)
+      end
       redirect_to @event
     else
       render 'new'
@@ -20,6 +23,15 @@ class EventsController < ApplicationController
     @event = current_user.events.build
     @users = User.all
     @game = Game.pluck(:title)
+  end
+
+  def results
+    User.find(params[:first_id]).first!
+    User.find(params[:second_id]).second!
+    User.find(params[:third_id]).third!
+    @event = Event.find(params[:event_id])
+    @event.update(finalised: true)
+    redirect_to @event
   end
 
   private

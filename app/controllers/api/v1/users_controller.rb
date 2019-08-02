@@ -4,8 +4,13 @@ class Api::V1::UsersController < ApiController
   end
 
   def current
+    start_month = Date.today.beginning_of_month
+    end_month = start_month.end_of_month
+    @user_games = Game.all
     @user = current_user
-    @events = Event.all
+    @take_events = current_user.organized_events.where(created_at: start_month..end_month).order(event_time: 'DESC')
+    @user_events = current_user.events.where(created_at: start_month..end_month).order(event_time: 'DESC')
+    @rank = User.order(points: :desc).index(current_user) + 1
   end
 
   def following
