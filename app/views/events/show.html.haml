@@ -1,6 +1,6 @@
 .show-event-page
   .row.justify-content-center
-    - if @event.event_time < Time.now && @event.event_date < Date.today && !@event.users.empty? && !@event.finalised
+    - if (@event.event_time < Time.now && @event.event_date < Date.today && !@event.users.empty? && !@event.finalised && @event.owner == current_user)
       .show-event-page-users
         %h3.show-labelp.results= "Results:"
         = form_with url: results_events_path do |form|
