@@ -15,11 +15,11 @@
     #main
       = render 'layouts/main_nav' 
       = yield
-    -# .circles
-    -#   %div{:class => "circle xlarge shade2"}
-    -#   %div{:class => "circle large shade3"}
-    -#   %div{:class => "circle mediun shade4"}
-    -#   %div{:class => "circle small shade5"}
+    .circles
+      %div{:class => "circle xlarge shade2"}
+      %div{:class => "circle large shade3"}
+      %div{:class => "circle mediun shade4"}
+      %div{:class => "circle small shade5"}
   %footer.footer
     %div.footer-logo
       = image_tag 'bin.png', class: "footer-logo"
