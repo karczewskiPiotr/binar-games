@@ -20,7 +20,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.omniauth :google_oauth2,
     Rails.application.credentials[:google_oauth2][:client_id],
-    Rails.application.credentials[:google_oauth2][:client_key], {}
+    Rails.application.credentials[:google_oauth2][:client_key], {redirect_uri: 'https://karo.binar.app/users/auth/google_oauth2/callback'}
 
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   # Configure the class responsible to send e-mails.
