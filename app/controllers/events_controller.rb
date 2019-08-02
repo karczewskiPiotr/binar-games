@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @game = Game.pluck(:title)
+    @game = current_user.games.pluck(:title)
     @event = current_user.events.build(event_params)
     if @event.save
       params[:event][:achivements]&.map do |achivement|
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   def new
     @event = current_user.events.build
     @users = User.all
-    @game = Game.pluck(:title)
+    @game = current_user.games.pluck(:title)
   end
 
   def results
@@ -31,14 +31,13 @@ class EventsController < ApplicationController
     User.find(params[:third_id]).third!
     @event = Event.find(params[:event_id])
     @event.update(finalised: true)
-    redirect_to @event
   end
 
   private
 
   def event_params
     params.require(:event).permit(:title, :description, :event_time, :event_date, :private, user_ids: []).
-      merge(owner_id: current_user.id, game_id: Game.find_by(title: params[:event][:game]).id)
+      merge(owner_id: current_user.id, game_id: Game.find_by(title: params[:event][:game])&.id)
   end
 
   def find_event

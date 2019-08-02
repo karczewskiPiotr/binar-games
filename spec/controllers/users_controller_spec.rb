@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
     describe 'GET #show' do
         let(:user) { create(:user) }
-        before { get :show, params: { id: user.id } }
+        before do
+            sign_in(user)
+            get :show, params: { id: user.id }
+        end
 
         describe "successful response" do
             it { expect(response).to be_successful }

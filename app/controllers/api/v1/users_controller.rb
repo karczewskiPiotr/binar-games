@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApiController
   def current
     start_month = Date.today.beginning_of_month
     end_month = start_month.end_of_month
-    @user_games = Game.all
+    @user_games = current_user.games
     @user = current_user
     @take_events = current_user.organized_events.where(created_at: start_month..end_month).order(event_time: 'DESC')
     @user_events = current_user.events.where(created_at: start_month..end_month).order(event_time: 'DESC')
