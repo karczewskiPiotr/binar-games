@@ -46,7 +46,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootstrap', '~> 4.3.1'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 gem 'haml'
 gem 'html2haml'
 gem 'jquery-rails'
